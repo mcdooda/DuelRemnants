@@ -15,6 +15,9 @@ func _process(_delta):
 		
 	z_index = get_parent().position.y
 		
+	if animation == "death":
+		return
+		
 	if velocity.length_squared() > 0:
 		play("move")
 	else:

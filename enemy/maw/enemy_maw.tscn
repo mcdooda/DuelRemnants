@@ -10,7 +10,6 @@ radius = 8.0
 [node name="EnemyMaw" type="CharacterBody2D"]
 motion_mode = 1
 wall_min_slide_angle = 0.0
-platform_on_leave = 2
 script = ExtResource("1_v2cqm")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -18,7 +17,6 @@ texture_filter = 1
 position = Vector2(-1, -24)
 sprite_frames = ExtResource("1_5csga")
 animation = &"move"
-frame_progress = 0.60941
 script = ExtResource("2_3swck")
 
 [node name="Collision" type="CollisionShape2D" parent="."]

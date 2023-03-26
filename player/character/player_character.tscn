@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://drtouk1oa6ij4"]
+[gd_scene load_steps=6 format=3 uid="uid://drtouk1oa6ij4"]
 
 [ext_resource type="Script" path="res://player/character/player_character.gd" id="1_wuyec"]
 [ext_resource type="SpriteFrames" uid="uid://cjaf6l5pws0kx" path="res://player/character/player_character.tres" id="2_nov3l"]
+[ext_resource type="PackedScene" uid="uid://b4qkk0v1ay3ad" path="res://player/weapons/fireball/weapon_fireball.tscn" id="2_paonf"]
 [ext_resource type="Script" path="res://player/character/player_sprite.gd" id="3_xi74e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wppm"]
@@ -9,16 +10,19 @@
 [node name="PlayerCharacter" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_wuyec")
+projectile_scene = ExtResource("2_paonf")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-40, -59)
 sprite_frames = ExtResource("2_nov3l")
-animation = &"move"
+animation = &"idle"
+frame_progress = 0.940337
 centered = false
 script = ExtResource("3_xi74e")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_5wppm")
@@ -27,3 +31,6 @@ shape = SubResource("CircleShape2D_5wppm")
 process_mode = 3
 wait_time = 2.0
 autostart = true
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(18, -24)

@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4qkk0v1ay3ad"]
+[gd_scene load_steps=5 format=3 uid="uid://b4qkk0v1ay3ad"]
 
+[ext_resource type="Script" path="res://player/weapons/fireball/weapon_fireball.gd" id="1_6slrh"]
 [ext_resource type="SpriteFrames" uid="uid://b0s8s4v2sbbas" path="res://player/weapons/fireball/weapon_fireball.tres" id="1_c3dwf"]
+[ext_resource type="Script" path="res://player/weapons/fireball/weapon_fireball_sprite.gd" id="2_021ia"]
 
-[node name="fireball" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykd7a"]
+size = Vector2(33, 20.5)
 
-[node name="sprite" type="AnimatedSprite2D" parent="."]
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_6slrh")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
 sprite_frames = ExtResource("1_c3dwf")
 frame_progress = 0.533471
+script = ExtResource("2_021ia")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ykd7a")
