@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://enemy/maw/enemy_maw_sprite.gd" id="2_3swck"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t8v81"]
-radius = 17.0
+radius = 8.0
 
 [node name="EnemyMaw" type="CharacterBody2D"]
 motion_mode = 1
@@ -13,15 +13,14 @@ wall_min_slide_angle = 0.0
 platform_on_leave = 2
 script = ExtResource("1_v2cqm")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
-shape = SubResource("CircleShape2D_t8v81")
-
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1, -46)
-scale = Vector2(2, 2)
+position = Vector2(-1, -24)
 sprite_frames = ExtResource("1_5csga")
 animation = &"move"
 frame_progress = 0.60941
 script = ExtResource("2_3swck")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_t8v81")

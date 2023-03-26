@@ -13,6 +13,8 @@ func _process(_delta):
 	if velocity.x != 0:
 		set_flip_h(velocity.x < 0)
 		
+	z_index = get_parent().position.y
+		
 	if velocity.length_squared() > 0:
 		play("move")
 	else:

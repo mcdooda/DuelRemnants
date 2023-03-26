@@ -11,66 +11,66 @@ position = Vector2(575.5, 324.5)
 texture = ExtResource("1_13u5t")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_7so5x")]
-position = Vector2(561, 392)
+position = Vector2(169, 146)
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="EnemyMaw" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(821, 417)
+position = Vector2(391, 120)
 
 [node name="EnemyMaw2" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(990, 522)
+position = Vector2(560, 225)
 
 [node name="EnemyMaw3" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(994, 332)
+position = Vector2(564, 35)
 
 [node name="EnemyMaw4" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(898, 233)
+position = Vector2(468, -64)
 
 [node name="EnemyMaw5" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(738, 244)
+position = Vector2(308, -53)
 
 [node name="EnemyMaw6" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(819, 311)
+position = Vector2(389, 14)
 
 [node name="EnemyMaw7" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(451, 436)
+position = Vector2(21, 139)
 
 [node name="EnemyMaw8" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(444, 284)
+position = Vector2(14, -13)
 
 [node name="EnemyMaw9" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(626, 258)
+position = Vector2(196, -39)
 
 [node name="EnemyMaw10" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(174, 416)
+position = Vector2(-256, 119)
 
 [node name="EnemyMaw11" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(231, 526)
+position = Vector2(-199, 229)
 
 [node name="EnemyMaw12" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(293, 318)
+position = Vector2(-137, 21)
 
 [node name="EnemyMaw13" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(355, 234)
+position = Vector2(-75, -63)
 
 [node name="EnemyMaw14" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(527, 203)
+position = Vector2(97, -94)
 
 [node name="EnemyMaw15" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(791, 523)
+position = Vector2(361, 226)
 
 [node name="EnemyMaw16" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(820, 620)
+position = Vector2(390, 323)
 
 [node name="EnemyMaw17" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(658, 604)
+position = Vector2(228, 307)
 
 [node name="EnemyMaw18" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(366, 523)
+position = Vector2(-64, 226)
 
 [node name="EnemyMaw19" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(336, 435)
+position = Vector2(-94, 138)
 
 [node name="EnemyMaw20" parent="Enemies" instance=ExtResource("3_dgu8n")]
-position = Vector2(546, 531)
+position = Vector2(116, 234)

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 250
+@export var speed = 120
 
 @onready var target = get_node("/root/level_1/PlayerCharacter/Collision")
 
