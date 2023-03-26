@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://drtouk1oa6ij4"]
+
+[ext_resource type="Script" path="res://player/character/player_character.gd" id="1_wuyec"]
+[ext_resource type="SpriteFrames" uid="uid://cjaf6l5pws0kx" path="res://player/character/player_character.tres" id="2_nov3l"]
+[ext_resource type="Script" path="res://player/character/player_sprite.gd" id="3_xi74e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wppm"]
+
+[node name="PlayerCharacter" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_wuyec")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 1000
+texture_filter = 1
+position = Vector2(-82, -126)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_nov3l")
+animation = &"move"
+centered = false
+script = ExtResource("3_xi74e")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -38.5)
+shape = SubResource("CircleShape2D_5wppm")

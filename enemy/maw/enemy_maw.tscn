@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bldk1x1ej2bnu"]
+
+[ext_resource type="SpriteFrames" uid="uid://no3445mbr0jk" path="res://enemy/maw/enemy_maw.tres" id="1_5csga"]
+[ext_resource type="Script" path="res://enemy/maw/enemy_maw.gd" id="1_v2cqm"]
+[ext_resource type="Script" path="res://enemy/maw/enemy_maw_sprite.gd" id="2_3swck"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8v81"]
+radius = 17.0
+
+[node name="EnemyMaw" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+platform_on_leave = 2
+script = ExtResource("1_v2cqm")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_t8v81")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -46)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_5csga")
+animation = &"move"
+frame_progress = 0.60941
+script = ExtResource("2_3swck")
