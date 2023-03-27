@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdq1wkx2dgong"]
+
+[ext_resource type="SpriteFrames" uid="uid://df0gjdfugppeq" path="res://player/weapons/fireball/impact/weapon_fireball_impact.tres" id="1_rvm18"]
+[ext_resource type="Script" path="res://player/weapons/fireball/impact/weapon_fireball_impact.gd" id="2_v8prq"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = ExtResource("1_rvm18")
+animation = &"small"
+frame_progress = 0.261234
+script = ExtResource("2_v8prq")
