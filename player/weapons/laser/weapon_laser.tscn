@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://k48mipjeonht"]
+
+[ext_resource type="Script" path="res://player/weapons/laser/laser.gd" id="1_jn12i"]
+[ext_resource type="Texture2D" uid="uid://dyhxxwlkykwpg" path="res://player/weapons/laser/laser.png" id="2_senno"]
+[ext_resource type="Texture2D" uid="uid://b6ym3uc73wqhc" path="res://player/weapons/laser/ball.png" id="4_37mqy"]
+
+[sub_resource type="Gradient" id="Gradient_aoqne"]
+offsets = PackedFloat32Array(0, 0.362416, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uvq0k"]
+gradient = SubResource("Gradient_aoqne")
+
+[sub_resource type="Curve" id="Curve_61etd"]
+_data = [Vector2(0, 0.318182), 0.0, 0.0, 0, 0, Vector2(0.477778, 0.990909), 0.0, 0.0, 0, 0, Vector2(1, 0.790909), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ytrm0"]
+curve = SubResource("Curve_61etd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6xpr4"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_ytrm0")
+color_ramp = SubResource("GradientTexture1D_uvq0k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_81wmr"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 120.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_ytrm0")
+color_ramp = SubResource("GradientTexture1D_uvq0k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mn1fa"]
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_ytrm0")
+color_ramp = SubResource("GradientTexture1D_uvq0k")
+
+[node name="weapon_laser" type="RayCast2D"]
+exclude_parent = false
+target_position = Vector2(0, 1000)
+collision_mask = 3
+script = ExtResource("1_jn12i")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 300, 0)
+texture = ExtResource("2_senno")
+texture_mode = 1
+
+[node name="EmitingParticles" type="GPUParticles2D" parent="."]
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_6xpr4")
+texture = ExtResource("4_37mqy")
+lifetime = 0.3
+local_coords = true
+trail_sections = 2
+
+[node name="ImpactParticles" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_81wmr")
+texture = ExtResource("4_37mqy")
+lifetime = 0.3
+trail_sections = 2
+
+[node name="BeamParticles" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_mn1fa")
+texture = ExtResource("4_37mqy")
+lifetime = 0.3
+trail_sections = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
