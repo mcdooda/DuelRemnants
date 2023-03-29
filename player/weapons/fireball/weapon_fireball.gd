@@ -13,6 +13,7 @@ func _process(delta):
 	global_position += velocity * delta
 
 func body_entered(body):
+	print("entered")
 	if body.has_method("kill"):
 		body.kill()
 		

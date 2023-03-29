@@ -8,6 +8,6 @@ func _ready():
 func trigger_ability():
 	for i in num_projectiles:
 		var projectile = projectile_scene.instantiate()
-		#projectile.global_position = player_ref.global_position
+		projectile.global_position = player_ref.global_position
 		projectile.direction = player_ref.direction
 		get_tree().root.add_child(projectile)
