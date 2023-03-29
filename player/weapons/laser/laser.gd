@@ -12,7 +12,7 @@ extends RayCast2D
 # See `appear()` and `disappear()` for more information.
 var is_casting := false : set = set_is_casting
 
-@export var direction: Vector2
+var direction: Vector2
 @export var impact_scene: PackedScene
 
 @onready var fill := $Line2D
@@ -42,21 +42,15 @@ func set_is_casting(cast: bool):
 	casting_particles.emitting = is_casting
 	casting_particles.global_rotation = direction.angle()
 
-# Controls the emission of particles and extends the Line2D to target_position` or the ray's 
-# collision point, whichever is closest.
 func cast_beam():
 	var cast_point := target_position
 	force_raycast_update()
 
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
-		var impact_vfx = impact_scene.instantiate()
-		impact_vfx.global_position = get_collision_point()
-		impact_vfx.global_rotation = get_collision_normal().angle()
-		get_tree().root.add_child(impact_vfx)
 		var collided_object = get_collider()
-		if collided_object.has_method("hit"):
-			collided_object.hit()
+		if collided_object.has_method("kill"):
+			collided_object.kill()
 	else:
 		cast_point = target_position
 	fill.points[1] = cast_point
