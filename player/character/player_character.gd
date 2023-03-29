@@ -5,7 +5,6 @@ extends CharacterBody2D
 
 @export var ability : PackedScene
 
-@export var projectile_scene: PackedScene
 @export var playing_attack_animation = false
 @export var attack_animation_frame = 13
 
@@ -23,22 +22,8 @@ func start_attack():
 func attack_finished():
 	playing_attack_animation = false
 	
-#func frame_changed():
-	#if not playing_attack_animation:
-		#return
-		
-	#if $Sprite.frame == attack_animation_frame:
-	#	trigger_attack_effect()
-
-#func trigger_attack_effect():
-	#var projectile = projectile_scene.instantiate()
-	#projectile.global_position = $Muzzle.global_position
-	#projectile.direction = direction
-	#get_tree().root.add_child(projectile)
-	
 func _physics_process(delta):
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
-	
 	if input_direction.x != 0:
 		direction.x = sign(input_direction.x)
 		

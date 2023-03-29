@@ -15,8 +15,8 @@ func body_entered(body):
 func shoot_at(enemy_index):
 	var projectile = projectile_scene.instantiate()
 	player_ref.add_child(projectile)
-	var foo = (2 * PI) * (float(enemy_index) / float(num_projectiles))
-	projectile.position = Vector2(cos(foo) * radius, sin(foo)  * radius)
+	var alpha = (2 * PI) * (float(enemy_index) / float(num_projectiles))
+	projectile.position = Vector2(cos(alpha) * radius, sin(alpha)  * radius)
 	projectile.direction = enemies_in_range[enemy_index].position - projectile.global_position
 
 func trigger_ability():
@@ -25,4 +25,4 @@ func trigger_ability():
 			if enemies_in_range.size() > i:
 				shoot_at(i)
 			else:
-				shoot_at(enemies_in_range.back())
+				shoot_at(0)
