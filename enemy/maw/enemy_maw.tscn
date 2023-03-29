@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bldk1x1ej2bnu"]
+[gd_scene load_steps=7 format=3 uid="uid://bldk1x1ej2bnu"]
 
 [ext_resource type="SpriteFrames" uid="uid://no3445mbr0jk" path="res://enemy/maw/enemy_maw.tres" id="1_5csga"]
 [ext_resource type="Script" path="res://enemy/maw/enemy_maw.gd" id="1_v2cqm"]
 [ext_resource type="Script" path="res://enemy/maw/enemy_maw_sprite.gd" id="2_3swck"]
+[ext_resource type="Shader" uid="uid://doodqj16rilhk" path="res://enemy/maw/enemy_maw_shader.tres" id="2_gogrc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdmjx"]
+shader = ExtResource("2_gogrc")
+shader_parameter/flash_active = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t8v81"]
 radius = 8.0
 
-[node name="EnemyMaw" type="CharacterBody2D"]
+[node name="EnemyMaw" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
 collision_mask = 7
 motion_mode = 1
@@ -16,9 +21,10 @@ script = ExtResource("1_v2cqm")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_qdmjx")
 position = Vector2(-1, -24)
 sprite_frames = ExtResource("1_5csga")
-animation = &"move"
+animation = &"attack"
 script = ExtResource("2_3swck")
 
 [node name="Collision" type="CollisionShape2D" parent="."]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://qrixlgxkqkwk"]
+
+[ext_resource type="Texture2D" uid="uid://b6ym3uc73wqhc" path="res://player/weapons/laser/ball.png" id="1_e6530"]
+
+[sub_resource type="Gradient" id="Gradient_nijdh"]
+offsets = PackedFloat32Array(0, 0.362416, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uvq0k"]
+gradient = SubResource("Gradient_nijdh")
+
+[sub_resource type="Curve" id="Curve_81tql"]
+_data = [Vector2(0, 0.318182), 0.0, 0.0, 0, 0, Vector2(0.477778, 0.990909), 0.0, 0.0, 0, 0, Vector2(1, 0.790909), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ytrm0"]
+curve = SubResource("Curve_81tql")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q1j0d"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 120.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_ytrm0")
+color_ramp = SubResource("GradientTexture1D_uvq0k")
+
+[node name="weapon_laser_impact" type="GPUParticles2D"]
+emitting = false
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_q1j0d")
+texture = ExtResource("1_e6530")
+lifetime = 0.3
+one_shot = true

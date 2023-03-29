@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d2m5djbucqj05" path="res://level_1/battlemap6_middleground.png" id="1_13u5t"]
 [ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="2_7so5x"]
-[ext_resource type="PackedScene" uid="uid://c82advetq6btv" path="res://player/ability/abilities/laser_ability/laser.tscn" id="3_3qskl"]
 [ext_resource type="PackedScene" uid="uid://bldk1x1ej2bnu" path="res://enemy/maw/enemy_maw.tscn" id="3_dgu8n"]
+[ext_resource type="PackedScene" uid="uid://dndfbjcy7r6qt" path="res://player/ability/abilities/ability_laser/ability_laser.tscn" id="3_squb4"]
 [ext_resource type="PackedScene" uid="uid://k48mipjeonht" path="res://player/weapons/laser/weapon_laser.tscn" id="4_006qv"]
 
 [node name="level_1" type="Node2D"]
@@ -14,7 +14,7 @@ texture = ExtResource("1_13u5t")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_7so5x")]
 position = Vector2(169, 146)
-ability = ExtResource("3_3qskl")
+ability = ExtResource("3_squb4")
 projectile_scene = ExtResource("4_006qv")
 
 [node name="Enemies" type="Node" parent="."]

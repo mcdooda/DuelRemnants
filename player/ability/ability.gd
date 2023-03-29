@@ -10,9 +10,6 @@ class_name Ability
 var player_ref
 var timer: Timer
 
-var root: Node
-
-@export var Emitter: Resource
 @export var projectile_scene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
@@ -30,5 +27,4 @@ func init_timer():
 	add_child(timer)
 
 func trigger_ability():
-	print ("Trigger ability")
-	Emitter.emit(projectile_scene, num_projectiles, player_ref, root)
+	pass

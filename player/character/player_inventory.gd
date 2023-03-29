@@ -9,6 +9,6 @@ func add_item(item_scene):
 		var item = item_scene.instantiate()
 		item.init(get_parent())
 		item_list.push_back(item)
-		add_child(item)
+		get_parent().add_child(item)
 		
 

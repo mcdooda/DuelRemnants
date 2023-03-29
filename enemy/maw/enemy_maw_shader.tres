@@ -1,0 +1,72 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://doodqj16rilhk"]
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_5f5jt"]
+default_input_values = [0, 0.0, 1, 1.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
+
+[sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_u3vfe"]
+parameter_name = "flash_active"
+default_value_enabled = true
+default_value = true
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_33q3l"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_lv83p"]
+source = 2
+
+[resource]
+code = "shader_type canvas_item;
+uniform bool flash_active = true;
+
+
+
+void fragment() {
+// BooleanParameter:6
+	bool n_out6p0 = flash_active;
+
+
+// Input:7
+	vec4 n_out7p0 = COLOR;
+
+
+	vec4 n_out8p0;
+// Texture2D:8
+	n_out8p0 = texture(TEXTURE, UV);
+
+
+	vec3 n_out2p0;
+// If:2
+	float n_in2p1 = 1.00000;
+	float n_in2p2 = 0.00001;
+	if(abs((n_out6p0 ? 1.0 : 0.0) - n_in2p1) < n_in2p2)
+	{
+		n_out2p0 = vec3(n_out7p0.xyz);
+	}
+	else if((n_out6p0 ? 1.0 : 0.0) < n_in2p1)
+	{
+		n_out2p0 = vec3(n_out8p0.xyz);
+	}
+	else
+	{
+		n_out2p0 = vec3(n_out7p0.xyz);
+	}
+
+
+// Output:0
+	COLOR.rgb = n_out2p0;
+
+
+}
+"
+graph_offset = Vector2(-713, 24)
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeIf_5f5jt")
+nodes/fragment/2/position = Vector2(100, 180)
+nodes/fragment/6/node = SubResource("VisualShaderNodeBooleanParameter_u3vfe")
+nodes/fragment/6/position = Vector2(-460, 280)
+nodes/fragment/7/node = SubResource("VisualShaderNodeInput_33q3l")
+nodes/fragment/7/position = Vector2(-500, 420)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_lv83p")
+nodes/fragment/8/position = Vector2(-500, 100)
+nodes/fragment/connections = PackedInt32Array(6, 0, 2, 0, 7, 0, 2, 3, 7, 0, 2, 4, 2, 0, 0, 0, 8, 0, 2, 5)

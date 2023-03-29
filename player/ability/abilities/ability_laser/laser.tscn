@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc3dil7mkexde"]
+
+[ext_resource type="Script" path="res://player/ability/abilities/ability_laser/laser.gd" id="1_uu325"]
+[ext_resource type="PackedScene" uid="uid://k48mipjeonht" path="res://player/weapons/laser/weapon_laser.tscn" id="2_obl28"]
+
+[node name="laser" type="Node2D"]
+script = ExtResource("1_uu325")
+num_projectiles = 3
+projectile_scene = ExtResource("2_obl28")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
