@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbpxv4fpmcu6f"]
+
+[ext_resource type="Script" path="res://spawner/spawner_wave.gd" id="1_ljny5"]
+[ext_resource type="PackedScene" uid="uid://bldk1x1ej2bnu" path="res://enemy/maw/enemy_maw.tscn" id="2_fpqel"]
+
+[node name="spawner_wave_3" type="Node"]
+script = ExtResource("1_ljny5")
+enemy_type = ExtResource("2_fpqel")
+number = 20
+timing = 20.0
+distance = 300.0
