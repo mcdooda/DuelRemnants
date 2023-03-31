@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3wb6o4roqwdf"]
+
+[ext_resource type="Script" path="res://player/ability/abilities/decimate/decimate.gd" id="1_k8r8o"]
+[ext_resource type="PackedScene" uid="uid://cox5biyf5m3j" path="res://player/weapons/decimate/weapon_decimate.tscn" id="2_cghi7"]
+
+[node name="decimate" type="Node"]
+script = ExtResource("1_k8r8o")
+cooldown = 3
+projectile_scene = ExtResource("2_cghi7")

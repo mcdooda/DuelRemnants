@@ -26,7 +26,7 @@ func _physics_process(delta):
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	if input_direction.x != 0:
 		direction.x = sign(input_direction.x)
-		
+	direction = input_direction
 	velocity = input_direction * speed
 	global_position += velocity * delta
 

@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dndfbjcy7r6qt"]
 
-[ext_resource type="Script" path="res://player/ability/abilities/ability_laser/laser.gd" id="1_m2e0i"]
-[ext_resource type="PackedScene" uid="uid://k48mipjeonht" path="res://player/weapons/laser/weapon_laser.tscn" id="2_utxm5"]
+[ext_resource type="Script" path="res://player/ability/abilities/laser/laser.gd" id="1_t7q0t"]
+[ext_resource type="PackedScene" uid="uid://k48mipjeonht" path="res://player/weapons/laser/weapon_laser.tscn" id="2_iefci"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbet5"]
 radius = 300.0
 
 [node name="ability_laser" type="Area2D"]
 collision_mask = 6
-script = ExtResource("1_m2e0i")
+script = ExtResource("1_t7q0t")
 num_projectiles = 6
-projectile_scene = ExtResource("2_utxm5")
+projectile_scene = ExtResource("2_iefci")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 6

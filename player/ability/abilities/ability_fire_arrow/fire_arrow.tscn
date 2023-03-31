@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl75wute2x26a"]
-
-[ext_resource type="Script" path="res://player/ability/abilities/ability_fire_arrow/fire_arrow.gd" id="1_fyrt0"]
-[ext_resource type="PackedScene" uid="uid://b4qkk0v1ay3ad" path="res://player/weapons/fireball/weapon_fireball.tscn" id="2_1eo2v"]
-
-[node name="fire_arrow" type="Node"]
-script = ExtResource("1_fyrt0")
-projectile_scene = ExtResource("2_1eo2v")

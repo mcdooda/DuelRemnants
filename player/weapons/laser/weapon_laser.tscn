@@ -31,12 +31,14 @@ scale_curve = SubResource("CurveTexture_ytrm0")
 color_ramp = SubResource("GradientTexture1D_uvq0k")
 
 [node name="weapon_laser" type="RayCast2D"]
+texture_filter = 1
 target_position = Vector2(0, 1000)
 collision_mask = 3
 script = ExtResource("1_jn12i")
 impact_scene = ExtResource("2_6c506")
 
 [node name="Line2D" type="Line2D" parent="."]
+texture_filter = 1
 points = PackedVector2Array(0, 0, 300, 0)
 texture = ExtResource("2_senno")
 texture_mode = 1

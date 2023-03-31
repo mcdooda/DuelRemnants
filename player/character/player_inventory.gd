@@ -5,10 +5,7 @@ var item_list = []
 
 func add_item(item_scene):
 	if item_list.size() < max_size:
-		print ("Add item")
 		var item = item_scene.instantiate()
 		item.init(get_parent())
 		item_list.push_back(item)
 		get_parent().add_child(item)
-		
-
