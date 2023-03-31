@@ -14,14 +14,12 @@ var timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func init(player):
-	print ("Init item")
 	#do your init
 	player_ref = player
 	timer = Timer.new()
 	timer.wait_time = cooldown
 	timer.connect("timeout", trigger_ability) 
 	timer.set_autostart(true)
-	print("Starting timer...")
 
 func init_timer():
 	add_child(timer)

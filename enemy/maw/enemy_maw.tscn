@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bldk1x1ej2bnu"]
+[gd_scene load_steps=8 format=3 uid="uid://bldk1x1ej2bnu"]
 
 [ext_resource type="SpriteFrames" uid="uid://no3445mbr0jk" path="res://enemy/maw/enemy_maw.tres" id="1_5csga"]
 [ext_resource type="Script" path="res://enemy/maw/enemy_maw.gd" id="1_v2cqm"]
 [ext_resource type="Script" path="res://enemy/maw/enemy_maw_sprite.gd" id="2_3swck"]
 [ext_resource type="Shader" uid="uid://doodqj16rilhk" path="res://enemy/maw/enemy_maw_shader.tres" id="2_gogrc"]
+[ext_resource type="PackedScene" uid="uid://bgjw0pa35b2tf" path="res://items/experience/experience.tscn" id="2_tekqn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdmjx"]
 shader = ExtResource("2_gogrc")
@@ -18,6 +19,7 @@ collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_v2cqm")
+drop_item_scene = ExtResource("2_tekqn")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

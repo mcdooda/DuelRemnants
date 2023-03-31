@@ -24,12 +24,10 @@ func attack_finished():
 	
 func _physics_process(delta):
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
-	if input_direction.x != 0:
-		direction.x = sign(input_direction.x)
-	direction = input_direction
+	if input_direction.x != 0 or input_direction.y != 0:
+		direction = input_direction
 	velocity = input_direction * speed
 	global_position += velocity * delta
 
 func _process(_delta):
 	pass
-

@@ -10,4 +10,8 @@ func trigger_ability():
 		var projectile = projectile_scene.instantiate()
 		projectile.global_position = player_ref.global_position
 		projectile.direction = player_ref.direction
+		projectile.direction.y = 0
+		if projectile.direction.x == 0:
+			projectile.direction.x = 1
+			
 		get_tree().root.add_child(projectile)
