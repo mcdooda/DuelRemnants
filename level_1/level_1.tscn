@@ -17,6 +17,8 @@ texture = ExtResource("1_13u5t")
 position = Vector2(169, 146)
 ability = ExtResource("3_0hvn8")
 
+[node name="Camera" type="Camera2D" parent="PlayerCharacter"]
+
 [node name="Spawner" parent="." instance=ExtResource("3_irdb4")]
 
 [node name="chest" parent="." instance=ExtResource("5_e3qio")]
