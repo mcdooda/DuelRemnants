@@ -212,17 +212,18 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_6cn0m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(15, 0)
 shape = SubResource("CircleShape2D_thcb2")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ioww8")
-animation = &"move"
+animation = &"spawn"
 script = ExtResource("3_6blym")
 
 [node name="Timer" type="Timer" parent="AnimatedSprite"]
 one_shot = true
 
 [connection signal="death_animation_finished" from="AnimatedSprite" to="." method="_on_animated_sprite_death_animation_finished"]
+[connection signal="spawn_animation_finished" from="AnimatedSprite" to="." method="_on_animated_sprite_spawn_animation_finished"]

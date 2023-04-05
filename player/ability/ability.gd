@@ -7,15 +7,12 @@ class_name Ability
 @export var speed := 1
 @export var cooldown := 1
 
-var player_ref
 var timer: Timer
 
 @export var projectile_scene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
-func init(player):
-	#do your init
-	player_ref = player
+func init():
 	timer = Timer.new()
 	timer.wait_time = cooldown
 	timer.connect("timeout", trigger_ability) 

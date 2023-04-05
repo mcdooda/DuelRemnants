@@ -5,6 +5,5 @@
 
 [node name="consuming_rebirth" type="Node"]
 script = ExtResource("1_tybc7")
-speed = 0
 cooldown = 4
 projectile_scene = ExtResource("2_gpqiu")

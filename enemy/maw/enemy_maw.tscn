@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://enemy/maw/enemy_maw.gd" id="1_v2cqm"]
 [ext_resource type="Script" path="res://enemy/maw/enemy_maw_sprite.gd" id="2_3swck"]
 [ext_resource type="Shader" uid="uid://doodqj16rilhk" path="res://enemy/maw/enemy_maw_shader.tres" id="2_gogrc"]
-[ext_resource type="PackedScene" uid="uid://bgjw0pa35b2tf" path="res://items/experience/experience.tscn" id="2_tekqn"]
+[ext_resource type="PackedScene" uid="uid://bh8vj0k0wrt5g" path="res://items/experience/experience.tscn" id="2_tekqn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdmjx"]
 shader = ExtResource("2_gogrc")

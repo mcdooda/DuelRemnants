@@ -27,7 +27,6 @@ func kill():
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 0), 0.5)
 
-	$Collision.disabled = true
 	if rng.randi_range(0, 1):
 		call_deferred("drop_item")
 	

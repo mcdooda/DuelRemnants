@@ -18,6 +18,5 @@ func body_entered(body):
 	if body.has_method("kill"):
 		body.kill()
 
-
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()

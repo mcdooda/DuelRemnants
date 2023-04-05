@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://drtouk1oa6ij4"]
+[gd_scene load_steps=8 format=3 uid="uid://drtouk1oa6ij4"]
 
 [ext_resource type="Script" path="res://player/character/player_character.gd" id="1_wuyec"]
 [ext_resource type="SpriteFrames" uid="uid://cjaf6l5pws0kx" path="res://player/character/player_character.tres" id="2_nov3l"]
 [ext_resource type="Script" path="res://player/character/player_sprite.gd" id="3_xi74e"]
+[ext_resource type="Script" path="res://player/character/player_item_collision.gd" id="5_0gsxd"]
 [ext_resource type="Script" path="res://player/character/player_inventory.gd" id="6_1eqst"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wppm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0074"]
+radius = 30.0
 
 [node name="PlayerCharacter" type="CharacterBody2D" groups=["player"]]
 collision_mask = 6
@@ -35,5 +39,13 @@ autostart = true
 [node name="Muzzle" type="Node2D" parent="."]
 position = Vector2(18, -24)
 
-[node name="Inventory" type="Node" parent="."]
+[node name="Inventory" type="Node2D" parent="."]
 script = ExtResource("6_1eqst")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("5_0gsxd")
+
+[node name="ItemCollision" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g0074")

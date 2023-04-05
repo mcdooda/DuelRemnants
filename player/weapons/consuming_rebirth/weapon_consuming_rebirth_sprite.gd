@@ -1,14 +1,15 @@
 extends AnimatedSprite2D
 
-
 func _ready():
 	z_index = get_parent().position.y
 	set_flip_h(get_parent().direction.x < 0)
+	play("spawn")
 	connect("animation_finished", play_move_animation)
 	$Timer.connect("timeout", play_death_animation)
 	
 func play_move_animation():
 	play("move")
+	emit_signal("spawn_animation_finished")
 	$Timer.start()
 
 func play_death_animation():
@@ -18,5 +19,6 @@ func play_death_animation():
 func kill_me():
 	emit_signal("death_animation_finished")
 
+signal spawn_animation_finished
 signal death_animation_finished
 	
