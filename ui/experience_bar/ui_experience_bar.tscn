@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dushukjmi4x7u"]
+
+[ext_resource type="Texture2D" uid="uid://dyudttudq1uas" path="res://ui/experience_bar/bar_background.png" id="1_8j0od"]
+[ext_resource type="Script" path="res://ui/experience_bar/ui_experience_bar.gd" id="1_mpa6p"]
+[ext_resource type="Texture2D" uid="uid://bkqjpj0k4oukl" path="res://ui/experience_bar/bar_over.png" id="2_gqxsj"]
+
+[node name="experience_bar" type="TextureProgressBar"]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 88.0
+max_value = 5.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_8j0od")
+texture_progress = ExtResource("2_gqxsj")
+script = ExtResource("1_mpa6p")
+
+[node name="LevelLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 372.0
+offset_top = 75.0
+offset_right = 533.0
+offset_bottom = 167.0

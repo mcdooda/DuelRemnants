@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dinrabr8pdew2"]
+[gd_scene load_steps=7 format=3 uid="uid://dinrabr8pdew2"]
 
 [ext_resource type="Texture2D" uid="uid://d2m5djbucqj05" path="res://level_1/battlemap6_middleground.png" id="1_13u5t"]
 [ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="2_7so5x"]
-[ext_resource type="PackedScene" uid="uid://c3wb6o4roqwdf" path="res://player/ability/abilities/decimate/decimate.tscn" id="3_ad3ec"]
+[ext_resource type="PackedScene" uid="uid://dndfbjcy7r6qt" path="res://player/ability/abilities/laser/laser.tscn" id="3_0hvn8"]
 [ext_resource type="PackedScene" uid="uid://13omvhfaf3co" path="res://spawner/spawner.tscn" id="3_irdb4"]
 [ext_resource type="PackedScene" uid="uid://d1jnsy2kqxgbh" path="res://items/chest/chest.tscn" id="5_e3qio"]
+[ext_resource type="PackedScene" uid="uid://diq0t53fc518" path="res://ui/screen_ui/screen_ui.tscn" id="6_opg1h"]
 
 [node name="level_1" type="Node2D"]
 
@@ -14,9 +15,11 @@ texture = ExtResource("1_13u5t")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_7so5x")]
 position = Vector2(169, 146)
-ability = ExtResource("3_ad3ec")
+ability = ExtResource("3_0hvn8")
 
 [node name="Spawner" parent="." instance=ExtResource("3_irdb4")]
 
 [node name="chest" parent="." instance=ExtResource("5_e3qio")]
 position = Vector2(337, 184)
+
+[node name="screen_ui" parent="." instance=ExtResource("6_opg1h")]

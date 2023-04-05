@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wppm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g0074"]
-radius = 30.0
+radius = 50.0
 
 [node name="PlayerCharacter" type="CharacterBody2D" groups=["player"]]
 collision_mask = 6

@@ -15,8 +15,15 @@ run/main_scene="res://level_1/level_1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalExperience="*res://globals/global_experience.gd"
+
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=800
+window/stretch/mode="viewport"
 window/stretch/scale=2.0
 
 [input]

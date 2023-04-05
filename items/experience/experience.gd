@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 @export var experience_value = 1
-@export var max_speed = 200
+@export var max_speed = 400
 
 var player_ref
-var current_speed = -200
+var current_speed = -400
 
 func move_to(player):
 	player_ref = player
@@ -25,8 +25,5 @@ func _physics_process(_delta):
 func handle_collision_with_player():
 	if get_slide_collision_count() == 0:
 		return
-	var collision = get_slide_collision(0)
-	var collider = collision.get_collider()
-	if collider.has_method("add_experience"):
-		collider.add_experience(experience_value)
+	GlobalExperience.add_experience(experience_value)
 	queue_free()
