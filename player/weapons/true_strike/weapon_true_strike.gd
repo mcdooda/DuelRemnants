@@ -7,8 +7,8 @@ func _ready():
 	$Collision.disabled = true
 
 func body_entered(body):
-	if body.has_method("kill"):
-		body.kill()
+	if body.has_method("hit"):
+		body.hit(200, 1)
 
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
