@@ -24,4 +24,6 @@ ability = ExtResource("3_0hvn8")
 [node name="chest" parent="." instance=ExtResource("5_e3qio")]
 position = Vector2(337, 184)
 
-[node name="screen_ui" parent="." instance=ExtResource("6_opg1h")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="screen_ui" parent="CanvasLayer" instance=ExtResource("6_opg1h")]
