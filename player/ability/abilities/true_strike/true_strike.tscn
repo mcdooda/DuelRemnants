@@ -5,6 +5,8 @@
 
 [node name="true_strike" type="Node"]
 script = ExtResource("1_c6etc")
+radius = 80
+damage = 2
 num_projectiles = 4
 cooldown = 5
 projectile_scene = ExtResource("2_7a6up")

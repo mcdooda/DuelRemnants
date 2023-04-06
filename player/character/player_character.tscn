@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://drtouk1oa6ij4"]
+[gd_scene load_steps=9 format=3 uid="uid://drtouk1oa6ij4"]
 
 [ext_resource type="Script" path="res://player/character/player_character.gd" id="1_wuyec"]
 [ext_resource type="SpriteFrames" uid="uid://cjaf6l5pws0kx" path="res://player/character/player_character.tres" id="2_nov3l"]
 [ext_resource type="Script" path="res://player/character/player_sprite.gd" id="3_xi74e"]
 [ext_resource type="Script" path="res://player/character/player_item_collision.gd" id="5_0gsxd"]
 [ext_resource type="Script" path="res://player/character/player_inventory.gd" id="6_1eqst"]
+[ext_resource type="PackedScene" uid="uid://va634q7an7vd" path="res://ui/health_bar/ui_health_bar.tscn" id="6_8mm4c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wppm"]
 
@@ -49,3 +50,15 @@ script = ExtResource("5_0gsxd")
 
 [node name="ItemCollision" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_g0074")
+
+[node name="ui_health_bar" parent="." instance=ExtResource("6_8mm4c")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -25.0
+offset_top = 20.0
+offset_right = 25.0
+offset_bottom = 23.0
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+wait_time = 0.05

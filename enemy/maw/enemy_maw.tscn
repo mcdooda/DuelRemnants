@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdmjx"]
 shader = ExtResource("2_gogrc")
-shader_parameter/flash_active = true
+shader_parameter/flash_active = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t8v81"]
 radius = 8.0
@@ -32,3 +32,6 @@ script = ExtResource("2_3swck")
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_t8v81")
+
+[node name="FlashTimer" type="Timer" parent="."]
+wait_time = 0.1

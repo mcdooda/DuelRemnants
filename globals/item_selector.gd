@@ -1,10 +1,11 @@
-extends Area2D
+extends Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("body_entered", on_body_entered)
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func on_body_entered(body):
-	if body.has_method("move_to"):
-		body.move_to(get_parent())
+func pick_random_items(num):
+	pass

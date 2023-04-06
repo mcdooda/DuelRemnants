@@ -7,6 +7,10 @@ extends RayCast2D
 # Base duration of the tween animation in seconds.
 @export var growth_time := 0.2
 
+@export var base_damage := 1
+@export var base_knockback := 10
+
+
 # If `true`, the laser is firing.
 # It plays appearing and disappearing animations when it's not animating.
 # See `appear()` and `disappear()` for more information.
@@ -49,8 +53,8 @@ func cast_beam():
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
 		var collided_object = get_collider()
-		if collided_object.has_method("kill"):
-			collided_object.kill()
+		if collided_object.has_method("hit"):
+			collided_object.hit(base_knockback, base_damage)
 	else:
 		cast_point = target_position
 	fill.points[1] = cast_point

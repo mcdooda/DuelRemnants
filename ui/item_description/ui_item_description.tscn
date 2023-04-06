@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp4jnurhaok5p"]
+
+[ext_resource type="Script" path="res://ui/item_description/ui_item_description.gd" id="1_8oegw"]
+[ext_resource type="Texture2D" uid="uid://dyudttudq1uas" path="res://ui/experience_bar/bar_background.png" id="2_ulcke"]
+
+[node name="ui_item_description" type="Control"]
+layout_mode = 3
+anchor_right = 0.339
+anchor_bottom = 0.261
+offset_right = -1.92001
+offset_bottom = -121.8
+script = ExtResource("1_8oegw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ulcke")
+
+[node name="Hcontainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelLabel" type="RichTextLabel" parent="Hcontainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Level 1"
+
+[node name="ItemDescriptionLabel" type="RichTextLabel" parent="Hcontainer"]
+clip_contents = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Foo bar baz"
+scroll_active = false

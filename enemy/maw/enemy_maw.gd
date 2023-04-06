@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var max_speed = 120
 var speed = max_speed
 @export var drop_item_scene: PackedScene
+@export var life = 5
 
 @onready var target = get_node("/root/level_1/PlayerCharacter/Collision")
 var is_alive = true
@@ -12,6 +13,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	$Sprite.connect("animation_looped", animation_looped)
+	$FlashTimer.connect("timeout", reset_flash)
 
 func animation_looped():
 	if $Sprite.animation == "death":
@@ -34,10 +36,21 @@ func kill():
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 0), 0.5)
 	maybe_drop_item()
-	
+
 func hit(knockback, damage):
-	speed = -knockback
+	speed -= knockback
+	life -= damage
+	if life <= 0:
+		kill()
+	else:
+		flash()
+
+func flash():
 	sprite_material.set_shader_parameter("flash_active", true)
+	$FlashTimer.start()
+	
+func reset_flash():
+	sprite_material.set_shader_parameter("flash_active", false)
 
 func _physics_process(_delta):
 	if not is_alive:
@@ -49,3 +62,12 @@ func _physics_process(_delta):
 	var direction = target_position - self_position
 	velocity = direction.normalized() * speed
 	move_and_slide()
+	handle_collision_with_player()
+
+func handle_collision_with_player():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().is_in_group("player"):
+			collision.get_collider().hit()
+
+

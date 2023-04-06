@@ -17,5 +17,4 @@ func spawn_sword(sword_index):
 	var projectile = projectile_scene.instantiate()
 	var alpha = (2 * PI) * (float(sword_index) / float(num_projectiles))
 	projectile.position += Vector2(cos(alpha) * radius, sin(alpha)  * radius)
-	#projectile.direction.x = cos(alpha)
 	get_parent().add_child(projectile)

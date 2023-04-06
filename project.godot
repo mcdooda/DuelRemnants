@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalExperience="*res://globals/global_experience.gd"
+ItemSelector="*res://globals/item_selector.gd"
 
 [display]
 

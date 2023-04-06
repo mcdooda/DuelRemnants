@@ -1,6 +1,10 @@
 extends Area2D
 
 @export var direction = Vector2(1, 0)
+@export var base_damage := 3
+@export var base_knockback := 300
+
+var knockback := 200
 
 func _ready():
 	connect("body_entered", body_entered)
@@ -8,11 +12,10 @@ func _ready():
 
 func body_entered(body):
 	if body.has_method("hit"):
-		body.hit(200, 1)
+		body.hit(base_knockback, base_damage)
 
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
-
 
 func _on_animated_sprite_sprite_frames_changed():
 	var current_frame = $AnimatedSprite.frame
