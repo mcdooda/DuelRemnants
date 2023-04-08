@@ -23,6 +23,6 @@ func on_experience_changed():
 	value = GlobalExperience.current_experience
 
 func compute_size():
-	var parent_size = get_parent().size / 2
-	size = Vector2(parent_size.x + 1, 10)
+	var parent_size = get_parent().size
+	size = Vector2(parent_size.x, 10)
 	$LevelLabel.position = Vector2(parent_size.x - 100, 0)

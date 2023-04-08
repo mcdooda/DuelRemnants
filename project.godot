@@ -25,7 +25,8 @@ ItemSelector="*res://globals/item_selector.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=800
 window/stretch/mode="viewport"
-window/stretch/scale=2.0
+window/stretch/aspect="expand"
+window/stretch/scale=1.5
 
 [input]
 

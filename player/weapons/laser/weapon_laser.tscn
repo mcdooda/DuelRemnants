@@ -33,7 +33,7 @@ color_ramp = SubResource("GradientTexture1D_uvq0k")
 [node name="weapon_laser" type="RayCast2D"]
 texture_filter = 1
 target_position = Vector2(0, 1000)
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_jn12i")
 impact_scene = ExtResource("2_6c506")
 

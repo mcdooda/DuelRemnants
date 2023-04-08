@@ -21,8 +21,7 @@ script = ExtResource("1_wuyec")
 texture_filter = 1
 position = Vector2(-40, -59)
 sprite_frames = ExtResource("2_nov3l")
-animation = &"idle"
-frame_progress = 0.160749
+animation = &"attack2"
 centered = false
 script = ExtResource("3_xi74e")
 

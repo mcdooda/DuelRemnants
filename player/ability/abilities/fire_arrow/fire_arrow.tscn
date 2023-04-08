@@ -5,4 +5,5 @@
 
 [node name="fire_arrow" type="Node"]
 script = ExtResource("1_d0j8o")
+cooldown = 2
 projectile_scene = ExtResource("2_3r1tm")
