@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3s35f06jfpwc"]
+
+[ext_resource type="Script" path="res://enemy/base_enemy/base_enemy.gd" id="1_hwflu"]
+[ext_resource type="Shader" uid="uid://dwmmkvg1eibh0" path="res://enemy/base_enemy/base_enemy_shader.tres" id="2_sfmqd"]
+[ext_resource type="Script" path="res://enemy/base_enemy/base_enemy_sprite.gd" id="3_3i7qw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdmjx"]
+shader = ExtResource("2_sfmqd")
+shader_parameter/flash_active = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_liv8m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t8v81"]
+radius = 8.0
+
+[node name="BaseEnemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 2
+collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_hwflu")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_qdmjx")
+position = Vector2(-1, -24)
+sprite_frames = SubResource("SpriteFrames_liv8m")
+script = ExtResource("3_3i7qw")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_t8v81")
+
+[node name="FlashTimer" type="Timer" parent="."]
+wait_time = 0.1

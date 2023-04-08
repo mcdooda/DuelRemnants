@@ -27,5 +27,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func pick_random_items(player_ref, num):
+func pick_random_items(_player_ref, _num):
 	pass
