@@ -3,8 +3,12 @@ extends Node
 var item_list = {}
 @export var max_size = 6
 
+func random_key():
+	var item_keys = item_list.keys()
+	item_keys = item_keys[randi() % item_keys.size()]
+	return item_keys
+
 func add_item(item_scene, trigger_on_cooldown):
-	print("add item: ", item_scene.resource_path)
 	var item_path = item_scene.resource_path
 	if item_list.has(item_path):
 		item_list[item_path].level_up()
@@ -16,4 +20,6 @@ func add_item(item_scene, trigger_on_cooldown):
 		return item
 
 func random_item():
-	return item_list.pick_random()
+	return item_list[random_key()]
+
+signal item_leveled_up

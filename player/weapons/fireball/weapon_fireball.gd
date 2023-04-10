@@ -17,7 +17,6 @@ func _process(delta):
 func body_entered(body):
 	if body.has_method("hit"):
 		body.hit(base_knockback, base_damage)
-		
 		var impact_vfx = impact_scene.instantiate()
 		impact_vfx.global_position = global_position
 		impact_vfx.set_flip_h($Sprite.is_flipped_h())

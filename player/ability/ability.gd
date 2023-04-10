@@ -6,7 +6,6 @@ class_name Ability
 @export var pierce := 0
 @export var speed := 1
 @export var cooldown := 1
-
 var current_level := 0
 
 var timer: Timer
@@ -17,7 +16,6 @@ var modifiers := Modifiers.new()
 # Called when the node enters the scene tree for the first time.
 func init(trigger_on_cooldown):
 	if trigger_on_cooldown:
-		print("trigger on ", cooldown)
 		timer = Timer.new()
 		timer.wait_time = cooldown
 		timer.connect("timeout", trigger_ability) 
@@ -49,5 +47,6 @@ func level_up():
 	var maybe_next_level = level_scene(current_path + "/levels", current_level)
 	if maybe_next_level != null:
 		var next_modifiers = ResourceLoader.load(maybe_next_level)
-		modifiers.add(next_modifiers.instantiate())
-	
+		var instance = next_modifiers.instantiate()
+		modifiers.add(instance)
+		GlobalUi.emit_signal("item_leveled_up", current_level, instance)

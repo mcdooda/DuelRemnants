@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnsvjqbwasykt"]
+
+[ext_resource type="Script" path="res://ui/notification/notification.gd" id="1_1hjbp"]
+
+[node name="Notification" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 450.0
+offset_bottom = 35.0
+script = ExtResource("1_1hjbp")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="DescriptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_right = 532.0
+offset_bottom = 27.0
+text = "Foo
+"
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 27.0
+text = "Bar"

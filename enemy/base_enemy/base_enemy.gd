@@ -15,12 +15,8 @@ var is_alive = true
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	$Sprite.connect("animation_looped", animation_looped)
 	$FlashTimer.connect("timeout", reset_flash)
 
-func animation_looped():
-	if $Sprite.animation == "death":
-		get_parent().remove_child(self)
 
 func drop_item():
 	var dropped_item = drop_item_scene.instantiate()
@@ -73,4 +69,6 @@ func handle_collision_with_player():
 		if collision.get_collider().is_in_group("player"):
 			collision.get_collider().hit()
 
-
+func _on_sprite_animation_finished():
+	if $Sprite.animation == "death":
+		get_parent().remove_child(self)

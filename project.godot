@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalExperience="*res://globals/global_experience.gd"
 ItemSelector="*res://globals/item_selector.gd"
+GlobalUi="*res://globals/global_ui.gd"
 
 [display]
 

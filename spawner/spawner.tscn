@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://13omvhfaf3co"]
 
 [ext_resource type="Script" path="res://spawner/spawner.gd" id="1_ankpt"]
-[ext_resource type="PackedScene" uid="uid://sr28kt51v3pp" path="res://spawner/waves/spawner_wave_1.tscn" id="2_4tog7"]
+[ext_resource type="PackedScene" uid="uid://1gl8puesms32" path="res://spawner/waves/spawner_wave_1.tscn" id="2_4tog7"]
 [ext_resource type="PackedScene" uid="uid://bu5l6nbgbvm6t" path="res://spawner/waves/spawner_wave_2.tscn" id="3_wjbrk"]
 [ext_resource type="PackedScene" uid="uid://cbpxv4fpmcu6f" path="res://spawner/waves/spawner_wave_3.tscn" id="4_rydup"]
 [ext_resource type="PackedScene" uid="uid://ckggfm6ku70qn" path="res://spawner/waves/spawner_wave_4.tscn" id="5_q53es"]
