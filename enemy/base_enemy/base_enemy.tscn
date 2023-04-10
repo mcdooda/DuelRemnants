@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3s35f06jfpwc"]
+[gd_scene load_steps=8 format=3 uid="uid://c3s35f06jfpwc"]
 
 [ext_resource type="Script" path="res://enemy/base_enemy/base_enemy.gd" id="1_hwflu"]
 [ext_resource type="Shader" uid="uid://dwmmkvg1eibh0" path="res://enemy/base_enemy/base_enemy_shader.tres" id="2_sfmqd"]
+[ext_resource type="PackedScene" uid="uid://cjuxkww2js77n" path="res://items/collectible/experience/experience.tscn" id="2_ueeec"]
 [ext_resource type="Script" path="res://enemy/base_enemy/base_enemy_sprite.gd" id="3_3i7qw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdmjx"]
@@ -19,6 +20,7 @@ collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_hwflu")
+drop_item_scene = ExtResource("2_ueeec")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

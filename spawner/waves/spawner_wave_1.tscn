@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://sr28kt51v3pp"]
 
 [ext_resource type="Script" path="res://spawner/spawner_wave.gd" id="1_6ss8q"]
-[ext_resource type="PackedScene" uid="uid://bp40kn6ck7rxp" path="res://enemy/maw/enemy_maw.tscn" id="2_c5xtc"]
+[ext_resource type="PackedScene" uid="uid://bx6k3cqqvexdo" path="res://enemy/maw_boss/maw_boss.tscn" id="2_knx7e"]
 
 [node name="spawner_wave_1" type="Node"]
 script = ExtResource("1_6ss8q")
-enemy_type = ExtResource("2_c5xtc")
+enemy_type = ExtResource("2_knx7e")
 number = 5

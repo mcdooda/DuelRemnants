@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://2v8b7054i647"]
+
+[ext_resource type="PackedScene" uid="uid://bn2v84s0eoo5u" path="res://items/collectible/collectible.tscn" id="1_gytg0"]
+[ext_resource type="Script" path="res://items/collectible/ability/ability.gd" id="2_iv5o8"]
+[ext_resource type="PackedScene" uid="uid://c1yll0t3ti51k" path="res://player/ability/abilities/true_strike/true_strike.tscn" id="3_j27je"]
+
+[node name="Ability" instance=ExtResource("1_gytg0")]
+script = ExtResource("2_iv5o8")
+item = ExtResource("3_j27je")

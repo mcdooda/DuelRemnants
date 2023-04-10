@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://oyg413m2fyvv"]
+
+[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_rfaac"]
+
+[node name="level_3" type="Node"]
+script = ExtResource("1_rfaac")
+num_projectiles = 1
+description = "+1 projectile"

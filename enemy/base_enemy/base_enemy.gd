@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+class_name BaseEnemy
+
 @export var max_speed = 120
 var speed = max_speed
 @export var drop_item_scene: PackedScene
+@export var drop_item_chance = 0.5
 @export var life = 5
 
 @onready var target = get_node("/root/level_1/PlayerCharacter/Collision")
@@ -25,7 +28,7 @@ func drop_item():
 	get_tree().root.add_child(dropped_item)
 
 func maybe_drop_item():
-	if rng.randi_range(0, 1):
+	if rng.randf_range(0, 1) <= drop_item_chance:
 		call_deferred("drop_item")
 
 func kill():

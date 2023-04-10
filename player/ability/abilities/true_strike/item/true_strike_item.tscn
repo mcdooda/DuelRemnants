@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cck386sukw3jq"]
+
+[ext_resource type="PackedScene" uid="uid://2v8b7054i647" path="res://items/collectible/ability/ability.tscn" id="1_xv1le"]
+[ext_resource type="SpriteFrames" uid="uid://cc1guluo54kfe" path="res://player/weapons/true_strike/weapon_true_strike.tres" id="2_qj27s"]
+
+[node name="Ability" instance=ExtResource("1_xv1le")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_qj27s")
+frame = 0
+frame_progress = 0.0

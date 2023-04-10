@@ -1,50 +1,50 @@
-[gd_scene load_steps=16 format=3 uid="uid://bh8vj0k0wrt5g"]
+[gd_scene load_steps=16 format=3 uid="uid://bn2v84s0eoo5u"]
 
-[ext_resource type="Texture2D" uid="uid://dus8uffdx11yf" path="res://items/experience/experience.png" id="1_yvusj"]
-[ext_resource type="Script" path="res://items/experience/experience.gd" id="2_soj03"]
-[ext_resource type="Script" path="res://items/experience/experience_sprite.gd" id="3_vn0da"]
+[ext_resource type="Script" path="res://items/collectible/collectible.gd" id="1_plu04"]
+[ext_resource type="Texture2D" uid="uid://dus8uffdx11yf" path="res://items/collectible/experience/experience.png" id="2_hk1ij"]
+[ext_resource type="Script" path="res://items/collectible/experience/experience_sprite.gd" id="3_x8k3v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_15gjd"]
 radius = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojuij"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(0, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1fqt"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(40, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08b6o"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(80, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2lpk"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(120, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4krg"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(160, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjm22"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(200, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ry2w5"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(240, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3rtb"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(280, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8w6hp"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(320, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nj3xv"]
-atlas = ExtResource("1_yvusj")
+atlas = ExtResource("2_hk1ij")
 region = Rect2(360, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ses5n"]
@@ -85,9 +85,9 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="experience" type="CharacterBody2D" groups=["experience"]]
+[node name="Collectible" type="CharacterBody2D" groups=["experience"]]
 collision_layer = 8
-script = ExtResource("2_soj03")
+script = ExtResource("1_plu04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_15gjd")
@@ -98,4 +98,4 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ses5n")
 frame = 8
 frame_progress = 0.602176
-script = ExtResource("3_vn0da")
+script = ExtResource("3_x8k3v")

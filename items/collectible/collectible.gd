@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var experience_value = 1
+class_name Collectible
+
 @export var max_speed = 400
 
 var player_ref
@@ -22,10 +23,7 @@ func _physics_process(_delta):
 	handle_collision_with_player()
 
 func handle_collision_with_player():
-	if get_slide_collision_count() == 0:
-		return
-	GlobalExperience.add_experience(experience_value)
-	queue_free()
+	pass
 
 func drop():
 	velocity = Vector2(rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0))

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjuxkww2js77n"]
+
+[ext_resource type="PackedScene" uid="uid://bn2v84s0eoo5u" path="res://items/collectible/collectible.tscn" id="1_s84kl"]
+[ext_resource type="Script" path="res://items/collectible/experience/experience.gd" id="2_clxsn"]
+
+[node name="Experience" instance=ExtResource("1_s84kl")]
+script = ExtResource("2_clxsn")
+experience_value = 1

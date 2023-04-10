@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1yll0t3ti51k"]
 
 [ext_resource type="Script" path="res://player/ability/abilities/true_strike/true_strike.gd" id="1_c6etc"]
-[ext_resource type="PackedScene" uid="uid://d1hohw63u82pc" path="res://player/weapons/true_strike/weapon_true_strike.tscn" id="2_7a6up"]
+[ext_resource type="PackedScene" uid="uid://d1hohw63u82pc" path="res://player/weapons/true_strike/weapon_true_strike.tscn" id="2_ssdfu"]
 
 [node name="true_strike" type="Node"]
 script = ExtResource("1_c6etc")
-radius = 80
-num_projectiles = 4
 cooldown = 5
-projectile_scene = ExtResource("2_7a6up")
+projectile_scene = ExtResource("2_ssdfu")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4

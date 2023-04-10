@@ -14,6 +14,7 @@ var starting_ability_ref : Ability
 var life = max_life
 var invincible = false
 @onready var muzzle = $Muzzle
+@onready var inventory = $Inventory
 
 func _ready():
 	$Timer.connect("timeout", start_attack)

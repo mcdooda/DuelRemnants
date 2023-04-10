@@ -5,6 +5,7 @@ extends Area2D
 @export var base_knockback := 300
 
 var knockback := 200
+var modifiers: Modifiers
 
 func _ready():
 	connect("body_entered", body_entered)
@@ -12,9 +13,9 @@ func _ready():
 
 func body_entered(body):
 	if body.has_method("hit"):
-		body.hit(base_knockback, base_damage)
+		body.hit(base_knockback + modifiers.knockback, base_damage + modifiers.damage)
 
-func _on_animated_sprite_2d_animation_finished():
+func _on_animated_sprite_animation_finished():
 	queue_free()
 
 func _on_animated_sprite_sprite_frames_changed():
