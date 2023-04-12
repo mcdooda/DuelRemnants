@@ -11,3 +11,8 @@
 [node name="Spawner" type="Node"]
 script = ExtResource("1_ankpt")
 spawn_settings = Array[PackedScene]([ExtResource("2_4tog7"), ExtResource("3_wjbrk"), ExtResource("4_rydup"), ExtResource("5_q53es"), ExtResource("6_aurgq"), ExtResource("7_8amov")])
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -6,6 +6,5 @@
 [node name="spawner_wave_6" type="Node"]
 script = ExtResource("1_7d4ku")
 enemy_type = ExtResource("2_rkrk3")
-number = 180
 timing = 50.0
 distance = 300.0

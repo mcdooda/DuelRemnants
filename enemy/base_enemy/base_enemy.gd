@@ -35,6 +35,7 @@ func kill():
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 0), 0.5)
 	maybe_drop_item()
+	emit_signal("enemy_dies")
 
 func hit(knockback, damage):
 	speed -= knockback
@@ -72,3 +73,6 @@ func handle_collision_with_player():
 func _on_sprite_animation_finished():
 	if $Sprite.animation == "death":
 		get_parent().remove_child(self)
+
+
+signal enemy_dies
