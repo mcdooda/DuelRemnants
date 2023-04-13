@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0vbus6qhb5ca"]
+
+[ext_resource type="PackedScene" uid="uid://c7h68gwjmpeh0" path="res://items/collectible/item/item.tscn" id="1_h6n7r"]
+[ext_resource type="SpriteFrames" uid="uid://08q5ekajr87a" path="res://player/ability/abilities/fire_arrow/item/item_fire_arrow.tres" id="2_0ygby"]
+[ext_resource type="PackedScene" uid="uid://cl75wute2x26a" path="res://player/ability/abilities/fire_arrow/fire_arrow.tscn" id="2_cjp6c"]
+
+[node name="ItemFireArrow" groups=["experience"] instance=ExtResource("1_h6n7r")]
+item = ExtResource("2_cjp6c")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_0ygby")
+frame_progress = 0.248834

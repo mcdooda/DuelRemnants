@@ -1,40 +1,60 @@
 extends Node
 
 @export var spawn_settings : Array[PackedScene]
+@export var event_settings : Array[PackedScene]
 
 var spawn_settings_instances : Array
-var next_wave_index = 0
-var current_time = 0
-var enemy_count = 0
-@export var max_enemy_count = 200
-var rng = RandomNumberGenerator.new()
+var event_instances: Array
+var wave_index := 0
+var event_index := 0
+var current_time := 0.0
+var enemy_count := 0
+@export var max_enemy_count := 200
+var rng := RandomNumberGenerator.new()
 @onready var player_collision = get_node("/root/level_1/PlayerCharacter/Collision")
 
 var current_wave
 
 func _ready():
 	for wave_settings in spawn_settings:
-		var wave_settings_instance = wave_settings.instantiate()
-		#print(wave_settings_instance)
-		spawn_settings_instances.append(wave_settings_instance)
-	current_wave = spawn_settings_instances[0]
-	
-func _process(delta):
-	if next_wave_index < spawn_settings_instances.size() and current_time >= current_wave.timing:
+		spawn_settings_instances.append(wave_settings.instantiate())
+	for event in event_settings:
+		var event_instance = event.instantiate()
+		add_child(event_instance)
+		event_instances.append(event_instance)
+
+	if spawn_settings_instances.size() > 0:
+		current_wave = spawn_settings_instances[0]
+	else:
+		print("Current level have no waves!")
+
+	if event_instances.size() > 0:
+		$EventTimer.wait_time = event_instances[0].timing
+
+func handle_next_wave():
+	if wave_index < spawn_settings_instances.size() - 1 and current_time >= spawn_settings_instances[wave_index + 1].timing:
 		setup_next_wave()
+
+func _process(delta):
 	current_time += delta
+	handle_next_wave()
 
 func setup_next_wave():
 	print("Spawning wave:\n", current_wave)
 	spawn_minimum_amount_of_enemies(current_wave.enemy_type, current_wave.minimum_amount)
 	$SpawnTimer.wait_time = current_wave.interval
-	next_wave_index = min(next_wave_index + 1, spawn_settings_instances.size() - 1)
-	current_wave = spawn_settings_instances[next_wave_index]
+	wave_index += 1
+	if wave_index < spawn_settings_instances.size():
+		current_wave = spawn_settings_instances[wave_index]
 
-func spawn_enemy(enemy_type):
+func compute_position():
 	var player_position = player_collision.global_position
 	var alpha = rng.randf_range(0, PI * 2)
 	var wave_center = player_position + Vector2(cos(alpha), sin(alpha)) * current_wave.distance
+	return wave_center
+
+func spawn_enemy(enemy_type):
+	var wave_center = compute_position()
 	var enemy = enemy_type.instantiate()
 	get_tree().root.add_child(enemy)
 	enemy.connect("enemy_dies", decrease_enemy_count)
@@ -54,3 +74,11 @@ func decrease_enemy_count():
 func _on_spawn_timer_timeout():
 	if enemy_count < max_enemy_count:
 		spawn_enemy(current_wave.enemy_type)
+
+func _on_event_timer_timeout():
+	event_instances[event_index].spawn_units(compute_position())
+	event_index += 1
+	if event_index < event_instances.size():
+		$SpawnTimer.wait_time = event_instances[event_index].timing
+		$SpawnTimer.start()
+

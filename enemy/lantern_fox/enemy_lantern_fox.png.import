@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq81v3cs587is"
-path="res://.godot/imported/fat_bat.png-1d0b49354998c169e7939762b3db5430.ctex"
+uid="uid://b6ljnootwkewn"
+path="res://.godot/imported/enemy_lantern_fox.png-ab0a08f1a8830da31e9a378a505d0212.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/fat_bat/fat_bat.png"
-dest_files=["res://.godot/imported/fat_bat.png-1d0b49354998c169e7939762b3db5430.ctex"]
+source_file="res://enemy/lantern_fox/enemy_lantern_fox.png"
+dest_files=["res://.godot/imported/enemy_lantern_fox.png-ab0a08f1a8830da31e9a378a505d0212.ctex"]
 
 [params]
 

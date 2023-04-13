@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://1gl8puesms32"]
+[gd_scene load_steps=3 format=3 uid="uid://b85uima2ordu4"]
 
 [ext_resource type="Script" path="res://spawner/spawner_wave.gd" id="1_6ss8q"]
-[ext_resource type="PackedScene" uid="uid://cnwi04b2ha5mo" path="res://enemy/fat_bat/fat_bat.tscn" id="2_uuwga"]
+[ext_resource type="PackedScene" uid="uid://cx68y07wsqaxe" path="res://enemy/fat_bat/enemy_fat_bat.tscn" id="2_1j54n"]
 
 [node name="spawner_wave_1" type="Node"]
 script = ExtResource("1_6ss8q")
-enemy_type = ExtResource("2_uuwga")
+enemy_type = ExtResource("2_1j54n")
 interval = 1.0

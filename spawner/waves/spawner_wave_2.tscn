@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu5l6nbgbvm6t"]
+[gd_scene load_steps=3 format=3 uid="uid://c623cgqga4sjb"]
 
 [ext_resource type="Script" path="res://spawner/spawner_wave.gd" id="1_uvau8"]
-[ext_resource type="PackedScene" uid="uid://bod0ctybsnrfi" path="res://enemy/lantern_fox/lanter_fox.tscn" id="2_66lew"]
+[ext_resource type="PackedScene" uid="uid://cuhug36anabi2" path="res://enemy/fog/enemy_fog.tscn" id="2_sevko"]
 
 [node name="spawner_wave_2" type="Node"]
 script = ExtResource("1_uvau8")
-enemy_type = ExtResource("2_66lew")
+enemy_type = ExtResource("2_sevko")
 timing = 10.0
 distance = 250.0
 interval = 1.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ljnootwkewn"
-path="res://.godot/imported/lanter_fox.png-75afc2ebff192e257d65bc55e478f92e.ctex"
+uid="uid://cbqbbxdqvu38h"
+path="res://.godot/imported/item_consuming_rebirth.png-32b31747019e74a9c9be72dbd0b3c099.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/lantern_fox/lanter_fox.png"
-dest_files=["res://.godot/imported/lanter_fox.png-75afc2ebff192e257d65bc55e478f92e.ctex"]
+source_file="res://player/ability/abilities/consuming_rebirth/item/item_consuming_rebirth.png"
+dest_files=["res://.godot/imported/item_consuming_rebirth.png-32b31747019e74a9c9be72dbd0b3c099.ctex"]
 
 [params]
 

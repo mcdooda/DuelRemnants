@@ -24,6 +24,9 @@ starting_ability = ExtResource("3_fm47o")
 [node name="chest" parent="." instance=ExtResource("5_e3qio")]
 position = Vector2(337, 184)
 
+[node name="chest2" parent="." instance=ExtResource("5_e3qio")]
+position = Vector2(674, 368)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="screen_ui" parent="CanvasLayer" instance=ExtResource("6_opg1h")]

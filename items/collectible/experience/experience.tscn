@@ -3,6 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bn2v84s0eoo5u" path="res://items/collectible/collectible.tscn" id="1_s84kl"]
 [ext_resource type="Script" path="res://items/collectible/experience/experience.gd" id="2_clxsn"]
 
-[node name="Experience" instance=ExtResource("1_s84kl")]
+[node name="Experience" groups=["experience"] instance=ExtResource("1_s84kl")]
 script = ExtResource("2_clxsn")
 experience_value = 1

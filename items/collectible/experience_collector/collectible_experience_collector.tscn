@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=3 uid="uid://fdb2bqvvkipc"]
+
+[ext_resource type="PackedScene" uid="uid://bn2v84s0eoo5u" path="res://items/collectible/collectible.tscn" id="1_ibmee"]
+[ext_resource type="Script" path="res://items/collectible/experience_collector/collectible_experience_collector.gd" id="2_frq3w"]
+[ext_resource type="Texture2D" uid="uid://dx3kd4osiejll" path="res://items/collectible/experience_collector/collectible_experience_collector.png" id="3_185o7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uftig"]
+atlas = ExtResource("3_185o7")
+region = Rect2(0, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8d8i"]
+atlas = ExtResource("3_185o7")
+region = Rect2(100, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at6ce"]
+atlas = ExtResource("3_185o7")
+region = Rect2(200, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r3ma"]
+atlas = ExtResource("3_185o7")
+region = Rect2(300, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypd7i"]
+atlas = ExtResource("3_185o7")
+region = Rect2(400, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct2q8"]
+atlas = ExtResource("3_185o7")
+region = Rect2(500, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hougt"]
+atlas = ExtResource("3_185o7")
+region = Rect2(600, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyai0"]
+atlas = ExtResource("3_185o7")
+region = Rect2(700, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wybal"]
+atlas = ExtResource("3_185o7")
+region = Rect2(800, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjorb"]
+atlas = ExtResource("3_185o7")
+region = Rect2(900, 400, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta3qn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uftig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8d8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at6ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r3ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypd7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct2q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hougt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyai0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wybal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjorb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[node name="ExperienceCollector" instance=ExtResource("1_ibmee")]
+script = ExtResource("2_frq3w")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_ta3qn")
+frame = 0
+frame_progress = 0.539674

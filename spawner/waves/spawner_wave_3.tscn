@@ -9,3 +9,4 @@ enemy_type = ExtResource("2_fpqel")
 timing = 20.0
 distance = 300.0
 interval = 1.0
+minimum_amount = 50

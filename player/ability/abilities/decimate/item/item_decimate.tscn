@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dls7cnhhahcle"]
+
+[ext_resource type="PackedScene" uid="uid://c7h68gwjmpeh0" path="res://items/collectible/item/item.tscn" id="1_w1t1p"]
+[ext_resource type="PackedScene" uid="uid://c3wb6o4roqwdf" path="res://player/ability/abilities/decimate/decimate.tscn" id="2_clgto"]
+[ext_resource type="SpriteFrames" uid="uid://bg75gj2yc1oo7" path="res://player/ability/abilities/decimate/item/item_decimate.tres" id="2_g4anu"]
+
+[node name="ItemDecimate" groups=["experience"] instance=ExtResource("1_w1t1p")]
+item = ExtResource("2_clgto")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_g4anu")
+frame = 0
+frame_progress = 0.18476

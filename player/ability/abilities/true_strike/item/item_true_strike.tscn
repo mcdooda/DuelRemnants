@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck67aw3qec7pm"]
+
+[ext_resource type="PackedScene" uid="uid://c7h68gwjmpeh0" path="res://items/collectible/item/item.tscn" id="1_jgss4"]
+[ext_resource type="PackedScene" uid="uid://c1yll0t3ti51k" path="res://player/ability/abilities/true_strike/true_strike.tscn" id="2_84eha"]
+[ext_resource type="SpriteFrames" uid="uid://dkra0kvmo24e1" path="res://player/ability/abilities/true_strike/item/item_true_strike.tres" id="3_6kd73"]
+
+[node name="TrueStrikeItem" instance=ExtResource("1_jgss4")]
+item = ExtResource("2_84eha")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_6kd73")
+frame = 5
+frame_progress = 0.977286

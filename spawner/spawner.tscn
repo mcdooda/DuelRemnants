@@ -1,18 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://13omvhfaf3co"]
+[gd_scene load_steps=9 format=3 uid="uid://13omvhfaf3co"]
 
 [ext_resource type="Script" path="res://spawner/spawner.gd" id="1_ankpt"]
-[ext_resource type="PackedScene" uid="uid://1gl8puesms32" path="res://spawner/waves/spawner_wave_1.tscn" id="2_4tog7"]
-[ext_resource type="PackedScene" uid="uid://bu5l6nbgbvm6t" path="res://spawner/waves/spawner_wave_2.tscn" id="3_wjbrk"]
+[ext_resource type="PackedScene" uid="uid://b85uima2ordu4" path="res://spawner/waves/spawner_wave_1.tscn" id="2_4tog7"]
+[ext_resource type="PackedScene" uid="uid://c623cgqga4sjb" path="res://spawner/waves/spawner_wave_2.tscn" id="3_wjbrk"]
 [ext_resource type="PackedScene" uid="uid://cbpxv4fpmcu6f" path="res://spawner/waves/spawner_wave_3.tscn" id="4_rydup"]
 [ext_resource type="PackedScene" uid="uid://ckggfm6ku70qn" path="res://spawner/waves/spawner_wave_4.tscn" id="5_q53es"]
 [ext_resource type="PackedScene" uid="uid://d0cp2y166p70t" path="res://spawner/waves/spawner_wave_5.tscn" id="6_aurgq"]
 [ext_resource type="PackedScene" uid="uid://dpgukp6cmtixe" path="res://spawner/waves/spawner_wave_6.tscn" id="7_8amov"]
+[ext_resource type="PackedScene" uid="uid://c6oley2p37kbc" path="res://spawner/events/spawner_event_1.tscn" id="8_dmkoy"]
 
 [node name="Spawner" type="Node"]
 script = ExtResource("1_ankpt")
 spawn_settings = Array[PackedScene]([ExtResource("2_4tog7"), ExtResource("3_wjbrk"), ExtResource("4_rydup"), ExtResource("5_q53es"), ExtResource("6_aurgq"), ExtResource("7_8amov")])
+event_settings = Array[PackedScene]([ExtResource("8_dmkoy")])
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="EventTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="EventTimer" to="." method="_on_event_timer_timeout"]

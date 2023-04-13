@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpqwefntxwgab"]
+
+[ext_resource type="PackedScene" uid="uid://c7h68gwjmpeh0" path="res://items/collectible/item/item.tscn" id="1_7fb61"]
+[ext_resource type="PackedScene" uid="uid://di0u7kfe3pqgr" path="res://player/ability/abilities/consuming_rebirth/consuming_rebirth.tscn" id="2_dsix5"]
+[ext_resource type="SpriteFrames" uid="uid://c4niw38oxpl8g" path="res://player/ability/abilities/consuming_rebirth/item/item_consuming_rebirth.tres" id="2_u0kyx"]
+
+[node name="ItemConsumingRebirth" groups=["experience"] instance=ExtResource("1_7fb61")]
+item = ExtResource("2_dsix5")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_u0kyx")
+frame = 3
+frame_progress = 0.309648
