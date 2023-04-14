@@ -26,5 +26,6 @@ func handle_collision_with_player():
 	pass
 
 func drop():
-	velocity = Vector2(rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0))
+	#velocity = Vector2(rng.randf_range(-100.0, 100.0), rng.randf_range(-100.0, 100.0))
+	pass
 

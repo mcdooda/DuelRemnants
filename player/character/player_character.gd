@@ -44,9 +44,16 @@ func _physics_process(delta):
 func hit():
 	if not invincible:
 		invincible = true
-		life -= 1
-		emit_signal("life_changed", life)
 		$InvincibilityTimer.start()
+		if life > 0:
+			life -= 1
+			emit_signal("life_changed", life)
+
+func heal(amount):
+	life += amount
+	if life > max_life:
+		life = max_life
+	emit_signal("life_changed", life)
 
 func _process(_delta):
 	pass

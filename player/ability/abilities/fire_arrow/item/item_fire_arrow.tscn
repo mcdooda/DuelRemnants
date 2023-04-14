@@ -4,9 +4,10 @@
 [ext_resource type="SpriteFrames" uid="uid://08q5ekajr87a" path="res://player/ability/abilities/fire_arrow/item/item_fire_arrow.tres" id="2_0ygby"]
 [ext_resource type="PackedScene" uid="uid://cl75wute2x26a" path="res://player/ability/abilities/fire_arrow/fire_arrow.tscn" id="2_cjp6c"]
 
-[node name="ItemFireArrow" groups=["experience"] instance=ExtResource("1_h6n7r")]
+[node name="ItemFireArrow" instance=ExtResource("1_h6n7r")]
 item = ExtResource("2_cjp6c")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_0ygby")
+frame = 0
 frame_progress = 0.248834

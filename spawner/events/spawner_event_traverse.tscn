@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://5rxb543b1tvk"]
+
+[ext_resource type="PackedScene" uid="uid://csesri6pfsjq7" path="res://spawner/spawner_event.tscn" id="1_cmbd0"]
+
+[node name="spawner_event" instance=ExtResource("1_cmbd0")]

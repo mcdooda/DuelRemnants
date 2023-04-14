@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c3wb6o4roqwdf" path="res://player/ability/abilities/decimate/decimate.tscn" id="2_clgto"]
 [ext_resource type="SpriteFrames" uid="uid://bg75gj2yc1oo7" path="res://player/ability/abilities/decimate/item/item_decimate.tres" id="2_g4anu"]
 
-[node name="ItemDecimate" groups=["experience"] instance=ExtResource("1_w1t1p")]
+[node name="ItemDecimate" instance=ExtResource("1_w1t1p")]
 item = ExtResource("2_clgto")
 
 [node name="AnimatedSprite2D" parent="." index="1"]

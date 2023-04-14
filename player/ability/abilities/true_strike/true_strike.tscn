@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://player/ability/abilities/true_strike/true_strike.gd" id="1_c6etc"]
 [ext_resource type="PackedScene" uid="uid://d1hohw63u82pc" path="res://player/weapons/true_strike/weapon_true_strike.tscn" id="2_ssdfu"]
 
-[node name="true_strike" type="Node"]
+[node name="true_strike" type="Node2D"]
 script = ExtResource("1_c6etc")
+radius = 80
 cooldown = 5
 projectile_scene = ExtResource("2_ssdfu")
 

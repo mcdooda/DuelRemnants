@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dhn0uvs6g0m56" path="res://player/ability/abilities/laser/item/item_laser.tres" id="2_igge2"]
 [ext_resource type="PackedScene" uid="uid://dndfbjcy7r6qt" path="res://player/ability/abilities/laser/laser.tscn" id="2_qseoj"]
 
-[node name="ItemLaser" groups=["experience"] instance=ExtResource("1_b6i6m")]
+[node name="ItemLaser" instance=ExtResource("1_b6i6m")]
 item = ExtResource("2_qseoj")
 
 [node name="AnimatedSprite2D" parent="." index="1"]

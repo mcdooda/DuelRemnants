@@ -30,7 +30,7 @@ func _ready():
 	self.is_casting = true
 
 func _physics_process(delta: float):
-	target_position = (target_position + direction * cast_speed * delta)#.limit_length(max_length)
+	target_position = (target_position + direction * cast_speed * delta).limit_length(max_length)
 	cast_beam()
 
 func set_is_casting(cast: bool):
@@ -61,7 +61,7 @@ func cast_beam():
 
 func appear():
 	var tween = create_tween()
-	tween.tween_property(fill, "width", 3, growth_time).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(fill, "width", 5, growth_time).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	$Timer.connect("timeout", disappear)
 	$Timer.start()
 

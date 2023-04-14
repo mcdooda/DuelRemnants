@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 class_name BaseEnemy
 
-@export var max_speed = 120
+@export var max_speed := 120
 var speed = max_speed
 @export var drop_item_scene: PackedScene
-@export var drop_item_chance = 0.5
-@export var life = 5
+@export var drop_item_chance := 0.5
+@export var knockback_resistance := 0.0
+@export var life := 5
 
 @onready var target = get_node("/root/level_1/PlayerCharacter/Collision")
 var is_alive = true
@@ -16,7 +17,6 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	$FlashTimer.connect("timeout", reset_flash)
-
 
 func drop_item():
 	var dropped_item = drop_item_scene.instantiate()
@@ -38,7 +38,7 @@ func kill():
 	emit_signal("enemy_dies")
 
 func hit(knockback, damage):
-	speed -= knockback
+	speed -= knockback * (1.0 - knockback_resistance)
 	life -= damage
 	if life <= 0:
 		kill()
@@ -55,8 +55,7 @@ func reset_flash():
 func _physics_process(_delta):
 	if not is_alive:
 		return
-	if speed < max_speed:
-		speed = min(speed + _delta * 600, max_speed)
+	speed = min(speed + _delta * 600, max_speed)
 	var target_position = target.global_position
 	var self_position = global_position
 	var direction = target_position - self_position
@@ -73,6 +72,5 @@ func handle_collision_with_player():
 func _on_sprite_animation_finished():
 	if $Sprite.animation == "death":
 		get_parent().remove_child(self)
-
 
 signal enemy_dies

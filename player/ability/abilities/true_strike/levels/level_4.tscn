@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjuv8hda1bbyw"]
+
+[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_5n8kp"]
+
+[node name="level_4" type="Node"]
+script = ExtResource("1_5n8kp")
+num_projectiles = 2
+description = "+2 projectile"

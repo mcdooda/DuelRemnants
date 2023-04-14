@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy70yotk6ue3o"]
+
+[ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_f1i6o"]
+[ext_resource type="Script" path="res://enemy/timed_enemy/timed_enemy.gd" id="2_wdxe1"]
+
+[node name="TimedEnemy" instance=ExtResource("1_f1i6o")]
+script = ExtResource("2_wdxe1")
+drop_item_scene = null
+
+[node name="LifeTimer" type="Timer" parent="." index="3"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

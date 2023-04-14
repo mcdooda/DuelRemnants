@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/ability/abilities/consuming_rebirth/consuming_rebirth.gd" id="1_tybc7"]
 [ext_resource type="PackedScene" uid="uid://dnibjym1wvcvr" path="res://player/weapons/consuming_rebirth/weapon_consuming_rebirth.tscn" id="2_gpqiu"]
 
-[node name="consuming_rebirth" type="Node"]
+[node name="consuming_rebirth" type="Node2D"]
 script = ExtResource("1_tybc7")
 cooldown = 4
 projectile_scene = ExtResource("2_gpqiu")

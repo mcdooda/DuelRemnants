@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://bifqp1owgfgc5"]
+
+[ext_resource type="PackedScene" uid="uid://deahjuq85kgnj" path="res://items/collectible/collectible.tscn" id="1_xa60y"]
+[ext_resource type="Script" path="res://items/collectible/monster_crystal_wisp/collectible_monster_crystal.gd" id="2_ply1a"]
+[ext_resource type="Texture2D" uid="uid://dvwjcyh28pxjb" path="res://items/collectible/mini_jax/collectible_mini_jax.png" id="3_134mo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg7d2"]
+atlas = ExtResource("3_134mo")
+region = Rect2(0, 400, 110, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhwvr"]
+atlas = ExtResource("3_134mo")
+region = Rect2(110, 400, 110, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieh7s"]
+atlas = ExtResource("3_134mo")
+region = Rect2(220, 400, 110, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2irc"]
+atlas = ExtResource("3_134mo")
+region = Rect2(330, 400, 110, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3alj"]
+atlas = ExtResource("3_134mo")
+region = Rect2(440, 400, 110, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b80p"]
+atlas = ExtResource("3_134mo")
+region = Rect2(550, 400, 110, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl1bn"]
+atlas = ExtResource("3_134mo")
+region = Rect2(660, 400, 110, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4oef"]
+atlas = ExtResource("3_134mo")
+region = Rect2(770, 400, 110, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2dcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg7d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhwvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieh7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2irc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3alj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b80p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl1bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4oef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[node name="MonsterCrystal" instance=ExtResource("1_xa60y")]
+script = ExtResource("2_ply1a")
+heal_amount = 30
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_a2dcf")
+frame_progress = 0.775784

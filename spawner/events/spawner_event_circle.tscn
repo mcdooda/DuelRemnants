@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6oley2p37kbc"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="PackedScene" uid="uid://csesri6pfsjq7" path="res://spawner/spawner_event.tscn" id="1_udetm"]
-[ext_resource type="Script" path="res://spawner/events/spawner_event_1.gd" id="2_ts602"]
+[ext_resource type="Script" path="res://spawner/events/spawner_event_circle.gd" id="2_ts602"]
 [ext_resource type="PackedScene" uid="uid://4aigns5ix8i0" path="res://enemy/chaos_elemental/enemy_chaos_elemental.tscn" id="3_03tv8"]
-[ext_resource type="PackedScene" uid="uid://cuhug36anabi2" path="res://enemy/fog/enemy_fog.tscn" id="3_nq73p"]
+[ext_resource type="PackedScene" uid="uid://3hdjqvxd7fng" path="res://enemy/death_phantom/timed_enemy_death_fantom.tscn" id="3_6k4rq"]
 
 [node name="spawner_event_1" instance=ExtResource("1_udetm")]
 script = ExtResource("2_ts602")
-block_enemy = ExtResource("3_nq73p")
+block_enemy = ExtResource("3_6k4rq")
 radius = 400
 num_enemies = 60
 enemy_type = ExtResource("3_03tv8")

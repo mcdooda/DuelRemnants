@@ -35,6 +35,7 @@ texture_filter = 1
 target_position = Vector2(0, 1000)
 collision_mask = 2
 script = ExtResource("1_jn12i")
+cast_speed = 50.0
 impact_scene = ExtResource("2_6c506")
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -52,4 +53,3 @@ local_coords = true
 trail_sections = 2
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2

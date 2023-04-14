@@ -1,7 +1,7 @@
 [gd_scene load_steps=96 format=3 uid="uid://4aigns5ix8i0"]
 
 [ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_i40jo"]
-[ext_resource type="PackedScene" uid="uid://cxtty7u71fosx" path="res://player/ability/abilities/laser/item/item_laser.tscn" id="2_inx7r"]
+[ext_resource type="PackedScene" uid="uid://dls7cnhhahcle" path="res://player/ability/abilities/decimate/item/item_decimate.tscn" id="2_r506p"]
 [ext_resource type="Texture2D" uid="uid://b488k8axatre0" path="res://enemy/chaos_elemental/enemy_chaos_elemental.png" id="2_tfbwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7cwr"]
@@ -665,7 +665,7 @@ animations = [{
 }]
 
 [node name="EnemyChaosElemental" instance=ExtResource("1_i40jo")]
-drop_item_scene = ExtResource("2_inx7r")
+drop_item_scene = ExtResource("2_r506p")
 drop_item_chance = 1.0
 
 [node name="Sprite" parent="." index="0"]

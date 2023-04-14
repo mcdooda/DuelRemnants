@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hlhacxe8214y"
-path="res://.godot/imported/chest.png-cf674f61dc1fb2393043c43005f240e2.ctex"
+uid="uid://bq8ovuf5hxwam"
+path="res://.godot/imported/collectible_monster_crystal.png-ab9a7af4b73bce65bf839e9ca6cd83af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/chest/chest.png"
-dest_files=["res://.godot/imported/chest.png-cf674f61dc1fb2393043c43005f240e2.ctex"]
+source_file="res://items/collectible/monster_crystal_wisp/collectible_monster_crystal.png"
+dest_files=["res://.godot/imported/collectible_monster_crystal.png-ab9a7af4b73bce65bf839e9ca6cd83af.ctex"]
 
 [params]
 
