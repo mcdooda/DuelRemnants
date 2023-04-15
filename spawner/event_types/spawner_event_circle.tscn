@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bru1e2bdxok0x"]
+
+[ext_resource type="PackedScene" uid="uid://csesri6pfsjq7" path="res://spawner/spawner_event.tscn" id="1_ubiuv"]
+[ext_resource type="Script" path="res://spawner/event_types/spawner_event_circle.gd" id="2_pir74"]
+[ext_resource type="PackedScene" uid="uid://3hdjqvxd7fng" path="res://enemy/death_phantom/timed_enemy_death_fantom.tscn" id="3_oorfr"]
+[ext_resource type="PackedScene" uid="uid://4aigns5ix8i0" path="res://enemy/chaos_elemental/enemy_chaos_elemental.tscn" id="4_kiqlj"]
+
+[node name="spawner_event_1" instance=ExtResource("1_ubiuv")]
+script = ExtResource("2_pir74")
+block_enemy = ExtResource("3_oorfr")
+radius = 400
+num_enemies = 60
+enemy_type = ExtResource("4_kiqlj")
+timing = 5.0

@@ -595,7 +595,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gtsve")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 13.0
 }, {
@@ -670,5 +670,4 @@ drop_item_chance = 1.0
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_bhahg")
-animation = &"attack"
-frame_progress = 0.770237
+animation = &"move"

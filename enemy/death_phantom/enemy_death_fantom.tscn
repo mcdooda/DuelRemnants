@@ -400,4 +400,4 @@ life = 1
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_267dj")
-animation = &"death"
+animation = &"move"

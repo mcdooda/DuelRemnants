@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b21e3pcysx422"]
+
+[ext_resource type="PackedScene" uid="uid://d2b4b433p4bec" path="res://spawner/event_types/spawner_event_traverse.tscn" id="1_hswus"]
+
+[node name="spawner_event_traverse" instance=ExtResource("1_hswus")]

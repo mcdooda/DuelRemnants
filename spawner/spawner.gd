@@ -2,6 +2,7 @@ extends Node
 
 @export var spawn_settings : Array[PackedScene]
 @export var event_settings : Array[PackedScene]
+@export var max_distance_allowed := 2000
 
 var spawn_settings_instances : Array
 var event_instances: Array
@@ -9,8 +10,8 @@ var wave_index := 0
 var event_index := 0
 var current_time := 0.0
 var enemy_count := 0
-@export var max_enemy_count := 200
 var rng := RandomNumberGenerator.new()
+@export var max_enemy_count := 200
 @onready var player_collision = get_node("/root/level_1/PlayerCharacter/Collision")
 
 var current_wave
@@ -79,6 +80,14 @@ func _on_event_timer_timeout():
 	event_instances[event_index].spawn_units(compute_position())
 	event_index += 1
 	if event_index < event_instances.size():
-		$SpawnTimer.wait_time = event_instances[event_index].timing
-		$SpawnTimer.start()
+		$EventTimer.wait_time = event_instances[event_index].timing
+		$EventTimer.start()
 
+# kill all enemies that are too far away from the player
+func _on_garbage_timer_timeout():
+	var all_enemies = get_tree().get_nodes_in_group("enemies")
+	var max_distance_squared = max_distance_allowed * max_distance_allowed
+	for enemy in all_enemies:
+		if player_collision.global_position.distance_squared_to(enemy.global_position) > max_distance_squared:
+			print("Killing ", enemy)
+			enemy.kill(true)

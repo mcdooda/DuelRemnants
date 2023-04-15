@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d2m5djbucqj05" path="res://level_1/battlemap6_middleground.png" id="1_13u5t"]
 [ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="2_7so5x"]
 [ext_resource type="PackedScene" uid="uid://cl75wute2x26a" path="res://player/ability/abilities/fire_arrow/fire_arrow.tscn" id="3_fm47o"]
-[ext_resource type="PackedScene" path="res://spawner/spawner.tscn" id="3_irdb4"]
+[ext_resource type="PackedScene" uid="uid://1fo2m4q6nafk" path="res://spawner/spawner.tscn" id="3_irdb4"]
 [ext_resource type="PackedScene" uid="uid://bka3uf1w8psng" path="res://items/container/chest/chest.tscn" id="6_nteef"]
 [ext_resource type="PackedScene" uid="uid://diq0t53fc518" path="res://ui/screen_ui/screen_ui.tscn" id="6_opg1h"]
 [ext_resource type="PackedScene" uid="uid://wap32x80oj3u" path="res://items/container/egg/container_egg.tscn" id="7_5y2m8"]

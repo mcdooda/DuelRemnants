@@ -74,4 +74,5 @@ heal_amount = 30
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_a2dcf")
-frame_progress = 0.775784
+frame = 0
+frame_progress = 0.0197809

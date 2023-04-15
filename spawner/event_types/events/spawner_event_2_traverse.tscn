@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnfn46n85dl7m"]
+
+[ext_resource type="PackedScene" uid="uid://d2b4b433p4bec" path="res://spawner/event_types/spawner_event_traverse.tscn" id="1_jxh06"]
+[ext_resource type="PackedScene" uid="uid://j01wet2rc8ck" path="res://enemy/mini_scarab/traverse_enemy_mini_scarab.tscn" id="2_kjqqh"]
+
+[node name="spawner_event_traverse" instance=ExtResource("1_jxh06")]
+enemy_type = ExtResource("2_kjqqh")
+timing = 20.0

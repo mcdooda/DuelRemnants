@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpgukp6cmtixe"]
 
 [ext_resource type="Script" path="res://spawner/spawner_wave.gd" id="1_7d4ku"]
-[ext_resource type="PackedScene" uid="uid://cdu26u01j7aep" path="res://enemy/lantern_fox/enemy_lantern_fox.tscn" id="2_1w5q7"]
+[ext_resource type="PackedScene" uid="uid://cqvh34qk7uyll" path="res://enemy/rae/enemy_rae.tscn" id="2_hu1tq"]
 
 [node name="spawner_wave_6" type="Node"]
 script = ExtResource("1_7d4ku")
-enemy_type = ExtResource("2_1w5q7")
+enemy_type = ExtResource("2_hu1tq")
 timing = 50.0
 distance = 300.0

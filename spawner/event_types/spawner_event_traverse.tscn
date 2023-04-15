@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2b4b433p4bec"]
+
+[ext_resource type="PackedScene" uid="uid://csesri6pfsjq7" path="res://spawner/spawner_event.tscn" id="1_y8t2x"]
+[ext_resource type="Script" path="res://spawner/event_types/spawner_event_traverse.gd" id="2_7okvw"]
+[ext_resource type="PackedScene" uid="uid://bft1i3dvcn773" path="res://enemy/slo/traverse_enemy_slo.tscn" id="3_1k8qc"]
+
+[node name="spawner_event_traverse" instance=ExtResource("1_y8t2x")]
+script = ExtResource("2_7okvw")
+radius = 400
+num_enemies = 60
+enemy_type = ExtResource("3_1k8qc")
+timing = 10.0
