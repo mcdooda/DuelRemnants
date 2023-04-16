@@ -16,6 +16,7 @@ var is_alive = true
 var rng = RandomNumberGenerator.new()
 
 var direction: Vector2
+@export var acceleration = 600
 
 func _ready():
 	$FlashTimer.connect("timeout", reset_flash)
@@ -65,7 +66,7 @@ func _physics_process(delta):
 	if not is_alive:
 		return
 	handle_direction()
-	speed = min(speed + delta * 600, max_speed)
+	speed = min(speed + delta * acceleration, max_speed)
 	velocity = direction.normalized() * speed
 	move_and_slide()
 	handle_collision_with_player()

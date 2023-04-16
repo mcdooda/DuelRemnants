@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1fo2m4q6nafk"]
+[gd_scene load_steps=13 format=3 uid="uid://1fo2m4q6nafk"]
 
 [ext_resource type="Script" path="res://spawner/spawner.gd" id="1_ankpt"]
 [ext_resource type="PackedScene" uid="uid://b85uima2ordu4" path="res://spawner/waves/spawner_wave_1.tscn" id="2_4tog7"]
@@ -7,14 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://ckggfm6ku70qn" path="res://spawner/waves/spawner_wave_4.tscn" id="5_q53es"]
 [ext_resource type="PackedScene" uid="uid://d0cp2y166p70t" path="res://spawner/waves/spawner_wave_5.tscn" id="6_aurgq"]
 [ext_resource type="PackedScene" uid="uid://dpgukp6cmtixe" path="res://spawner/waves/spawner_wave_6.tscn" id="7_8amov"]
+[ext_resource type="PackedScene" uid="uid://cok2pgrw4xg7p" path="res://spawner/waves/spawner_wave_7.tscn" id="8_bs06b"]
 [ext_resource type="PackedScene" uid="uid://b21e3pcysx422" path="res://spawner/event_types/events/spawner_event_1_traverse.tscn" id="8_gc03o"]
 [ext_resource type="PackedScene" uid="uid://cnfn46n85dl7m" path="res://spawner/event_types/events/spawner_event_2_traverse.tscn" id="9_0mkoy"]
 [ext_resource type="PackedScene" uid="uid://bix6kg0o681gl" path="res://spawner/event_types/events/spawner_event_3_circle.tscn" id="10_aey50"]
+[ext_resource type="PackedScene" uid="uid://ctxvwvgfrkl6s" path="res://spawner/event_types/events/spawner_event_4_circle.tscn" id="11_kjsqp"]
 
 [node name="Spawner" type="Node"]
 script = ExtResource("1_ankpt")
-spawn_settings = Array[PackedScene]([ExtResource("2_4tog7"), ExtResource("3_wjbrk"), ExtResource("4_rydup"), ExtResource("5_q53es"), ExtResource("6_aurgq"), ExtResource("7_8amov")])
-event_settings = Array[PackedScene]([ExtResource("8_gc03o"), ExtResource("9_0mkoy"), ExtResource("10_aey50")])
+spawn_settings = Array[PackedScene]([ExtResource("2_4tog7"), ExtResource("3_wjbrk"), ExtResource("4_rydup"), ExtResource("5_q53es"), ExtResource("6_aurgq"), ExtResource("7_8amov"), ExtResource("8_bs06b")])
+event_settings = Array[PackedScene]([ExtResource("8_gc03o"), ExtResource("9_0mkoy"), ExtResource("10_aey50"), ExtResource("11_kjsqp")])
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true

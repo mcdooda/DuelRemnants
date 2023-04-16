@@ -13,11 +13,13 @@ func _process(_delta):
 	
 	if velocity.x != 0:
 		set_flip_h(velocity.x < 0)
-		
-	if get_parent().position.y >= RenderingServer.CANVAS_ITEM_Z_MAX:
+	var pos_y = get_parent().position.y
+	if pos_y > RenderingServer.CANVAS_ITEM_Z_MAX:
 		z_index = RenderingServer.CANVAS_ITEM_Z_MAX
+	elif pos_y < RenderingServer.CANVAS_ITEM_Z_MIN:
+		z_index = RenderingServer.CANVAS_ITEM_Z_MIN
 	else:
-		z_index = get_parent().position.y
+		z_index = pos_y
 		
 	if animation == "death":
 		return

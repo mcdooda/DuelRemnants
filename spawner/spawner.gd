@@ -2,7 +2,7 @@ extends Node
 
 @export var spawn_settings : Array[PackedScene]
 @export var event_settings : Array[PackedScene]
-@export var max_distance_allowed := 2000
+@export var max_distance_allowed := 4000
 
 var spawn_settings_instances : Array
 var event_instances: Array
@@ -48,18 +48,21 @@ func setup_next_wave():
 	if wave_index < spawn_settings_instances.size():
 		current_wave = spawn_settings_instances[wave_index]
 
-func compute_position():
-	var player_position = player_collision.global_position
-	var alpha = rng.randf_range(0, PI * 2)
-	var wave_center = player_position + Vector2(cos(alpha), sin(alpha)) * current_wave.distance
-	return wave_center
+func player_position():
+	return player_collision.global_position
+
+func compute_out_of_screen_position():
+	var position = player_position()
+	var radius = max(get_viewport().get_visible_rect().size.x, get_viewport().get_visible_rect().size.y)
+	var alpha = rng.randf_range(0, 2 * PI)
+	return position + Vector2(cos(alpha) * radius, sin(alpha) * radius)
 
 func spawn_enemy(enemy_type):
-	var wave_center = compute_position()
+	var out_of_screen_position = compute_out_of_screen_position()
 	var enemy = enemy_type.instantiate()
 	get_tree().root.add_child(enemy)
 	enemy.connect("enemy_dies", decrease_enemy_count)
-	enemy.global_position = wave_center + Vector2(rng.randf() - 0.5, rng.randf() - 0.5) * 200
+	enemy.global_position = out_of_screen_position
 	enemy_count += 1
 	
 func spawn_enemies(enemy_type, number):
@@ -77,7 +80,7 @@ func _on_spawn_timer_timeout():
 		spawn_enemy(current_wave.enemy_type)
 
 func _on_event_timer_timeout():
-	event_instances[event_index].spawn_units(compute_position())
+	event_instances[event_index].spawn_units(compute_out_of_screen_position(), player_position())
 	event_index += 1
 	if event_index < event_instances.size():
 		$EventTimer.wait_time = event_instances[event_index].timing
