@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://cqvh34qk7uyll"]
+[gd_scene load_steps=48 format=3 uid="uid://cqvh34qk7uyll"]
 
 [ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_3e0g6"]
+[ext_resource type="PackedScene" uid="uid://bpqwefntxwgab" path="res://player/ability/abilities/consuming_rebirth/item/item_consuming_rebirth.tscn" id="2_pro8p"]
 [ext_resource type="Texture2D" uid="uid://cl0hik2p7r1in" path="res://enemy/rae/enemy_rae.png" id="3_go5h7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kqlab"]
@@ -323,8 +324,8 @@ animations = [{
 }]
 
 [node name="Rae" instance=ExtResource("1_3e0g6")]
+drop_item_scene = ExtResource("2_pro8p")
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ptcy7")
 animation = &"move"
-frame_progress = 0.303646
