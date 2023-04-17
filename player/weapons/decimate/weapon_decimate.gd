@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	speed -= delta * 900
-	velocity = direction * speed
+	velocity = direction.normalized() * speed
 	global_position += velocity * delta
 
 func body_entered(body):

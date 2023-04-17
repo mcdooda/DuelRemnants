@@ -53,3 +53,11 @@ local_coords = true
 trail_sections = 2
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="ImpactParticles" type="GPUParticles2D" parent="."]
+position = Vector2(300, 0)
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_6xpr4")
+texture = ExtResource("4_37mqy")
+lifetime = 0.3
+trail_sections = 2

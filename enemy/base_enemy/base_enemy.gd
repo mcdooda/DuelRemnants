@@ -45,10 +45,9 @@ func kill(instant = false):
 func hit(knockback, damage):
 	speed -= knockback * (1.0 - knockback_resistance)
 	life -= damage
+	flash()
 	if life <= 0:
 		kill()
-	else:
-		flash()
 
 func flash():
 	sprite_material.set_shader_parameter("flash_active", true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dinrabr8pdew2"]
+[gd_scene load_steps=11 format=3 uid="uid://dinrabr8pdew2"]
 
 [ext_resource type="Texture2D" uid="uid://d2m5djbucqj05" path="res://level_1/battlemap6_middleground.png" id="1_13u5t"]
 [ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="2_7so5x"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://diq0t53fc518" path="res://ui/screen_ui/screen_ui.tscn" id="6_opg1h"]
 [ext_resource type="PackedScene" uid="uid://wap32x80oj3u" path="res://items/container/egg/container_egg.tscn" id="7_5y2m8"]
 [ext_resource type="PackedScene" uid="uid://btk2njxsf32eo" path="res://items/container/endless_obelysk/container_endless_obelysk.tscn" id="8_katis"]
+[ext_resource type="PackedScene" uid="uid://bifqp1owgfgc5" path="res://items/collectible/mini_jax/collectible_mini_jax.tscn" id="8_t4o45"]
+[ext_resource type="PackedScene" uid="uid://dls7cnhhahcle" path="res://player/ability/abilities/decimate/item/item_decimate.tscn" id="9_ykofl"]
 
 [node name="level_1" type="Node2D"]
 
@@ -32,6 +34,7 @@ position = Vector2(396, 264)
 
 [node name="Egg" parent="." instance=ExtResource("7_5y2m8")]
 position = Vector2(272, 372)
+items = Array[PackedScene]([ExtResource("8_t4o45"), ExtResource("9_ykofl")])
 
 [node name="EndlessObelysk" parent="." instance=ExtResource("8_katis")]
 position = Vector2(451, 354)

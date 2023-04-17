@@ -21,6 +21,7 @@ var direction: Vector2
 
 @onready var fill := $Line2D
 @onready var casting_particles := $EmitingParticles
+@onready var impact_particles := $ImpactParticles
 
 @onready var line_width: float = fill.width
 
@@ -45,6 +46,8 @@ func set_is_casting(cast: bool):
 	set_physics_process(is_casting)
 	casting_particles.emitting = is_casting
 	casting_particles.global_rotation = direction.angle()
+	impact_particles.emitting = is_casting
+	impact_particles.global_rotation = direction.angle()
 
 func cast_beam():
 	var cast_point := target_position
@@ -58,6 +61,7 @@ func cast_beam():
 	else:
 		cast_point = target_position
 	fill.points[1] = cast_point
+	impact_particles.position = cast_point
 
 func appear():
 	var tween = create_tween()
