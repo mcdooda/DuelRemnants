@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxyeeip6dut2k"]
+
+[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_lajhu"]
+
+[node name="level_3" type="Node"]
+script = ExtResource("1_lajhu")
+num_projectiles = 1
+description = "+1 projectile"

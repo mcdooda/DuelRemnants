@@ -1,41 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp4jnurhaok5p"]
+[gd_scene load_steps=4 format=3 uid="uid://dp4jnurhaok5p"]
 
-[ext_resource type="Script" path="res://ui/item_description/ui_item_description.gd" id="1_8oegw"]
-[ext_resource type="Texture2D" uid="uid://dyudttudq1uas" path="res://ui/experience_bar/bar_background.png" id="2_ulcke"]
+[ext_resource type="Script" path="res://ui/item_description/ui_item_description.gd" id="1_661nd"]
+[ext_resource type="Texture2D" uid="uid://dpxsk1kqqt4nm" path="res://themes/border.png" id="2_8pa1s"]
+[ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="3_c17r6"]
 
-[node name="ui_item_description" type="Control"]
-layout_mode = 3
-anchor_right = 0.339
-anchor_bottom = 0.261
-offset_right = -1.92001
-offset_bottom = -121.8
-script = ExtResource("1_8oegw")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 1
+[node name="ui_item_description" type="NinePatchRect"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1130.0
+offset_bottom = -600.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ulcke")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_c17r6")
+texture = ExtResource("2_8pa1s")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+script = ExtResource("1_661nd")
 
-[node name="Hcontainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LevelLabel" type="RichTextLabel" parent="Hcontainer"]
-custom_minimum_size = Vector2(80, 0)
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 145.0
+offset_bottom = 195.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_c17r6")
+
+[node name="LevelLabel" type="Label" parent="Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_c17r6")
 text = "Level 1"
 
-[node name="ItemDescriptionLabel" type="RichTextLabel" parent="Hcontainer"]
-clip_contents = false
-custom_minimum_size = Vector2(100, 0)
+[node name="NameLabel" type="Label" parent="Panel/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
-text = "Foo bar baz"
-scroll_active = false
+size_flags_horizontal = 4
+theme = ExtResource("3_c17r6")
+text = "Name"
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainer/Control"]
+process_mode = 3
+position = Vector2(64, 52)
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_c17r6")
+text = "Description of the item should be contained in this box"
+fit_content = true
+
+[node name="FocusLabel" type="Label" parent="Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "X"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -10,4 +10,4 @@ item = ExtResource("2_clgto")
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_g4anu")
 frame = 0
-frame_progress = 0.18476
+frame_progress = 0.0

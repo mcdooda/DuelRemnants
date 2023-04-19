@@ -1,7 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://cdu26u01j7aep"]
+[gd_scene load_steps=40 format=3 uid="uid://cdu26u01j7aep"]
 
 [ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_5f34d"]
-[ext_resource type="PackedScene" uid="uid://ck67aw3qec7pm" path="res://player/ability/abilities/true_strike/item/item_true_strike.tscn" id="2_52kdx"]
 [ext_resource type="Texture2D" uid="uid://b6ljnootwkewn" path="res://enemy/lantern_fox/enemy_lantern_fox.png" id="3_pm4go"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53dhv"]
@@ -275,7 +274,6 @@ animations = [{
 }]
 
 [node name="LanternFox" instance=ExtResource("1_5f34d")]
-drop_item_scene = ExtResource("2_52kdx")
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_0kmte")

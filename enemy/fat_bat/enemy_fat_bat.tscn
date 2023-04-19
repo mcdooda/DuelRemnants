@@ -1,7 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://cx68y07wsqaxe"]
+[gd_scene load_steps=29 format=3 uid="uid://cx68y07wsqaxe"]
 
 [ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_pbmvp"]
-[ext_resource type="PackedScene" uid="uid://ck67aw3qec7pm" path="res://player/ability/abilities/true_strike/item/item_true_strike.tscn" id="2_o3dp8"]
 [ext_resource type="Texture2D" uid="uid://bq81v3cs587is" path="res://enemy/fat_bat/enemy_fat_bat.png" id="3_5utv1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jxwq"]
@@ -199,7 +198,6 @@ animations = [{
 
 [node name="FatBat" instance=ExtResource("1_pbmvp")]
 max_speed = 80
-drop_item_scene = ExtResource("2_o3dp8")
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_idgdq")

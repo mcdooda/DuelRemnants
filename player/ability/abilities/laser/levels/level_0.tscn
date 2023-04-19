@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr411ugy7pw66"]
+
+[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_dhdcq"]
+
+[node name="level_0" type="Node"]
+script = ExtResource("1_dhdcq")
+description = "Pew pew pew"

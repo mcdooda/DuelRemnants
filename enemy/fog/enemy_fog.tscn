@@ -1,7 +1,6 @@
-[gd_scene load_steps=48 format=3 uid="uid://cuhug36anabi2"]
+[gd_scene load_steps=47 format=3 uid="uid://cuhug36anabi2"]
 
 [ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_l8l4s"]
-[ext_resource type="PackedScene" uid="uid://fdb2bqvvkipc" path="res://items/collectible/experience_collector/collectible_experience_collector.tscn" id="2_2qg22"]
 [ext_resource type="Texture2D" uid="uid://ctr1l6imh0tlv" path="res://enemy/fog/enemy_fog.png" id="2_ojj0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knlw6"]
@@ -325,7 +324,6 @@ animations = [{
 
 [node name="EnemyFog" instance=ExtResource("1_l8l4s")]
 max_speed = 80
-drop_item_scene = ExtResource("2_2qg22")
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_gsh0o")

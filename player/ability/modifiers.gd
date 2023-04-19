@@ -15,3 +15,4 @@ func add(other: Modifiers):
 	cooldown += other.cooldown
 	speed += other.speed
 	num_projectiles += other.num_projectiles
+	description = other.description

@@ -1,11 +1,34 @@
-extends HBoxContainer
+extends Control
 
+var item: Ability
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+@onready var name_label = get_node("Panel/VBoxContainer/NameLabel")
+@onready var level_label = get_node("Panel/VBoxContainer/LevelLabel")
+@onready var description_label = get_node("Panel/VBoxContainer/DescriptionLabel")
+@onready var focus_label = get_node("Panel/VBoxContainer/FocusLabel")
+@onready var animated_sprite: AnimatedSprite2D = get_node("Panel/VBoxContainer/Control/AnimatedSprite2D")
+
+func set_item(ability):
+	item = ability
+	#var next_level_modifiers = ability.get_next_level_modifiers()
+	name_label.text = ability.ability_name
+	level_label.text = "Level " + str(ability.current_level)
+	description_label.text = ability.modifiers.description
+	var icone_sprite_frame: SpriteFrames = ResourceLoader.load(AbilityUtils.find_item_animation(ability))
+	animated_sprite.set_sprite_frames(icone_sprite_frame)
+	animated_sprite.play("default")
+
+func _on_gui_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_X:
+			GlobalUi.emit_signal("item_selected", item)
+	elif event is InputEventMouseButton:
+		GlobalUi.emit_signal("item_selected", item)
+
+func _on_focus_entered():
+	focus_label.show()
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_focus_exited():
+	focus_label.hide()
+	pass # Replace with function body.

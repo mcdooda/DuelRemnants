@@ -12,6 +12,7 @@ script = ExtResource("1_1hjbp")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="DescriptionLabel" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 90.0
 offset_right = 532.0
@@ -20,6 +21,7 @@ text = "Foo
 "
 
 [node name="LevelLabel" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 442.0
 offset_bottom = 27.0

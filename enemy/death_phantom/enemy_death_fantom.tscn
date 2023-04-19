@@ -1,7 +1,6 @@
-[gd_scene load_steps=57 format=3 uid="uid://bump0yiu3i520"]
+[gd_scene load_steps=56 format=3 uid="uid://bump0yiu3i520"]
 
 [ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_u0f7l"]
-[ext_resource type="PackedScene" uid="uid://cxtty7u71fosx" path="res://player/ability/abilities/laser/item/item_laser.tscn" id="2_8t54r"]
 [ext_resource type="Texture2D" uid="uid://bae5g5wculv14" path="res://enemy/death_phantom/enemy_death_fantom.png" id="2_g65tj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhhjt"]
@@ -393,7 +392,6 @@ animations = [{
 
 [node name="DeathFantom" instance=ExtResource("1_u0f7l")]
 max_speed = 10
-drop_item_scene = ExtResource("2_8t54r")
 drop_item_chance = 1.0
 knockback_resistance = 1.0
 life = 1
