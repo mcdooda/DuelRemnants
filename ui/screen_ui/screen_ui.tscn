@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://diq0t53fc518"]
+[gd_scene load_steps=6 format=3 uid="uid://diq0t53fc518"]
 
+[ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="1_cl1i3"]
 [ext_resource type="Script" path="res://ui/screen_ui/screen_ui.gd" id="1_wcih4"]
 [ext_resource type="PackedScene" uid="uid://bnsvjqbwasykt" path="res://ui/notification/notification.tscn" id="2_hssy4"]
 [ext_resource type="PackedScene" uid="uid://dushukjmi4x7u" path="res://ui/experience_bar/ui_experience_bar.tscn" id="2_xu2fa"]
@@ -11,6 +12,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 800.0
+theme = ExtResource("1_cl1i3")
 script = ExtResource("1_wcih4")
 popup_scene = ExtResource("2_hssy4")
 

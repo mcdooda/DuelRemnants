@@ -22,6 +22,7 @@ func _ready():
 	$FlashTimer.connect("timeout", reset_flash)
 
 func drop_item():
+	$Collision.disabled = true
 	var dropped_item = drop_item_scene.instantiate()
 	dropped_item.global_position = global_position
 	get_tree().root.add_child(dropped_item)
@@ -33,7 +34,6 @@ func maybe_drop_item():
 func kill(instant = false):
 	if not is_alive:
 		return
-		
 	is_alive = false
 	emit_signal("enemy_dies")
 	if not instant:

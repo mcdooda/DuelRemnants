@@ -8,15 +8,15 @@ func _ready():
 	init_timer()
 	
 func trigger_ability():
-	var total_projectiles = num_projectiles + modifiers.num_projectiles
+	var total_projectiles = max_projectiles()
 	for i in total_projectiles:
 		$Timer.start()
 		await $Timer.timeout
-		spawn_sword(i)
+		spawn_sword(i / float(total_projectiles))
 
-func spawn_sword(sword_index):
+func spawn_sword(sword_ratio):
 	var projectile = projectile_scene.instantiate()
-	var alpha = (2 * PI) * (float(sword_index) / float(num_projectiles + modifiers.num_projectiles))
+	var alpha = (2 * PI) * sword_ratio
 	projectile.position += Vector2(cos(alpha) * radius, sin(alpha)  * radius)
 	projectile.modifiers = modifiers
 	get_parent().add_child(projectile)

@@ -23,3 +23,7 @@ script = ExtResource("2_021ia")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ykd7a")
+
+[node name="LifeTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://drtouk1oa6ij4"]
+[gd_scene load_steps=10 format=3 uid="uid://drtouk1oa6ij4"]
 
 [ext_resource type="Script" path="res://player/character/player_character.gd" id="1_wuyec"]
+[ext_resource type="PackedScene" uid="uid://cpjpo1uubjce8" path="res://fx/animations/heal/fx_heal.tscn" id="2_5jkmc"]
 [ext_resource type="SpriteFrames" uid="uid://cjaf6l5pws0kx" path="res://player/character/player_character.tres" id="2_nov3l"]
 [ext_resource type="Script" path="res://player/character/player_sprite.gd" id="3_xi74e"]
 [ext_resource type="Script" path="res://player/character/player_item_collision.gd" id="5_0gsxd"]
@@ -16,6 +17,7 @@ radius = 50.0
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_wuyec")
+heal_animation = ExtResource("2_5jkmc")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

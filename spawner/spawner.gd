@@ -31,6 +31,7 @@ func _ready():
 
 	if event_instances.size() > 0:
 		$EventTimer.wait_time = event_instances[0].timing
+		$EventTimer.start()
 
 func handle_next_wave():
 	if wave_index < spawn_settings_instances.size() - 1 and current_time >= spawn_settings_instances[wave_index + 1].timing:
@@ -92,5 +93,5 @@ func _on_garbage_timer_timeout():
 	var max_distance_squared = max_distance_allowed * max_distance_allowed
 	for enemy in all_enemies:
 		if player_collision.global_position.distance_squared_to(enemy.global_position) > max_distance_squared:
-			print("Killing ", enemy)
+			print("Removing ", enemy)
 			enemy.kill(true)

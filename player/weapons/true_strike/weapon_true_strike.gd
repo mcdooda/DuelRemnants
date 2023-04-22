@@ -23,7 +23,6 @@ func _on_animated_sprite_sprite_frames_changed():
 	if current_frame == 10:
 		$Collision.disabled = false
 
-
 func _on_animated_sprite_frame_changed():
 	var current_frame = $AnimatedSprite.frame
 	if current_frame == 10:

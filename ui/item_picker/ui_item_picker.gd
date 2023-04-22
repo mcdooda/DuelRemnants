@@ -10,16 +10,10 @@ func _ready():
 
 func load_item(item_path: String, item_ui):
 	var player_ability = player_ref.inventory.maybe_get_ability(item_path)
-	print("looking for: ", item_path)
 	if player_ability != null:
-		print("upgrade from player")
-		item_ui.set_item(player_ability)
+		item_ui.set_item(item_path, player_ability.current_level + 1)
 	else:
-		print("not upgrade from player")
-		var foo = ResourceLoader.load(item_path)
-		var bar = foo.instantiate()
-		bar.init(true)
-		item_ui.set_item(bar)
+		item_ui.set_item(item_path, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func on_level_changed():

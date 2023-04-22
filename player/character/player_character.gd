@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 200
 @export var direction = Vector2(1, 0)
 
+@export var heal_animation: PackedScene
 @export var starting_ability : PackedScene
 var starting_ability_ref : Ability
 @export var attack_frame := 12
@@ -54,6 +55,9 @@ func heal(amount):
 	if life > max_life:
 		life = max_life
 	emit_signal("life_changed", life)
+	# play heal animation
+	var animation = heal_animation.instantiate()
+	add_child(animation)
 
 func _process(_delta):
 	pass

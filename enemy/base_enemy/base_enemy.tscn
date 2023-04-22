@@ -4,12 +4,11 @@
 [ext_resource type="Shader" uid="uid://dwmmkvg1eibh0" path="res://enemy/base_enemy/base_enemy_shader.tres" id="2_sfmqd"]
 [ext_resource type="PackedScene" uid="uid://cjuxkww2js77n" path="res://items/collectible/experience/experience.tscn" id="2_ueeec"]
 [ext_resource type="Script" path="res://enemy/base_enemy/base_enemy_sprite.gd" id="3_3i7qw"]
+[ext_resource type="SpriteFrames" uid="uid://m0bv476rtb4n" path="res://enemy/maw/enemy_maw.tres" id="4_ya4vk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdmjx"]
 shader = ExtResource("2_sfmqd")
 shader_parameter/flash_active = false
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_liv8m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t8v81"]
 radius = 8.0
@@ -26,7 +25,8 @@ drop_item_scene = ExtResource("2_ueeec")
 texture_filter = 1
 material = SubResource("ShaderMaterial_qdmjx")
 position = Vector2(-1, -24)
-sprite_frames = SubResource("SpriteFrames_liv8m")
+sprite_frames = ExtResource("4_ya4vk")
+animation = &"attack"
 script = ExtResource("3_3i7qw")
 
 [node name="Collision" type="CollisionShape2D" parent="."]

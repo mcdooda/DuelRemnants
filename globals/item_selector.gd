@@ -9,7 +9,7 @@ func _ready():
 
 func get_random_items_from_inventory(player_ref, max_value):
 	var num_items = rng.randi_range(1, max_value)
-	var items: Array = []
+	var items: Array[PackedScene] = []
 	for i in num_items:
 		var item = player_ref.inventory.random_item()
 		var maybe_item_scene = AbilityUtils.find_item_scene(item)
@@ -17,7 +17,6 @@ func get_random_items_from_inventory(player_ref, max_value):
 			items.push_back(ResourceLoader.load(maybe_item_scene))
 	return items
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func pick_random_items(num_items):
 	var picked_items: Array[String] = []
 	for i in num_items:

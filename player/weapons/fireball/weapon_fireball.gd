@@ -21,4 +21,6 @@ func body_entered(body):
 		impact_vfx.global_position = global_position
 		impact_vfx.set_flip_h($Sprite.is_flipped_h())
 		get_tree().root.add_child(impact_vfx)
-		
+
+func _on_life_timer_timeout():
+	queue_free()

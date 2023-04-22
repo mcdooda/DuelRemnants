@@ -10,13 +10,14 @@ func _ready():
 func shoot_at(enemy_index):
 	var projectile = projectile_scene.instantiate()
 	add_child(projectile)
-	var alpha = (2 * PI) * (enemy_index / float(num_projectiles))
+	var alpha = (2 * PI) * (enemy_index / float(max_projectiles()))
 	var vectorAlpha = Vector2(cos(alpha), sin(alpha))
 	projectile.position = vectorAlpha * radius
 	projectile.direction = vectorAlpha * radius
 
 func trigger_ability():
-	for i in num_projectiles:
+	var projectile_number = max_projectiles()
+	for i in projectile_number:
 			shoot_at(i)
 
 func _process(delta):
