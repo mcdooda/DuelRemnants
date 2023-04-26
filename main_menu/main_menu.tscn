@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4vyah7bcm75d"]
+
+[ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="1_5rbmn"]
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="2_dgmte"]
+[ext_resource type="Texture2D" uid="uid://bn00b2u60a1ha" path="res://icon.svg" id="2_ewykd"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5rbmn")
+theme_type_variation = &"menu"
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource("2_dgmte")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "My favorite game"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="Continue" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../NewGame")
+focus_next = NodePath("../NewGame")
+focus_previous = NodePath("../Quit")
+focus_mode = 2
+theme = ExtResource("1_5rbmn")
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="NewGame" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Continue")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Continue")
+focus_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+
+[node name="Quit" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../NewGame")
+focus_neighbor_bottom = NodePath("../Continue")
+focus_next = NodePath("../Continue")
+focus_previous = NodePath("../NewGame")
+focus_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "bUTTON"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_ewykd")
