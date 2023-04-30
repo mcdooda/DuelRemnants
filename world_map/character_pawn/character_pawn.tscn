@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7wsjafu4t1hq"]
+
+[ext_resource type="Script" path="res://world_map/character_pawn/character_pawn.gd" id="1_ly3ao"]
+[ext_resource type="SpriteFrames" uid="uid://cjaf6l5pws0kx" path="res://player/character/player_character.tres" id="2_h5tg5"]
+[ext_resource type="Script" path="res://world_map/character_pawn/character_pawn_sprite.gd" id="3_tp3f5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0di2"]
+radius = 21.0238
+
+[node name="character_pawn" type="CharacterBody2D"]
+script = ExtResource("1_ly3ao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -21)
+sprite_frames = ExtResource("2_h5tg5")
+animation = &"attack"
+script = ExtResource("3_tp3f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_m0di2")

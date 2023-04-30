@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d22il4gxkw02d"]
+[gd_scene load_steps=2 format=3 uid="uid://d22il4gxkw02d"]
 
-[ext_resource type="SpriteFrames" uid="uid://m0bv476rtb4n" path="res://enemy/maw/enemy_maw.tres" id="1_5csga"]
 [ext_resource type="PackedScene" uid="uid://c3s35f06jfpwc" path="res://enemy/base_enemy/base_enemy.tscn" id="1_bo588"]
 
 [node name="EnemyMaw" instance=ExtResource("1_bo588")]
 
 [node name="Sprite" parent="." index="0"]
-sprite_frames = ExtResource("1_5csga")
 animation = &"breathing"

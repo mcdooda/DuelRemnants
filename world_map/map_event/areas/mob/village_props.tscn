@@ -1,0 +1,100 @@
+[gd_scene load_steps=17 format=3 uid="uid://bsn5m1pd4wbm8"]
+
+[ext_resource type="Shader" uid="uid://h06aofms86a3" path="res://world_map/map_event/areas/grass_patch/mask_shader.tres" id="1_yqumo"]
+[ext_resource type="PackedScene" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="2_ooyua"]
+[ext_resource type="Texture2D" uid="uid://dssfp3m461fmk" path="res://world_map/tiles/props/pine1.png" id="3_no7on"]
+[ext_resource type="Texture2D" uid="uid://doextcy20c8bw" path="res://world_map/tiles/buildings/human/tower_2.png" id="3_sutk3"]
+[ext_resource type="Texture2D" uid="uid://cpp2dttphvg6s" path="res://world_map/tiles/buildings/human/house_3.png" id="4_26j0l"]
+[ext_resource type="Texture2D" uid="uid://rgral5a3xwc3" path="res://world_map/tiles/buildings/human/house.png" id="5_jf6dj"]
+[ext_resource type="Texture2D" uid="uid://0sl81f52f2mp" path="res://world_map/tiles/buildings/human/house_4.png" id="6_mmvlc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ytyx"]
+shader = ExtResource("1_yqumo")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg0ax"]
+atlas = ExtResource("3_sutk3")
+region = Rect2(0, 0, 35, 62)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dm4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg0ax")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4fbb"]
+atlas = ExtResource("5_jf6dj")
+region = Rect2(0, 98, 39, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlf84"]
+atlas = ExtResource("5_jf6dj")
+region = Rect2(39, 98, 39, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nompq"]
+atlas = ExtResource("5_jf6dj")
+region = Rect2(78, 98, 39, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c5yp"]
+atlas = ExtResource("5_jf6dj")
+region = Rect2(117, 98, 39, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywk73"]
+atlas = ExtResource("5_jf6dj")
+region = Rect2(156, 98, 39, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xplxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4fbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlf84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nompq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c5yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywk73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="village_props" type="Node2D"]
+material = SubResource("ShaderMaterial_6ytyx")
+
+[node name="grass_patch" parent="." instance=ExtResource("2_ooyua")]
+
+[node name="pine3" type="Sprite2D" parent="."]
+position = Vector2(-48, -20)
+texture = ExtResource("3_no7on")
+
+[node name="Sprite2D5" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-5.5, -33)
+sprite_frames = SubResource("SpriteFrames_1dm4a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(22, -21.5)
+texture = ExtResource("4_26j0l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(17.5, 2)
+sprite_frames = SubResource("SpriteFrames_xplxx")
+autoplay = "default"
+frame_progress = 0.896926
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-22.5, 5)
+texture = ExtResource("6_mmvlc")

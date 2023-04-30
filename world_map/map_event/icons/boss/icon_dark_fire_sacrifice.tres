@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://culdmf87f7kuf"]
+
+[ext_resource type="Texture2D" uid="uid://bupb4svwa488b" path="res://world_map/map_event/icons/boss/icon_dark_fire_sacrifice.png" id="1_0ej1p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a25y"]
+atlas = ExtResource("1_0ej1p")
+region = Rect2(1800, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h44km"]
+atlas = ExtResource("1_0ej1p")
+region = Rect2(1980, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe4m0"]
+atlas = ExtResource("1_0ej1p")
+region = Rect2(1620, 0, 180, 180)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a25y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h44km")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe4m0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]

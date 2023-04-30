@@ -34,40 +34,36 @@ layout_mode = 2
 size_flags_vertical = 6
 theme_override_constants/separation = 30
 
-[node name="Continue" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
+[node name="Continue" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../NewGame")
 focus_next = NodePath("../NewGame")
 focus_previous = NodePath("../Quit")
-focus_mode = 2
 theme = ExtResource("1_5rbmn")
 theme_override_font_sizes/font_size = 30
 text = "Continue"
+alignment = 0
 
-[node name="NewGame" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
+[node name="NewGame" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Continue")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Continue")
-focus_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "New Game"
+alignment = 0
 
-[node name="Quit" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
+[node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../NewGame")
 focus_neighbor_bottom = NodePath("../Continue")
 focus_next = NodePath("../Continue")
 focus_previous = NodePath("../NewGame")
-focus_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Quit"
-
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "bUTTON"
+alignment = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -76,3 +72,7 @@ size_flags_horizontal = 3
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer"]
 layout_mode = 2
 texture = ExtResource("2_ewykd")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer2/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer2/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

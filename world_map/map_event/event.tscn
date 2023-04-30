@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvc3vywik1x0p"]
+
+[ext_resource type="SpriteFrames" uid="uid://culdmf87f7kuf" path="res://world_map/map_event/icons/boss/icon_dark_fire_sacrifice.tres" id="1_8occq"]
+[ext_resource type="Script" path="res://world_map/map_event/event.gd" id="1_s0x2j"]
+
+[node name="event" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = ExtResource("1_8occq")
+autoplay = "default"
+frame = 2
+frame_progress = 0.619332
+script = ExtResource("1_s0x2j")

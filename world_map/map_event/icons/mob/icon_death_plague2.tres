@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://c2xy6eamwjshq" path="res://world_map/tiles/buildings/barbarians/watch_tower.png" id="1_2nkpi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igvek"]
+atlas = ExtResource("1_2nkpi")
+region = Rect2(0, 0, 37, 40)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igvek")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]

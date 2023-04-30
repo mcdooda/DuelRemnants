@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2m5djbucqj05"
-path="res://.godot/imported/battlemap6_middleground.png-7b0435281ee8491da982479f87eb191e.ctex"
+uid="uid://ctvjdwjyxxtsw"
+path="res://.godot/imported/windmill.png-f8d51be3b46817427f0c53ba35fdb169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level_1/battlemap6_middleground.png"
-dest_files=["res://.godot/imported/battlemap6_middleground.png-7b0435281ee8491da982479f87eb191e.ctex"]
+source_file="res://world_map/tiles/buildings/human/windmill.png"
+dest_files=["res://.godot/imported/windmill.png-f8d51be3b46817427f0c53ba35fdb169.ctex"]
 
 [params]
 

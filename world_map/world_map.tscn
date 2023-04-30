@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlumms4uke6hm"]
+
+[ext_resource type="Script" path="res://world_map/world_map.gd" id="1_xsjd4"]
+[ext_resource type="PackedScene" uid="uid://bvc3vywik1x0p" path="res://world_map/map_event/event.tscn" id="2_vjbkk"]
+[ext_resource type="PackedScene" uid="uid://b7wsjafu4t1hq" path="res://world_map/character_pawn/character_pawn.tscn" id="3_ju4w8"]
+[ext_resource type="Texture2D" uid="uid://c734klld6jd74" path="res://world_map/map_background.png" id="3_wdh0d"]
+[ext_resource type="PackedScene" uid="uid://dy7qfymqew0cs" path="res://world_map/map_cursor/map_cursor.tscn" id="4_0amn6"]
+[ext_resource type="Script" path="res://world_map/background.gd" id="4_viwcq"]
+
+[node name="world_map" type="Node2D"]
+script = ExtResource("1_xsjd4")
+event_scene = ExtResource("2_vjbkk")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_mirroring = Vector2(80, 80)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("3_wdh0d")
+centered = false
+region_enabled = true
+script = ExtResource("4_viwcq")
+
+[node name="Cursor" parent="." instance=ExtResource("4_0amn6")]
+
+[node name="Pawn" parent="." instance=ExtResource("3_ju4w8")]
+
+[node name="Camera2D" type="Camera2D" parent="Pawn"]

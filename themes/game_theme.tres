@@ -1,19 +1,47 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://blkin3xm8152j"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://blkin3xm8152j"]
 
 [ext_resource type="FontFile" uid="uid://bynl315dqw8cf" path="res://themes/LGGothic.ttf" id="1_i8tlw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cka4u"]
 bg_color = Color(0.839216, 0.262745, 0.0941176, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phqk2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0utky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3p20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hv5cn"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cj62e"]
-bg_color = Color(0.74902, 0.0666667, 0, 1)
+content_margin_left = 10.0
+bg_color = Color(0.901961, 0.215686, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxut1"]
+bg_color = Color(0, 0.658824, 0.847059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.807843, 0.847059, 0, 1)
 
 [resource]
 default_base_scale = 1.0
 default_font = ExtResource("1_i8tlw")
 /styles/focus = SubResource("StyleBoxFlat_cka4u")
+Button/colors/font_focus_color = Color(0.419608, 0.709804, 1, 1)
+Button/colors/font_hover_color = Color(0.419608, 0.709804, 1, 1)
+Button/colors/font_pressed_color = Color(0, 0.235294, 0.701961, 1)
 Button/font_sizes/font_size = 30
+Button/styles/focus = SubResource("StyleBoxEmpty_phqk2")
+Button/styles/hover = SubResource("StyleBoxEmpty_0utky")
+Button/styles/normal = SubResource("StyleBoxEmpty_d3p20")
+Button/styles/pressed = SubResource("StyleBoxEmpty_hv5cn")
 Label/styles/focus = SubResource("StyleBoxFlat_cj62e")
+Label/styles/hover = SubResource("StyleBoxFlat_qxut1")
 MarginContainer/constants/margin_bottom = 5
 MarginContainer/constants/margin_left = 5
 MarginContainer/constants/margin_right = 5

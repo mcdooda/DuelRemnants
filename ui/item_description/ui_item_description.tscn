@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp4jnurhaok5p"]
+[gd_scene load_steps=5 format=3 uid="uid://dp4jnurhaok5p"]
 
 [ext_resource type="Script" path="res://ui/item_description/ui_item_description.gd" id="1_661nd"]
 [ext_resource type="Texture2D" uid="uid://dpxsk1kqqt4nm" path="res://themes/border.png" id="2_8pa1s"]
 [ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="3_c17r6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6lj6"]
 
 [node name="ui_item_description" type="NinePatchRect"]
 texture_filter = 1
@@ -60,6 +62,8 @@ size_flags_vertical = 3
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainer/Control"]
 process_mode = 3
 position = Vector2(64, 52)
+sprite_frames = SubResource("SpriteFrames_c6lj6")
+autoplay = "default"
 
 [node name="DescriptionLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
 texture_filter = 1

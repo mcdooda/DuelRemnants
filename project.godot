@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DuelRemnants"
-run/main_scene="res://level_1/level_1.tscn"
+run/main_scene="res://world_map/world_map.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -85,3 +85,8 @@ Right={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
 ]
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.72549, 0.662745, 0.439216, 1)
+textures/canvas_textures/default_texture_filter=0
