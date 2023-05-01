@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://gqcenjx23my2"]
+
+[ext_resource type="Texture2D" uid="uid://bm6uy8cldybbb" path="res://world_map/map_event/icons/mob/icon_death_plague.png" id="1_2eldt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0asgg"]
+atlas = ExtResource("1_2eldt")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmeqe"]
+atlas = ExtResource("1_2eldt")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds4td"]
+atlas = ExtResource("1_2eldt")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70upl"]
+atlas = ExtResource("1_2eldt")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqvrx"]
+atlas = ExtResource("1_2eldt")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hma18"]
+atlas = ExtResource("1_2eldt")
+region = Rect2(120, 0, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0asgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmeqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds4td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70upl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqvrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hma18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]

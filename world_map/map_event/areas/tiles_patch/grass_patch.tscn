@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://3cep8pehkov4"]
+
+[ext_resource type="Script" path="res://world_map/map_event/areas/tiles_patch/tiles_patch.gd" id="1_0u4la"]
+[ext_resource type="TileSet" uid="uid://cx28r85164l3a" path="res://world_map/map_event/areas/tiles/tileset.tres" id="2_w2fcc"]
+[ext_resource type="Shader" uid="uid://h06aofms86a3" path="res://world_map/map_event/areas/tiles_patch/mask_shader.tres" id="3_tkgeu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tyiq8"]
+shader = ExtResource("3_tkgeu")
+
+[node name="grass_patch" type="Node2D"]
+script = ExtResource("1_0u4la")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(180, 90)
+render_target_update_mode = 4
+
+[node name="TileMap" type="TileMap" parent="SubViewport"]
+y_sort_enabled = true
+position = Vector2(53, 36)
+tile_set = ExtResource("2_w2fcc")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(131071, 0, 12, 196607, 0, 6, 262143, 0, 7, 131072, 0, 1, 327679, 0, 6, 262144, 0, 12, 393215, 0, 11, 458751, 0, 3, 393214, 0, 3, 262141, 0, 4, 393216, 0, 1, 327680, 0, 11, 196608, 0, 7, 131073, 0, 4, 65536, 0, 1, 0, 0, 3, -1, 0, 0, 65535, 0, 9, 262145, 0, 7, 131069, 0, 5, 327678, 0, 12, 262142, 0, 10, 196606, 0, 9, 131070, 0, 11, 65534, 0, 3, -2, 0, 5, 524287, 0, 0, 393213, 0, 9, 458750, 0, 1, 524286, 0, 10, 458752, 0, 11, 524288, 0, 8, 589823, 0, 11, 393217, 0, 8, 327681, 0, 1, 262146, 0, 6, 196609, 0, 3, 393218, 0, 3, 458753, 0, 9, 524289, 0, 7, 589824, 0, 12, 655359, 0, 3, 655360, 0, 7, 589822, 0, 10, 524285, 0, 1, 458749, 0, 3, 327677, 0, 8, 196605, 0, 7, 655358, 0, 3, 720895, 0, 10, 786431, 0, 1, 655361, 0, 9, 589825, 0, 2, 524290, 0, 7, 458754, 0, 8, 720896, 0, 12, 786432, 0, 8, 524284, 0, 5, 589821, 0, 2, 393219, 0, 0, 327682, 0, 1, 786430, 0, 6, 720894, 0, 10, 655357, 0, 5, -196609, 0, 6, -131073, 0, 10, -65537, 0, 2, -131074, 0, 0, -65538, 0, 5, -3, 0, 6, -131072, 0, 6, -65536, 0, 3, 1, 0, 8, -65535, 0, 8, -131071, 0, 8, -196608, 0, 7, 65537, 0, 8, 131074, 0, 2, 65538, 0, 11, 3, 0, 3, -65534, 0, 8, 2, 0, 7, 196610, 0, 10, 262147, 0, 6, 196611, 0, 6, 131075, 0, 7, -262142, 0, 5, -327679, 0, 5, -196607, 0, 12, -131070, 0, 11, -196606, 0, 7, -262143, 0, 3, -262144, 0, 8, 65539, 0, 9, -65533, 0, 7, -131069, 0, 1, -327680, 0, 7, -262145, 0, 12)
+
+[node name="ViewportTexture" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tyiq8")

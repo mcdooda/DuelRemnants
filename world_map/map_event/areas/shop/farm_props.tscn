@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dsf85lwe1m3ne"]
 
-[ext_resource type="PackedScene" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_auknw"]
+[ext_resource type="PackedScene" uid="uid://cfqm1tbfuiynd" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_auknw"]
 [ext_resource type="Texture2D" uid="uid://ctvjdwjyxxtsw" path="res://world_map/tiles/buildings/human/windmill.png" id="2_jnt6g"]
 [ext_resource type="Texture2D" uid="uid://cib0u1vqysuys" path="res://world_map/tiles/props/wheat.png" id="3_xsb36"]
 
@@ -165,24 +165,42 @@ animations = [{
 [node name="grass_patch" parent="." instance=ExtResource("1_auknw")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(10.5, -27)
+position = Vector2(15.5, -42)
 sprite_frames = SubResource("SpriteFrames_2ke34")
 autoplay = "default"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(22.5, 7)
+position = Vector2(27.5, -8)
 sprite_frames = SubResource("SpriteFrames_8uyne")
 autoplay = "default"
 frame_progress = 0.456751
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(-25.5, 10)
+position = Vector2(-20.5, -5)
 sprite_frames = SubResource("SpriteFrames_8uyne")
 autoplay = "default"
 frame_progress = 0.3168
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.5, 20)
+position = Vector2(3.5, 5)
+sprite_frames = SubResource("SpriteFrames_8uyne")
+autoplay = "default"
+frame_progress = 0.598013
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.5, 5)
+sprite_frames = SubResource("SpriteFrames_8uyne")
+autoplay = "default"
+frame_progress = 0.598013
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 17)
+sprite_frames = SubResource("SpriteFrames_8uyne")
+autoplay = "default"
+frame_progress = 0.598013
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(-20, 16)
 sprite_frames = SubResource("SpriteFrames_8uyne")
 autoplay = "default"
 frame_progress = 0.598013

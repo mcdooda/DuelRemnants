@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bg1chgfqtxcar"]
 
-[ext_resource type="PackedScene" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_lx280"]
+[ext_resource type="PackedScene" uid="uid://3cep8pehkov4" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_lx280"]
 [ext_resource type="Texture2D" uid="uid://c2xy6eamwjshq" path="res://world_map/tiles/buildings/barbarians/watch_tower.png" id="2_kvjk0"]
 
 [node name="WatchTower" type="Node2D"]

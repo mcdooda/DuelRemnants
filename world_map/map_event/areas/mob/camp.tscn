@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bq5ylv273uxjb"]
 
-[ext_resource type="PackedScene" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_hgqeh"]
+[ext_resource type="PackedScene" uid="uid://cfqm1tbfuiynd" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_hgqeh"]
 [ext_resource type="Texture2D" uid="uid://dywefs0bxhyjd" path="res://world_map/tiles/buildings/barbarians/hut.png" id="2_0iw26"]
 [ext_resource type="Texture2D" uid="uid://cfun4xelcqv4h" path="res://world_map/tiles/buildings/barbarians/barracks.png" id="2_l4rnu"]
 

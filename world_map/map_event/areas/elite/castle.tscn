@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5jr3qc48mgwj"]
+
+[ext_resource type="Texture2D" uid="uid://bf58hy7a861s2" path="res://world_map/tiles/buildings/human/wall.png" id="1_k23na"]
+[ext_resource type="Texture2D" uid="uid://b0yhqqoa5x7h" path="res://world_map/tiles/buildings/human/tower_1.png" id="2_rxkbw"]
+
+[node name="Castle" type="Node2D"]
+
+[node name="Wall" type="Sprite2D" parent="."]
+texture = ExtResource("1_k23na")
+region_enabled = true
+region_rect = Rect2(0, 129, 42, 43)
+
+[node name="Wall2" type="Sprite2D" parent="."]
+position = Vector2(20, 10)
+texture = ExtResource("1_k23na")
+region_enabled = true
+region_rect = Rect2(0, 129, 42, 43)
+
+[node name="Wall3" type="Sprite2D" parent="."]
+position = Vector2(40, 20)
+texture = ExtResource("1_k23na")
+region_enabled = true
+region_rect = Rect2(0, 129, 42, 43)
+
+[node name="Tower" type="Sprite2D" parent="."]
+position = Vector2(57, 24)
+texture = ExtResource("2_rxkbw")
+region_rect = Rect2(0, 129, 42, 43)
+
+[node name="Tower2" type="Sprite2D" parent="."]
+position = Vector2(57, 24)
+texture = ExtResource("2_rxkbw")
+region_rect = Rect2(0, 129, 42, 43)

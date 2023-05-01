@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtqi6l5lqynch"]
+
+[ext_resource type="Texture2D" uid="uid://bygkt6157hjg8" path="res://world_map/tiles/props/chest.png" id="2_2mcob"]
+[ext_resource type="Texture2D" uid="uid://basrlhaouny44" path="res://world_map/tiles/props/crate2.png" id="3_ad8dd"]
+[ext_resource type="Texture2D" uid="uid://p7fq1n5argm6" path="res://world_map/tiles/props/crate1.png" id="4_pikdq"]
+[ext_resource type="PackedScene" uid="uid://c6w6tisst5o6h" path="res://world_map/map_event/areas/tiles_patch/plank_patch.tscn" id="4_wtndr"]
+
+[node name="Chest" type="Node2D"]
+
+[node name="PlankPatch" parent="." instance=ExtResource("4_wtndr")]
+
+[node name="ChestSprite5" type="Sprite2D" parent="."]
+position = Vector2(-7, -9)
+texture = ExtResource("2_2mcob")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(80, 0, 20, 18)
+
+[node name="ChestSprite" type="Sprite2D" parent="."]
+position = Vector2(11, -3)
+texture = ExtResource("2_2mcob")
+region_enabled = true
+region_rect = Rect2(80, 20, 20, 18)
+
+[node name="ChestSprite4" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
+texture = ExtResource("2_2mcob")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(80, 20, 20, 18)
+
+[node name="ChestSprite3" type="Sprite2D" parent="."]
+position = Vector2(15, 5)
+texture = ExtResource("2_2mcob")
+region_enabled = true
+region_rect = Rect2(80, 0, 20, 18)
+
+[node name="ChestSprite6" type="Sprite2D" parent="."]
+position = Vector2(27, -1)
+texture = ExtResource("3_ad8dd")
+region_rect = Rect2(80, 0, 20, 18)
+
+[node name="ChestSprite7" type="Sprite2D" parent="."]
+position = Vector2(-4, 11)
+texture = ExtResource("4_pikdq")
+region_rect = Rect2(80, 0, 20, 18)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvflah7b46huw"]
+
+[ext_resource type="PackedScene" uid="uid://cfqm1tbfuiynd" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_45ab6"]
+[ext_resource type="Texture2D" uid="uid://dhq5efye7i63k" path="res://world_map/tiles/props/tree1.png" id="2_h1cr2"]
+[ext_resource type="Texture2D" uid="uid://dssfp3m461fmk" path="res://world_map/tiles/props/pine1.png" id="3_3q3dc"]
+[ext_resource type="Texture2D" uid="uid://behck0aniv8yf" path="res://world_map/tiles/props/pine2.png" id="4_w4mke"]
+
+[node name="Forest" type="Node2D"]
+
+[node name="grass_patch" parent="." instance=ExtResource("1_45ab6")]
+
+[node name="tree" type="Sprite2D" parent="."]
+position = Vector2(4, -49)
+texture = ExtResource("2_h1cr2")
+
+[node name="tree3" type="Sprite2D" parent="."]
+position = Vector2(-26, -36)
+texture = ExtResource("2_h1cr2")
+
+[node name="pine" type="Sprite2D" parent="."]
+position = Vector2(3, -22)
+texture = ExtResource("3_3q3dc")
+
+[node name="pine2" type="Sprite2D" parent="."]
+position = Vector2(-30, -11)
+texture = ExtResource("3_3q3dc")
+
+[node name="tree4" type="Sprite2D" parent="."]
+position = Vector2(19, 10)
+texture = ExtResource("2_h1cr2")
+
+[node name="tree2" type="Sprite2D" parent="."]
+position = Vector2(-23, 11)
+texture = ExtResource("2_h1cr2")
+
+[node name="pine3" type="Sprite2D" parent="."]
+position = Vector2(39, 24)
+texture = ExtResource("3_3q3dc")
+
+[node name="pine4" type="Sprite2D" parent="."]
+position = Vector2(-1, 40)
+texture = ExtResource("4_w4mke")
+
+[node name="pine5" type="Sprite2D" parent="."]
+position = Vector2(-63, 4)
+texture = ExtResource("4_w4mke")
+
+[node name="pine6" type="Sprite2D" parent="."]
+position = Vector2(52, -18)
+texture = ExtResource("4_w4mke")

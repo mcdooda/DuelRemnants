@@ -5,18 +5,17 @@ class_name MapEvent
 const margin = 10
 
 var children: Array = []
-enum EventType {START, MOB, BOSS, SHOP, RANDOM, WEAPON}
+enum EventType {START, MOB, ELITE, BOSS, SHOP, TREASURE, RANDOM, WEAPON}
 var type := EventType.MOB
 
-var prop_scene : PackedScene
-
-func _ready():
-	load_prop()
+var area_scene : PackedScene
+var area: Node2D
 
 func randomize_type(_weight: int):
 	var rng = RandomNumberGenerator.new()
 	type = rng.randi_range(EventType.MOB, EventType.WEAPON) as EventType
 	load_animation()
+	load_prop()
 
 func event_type_string():
 	return EventType.keys()[type]
@@ -26,11 +25,13 @@ func add_child_event(child):
 		children.append(child)
 		
 func load_prop():
+	if area:
+		area.queue_free()
 	var random_scene = SceneUtils.find_random_file_with_extension_from_path("res://world_map/map_event/areas/" + event_type_string(), "tscn")
 	if random_scene:
-		prop_scene = ResourceLoader.load(random_scene)
-		var instance = prop_scene.instantiate()
-		add_child(instance)
+		area_scene = ResourceLoader.load(random_scene)
+		area = area_scene.instantiate()
+		add_child(area)
 
 func load_animation():
 	var path = scene_file_path.get_base_dir() + "/icons/" + event_type_string()

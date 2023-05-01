@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8x5dh07bbdjn"
-path="res://.godot/imported/tile_atlas.png-83e8a53bd16a594e7c342fcd695ab23c.ctex"
+uid="uid://bw6338y6eibbw"
+path="res://.godot/imported/rock5.png-96acc41f2441d20410d3e139b257fa4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world_map/map_event/areas/grass_patch/tile_atlas.png"
-dest_files=["res://.godot/imported/tile_atlas.png-83e8a53bd16a594e7c342fcd695ab23c.ctex"]
+source_file="res://world_map/tiles/props/rock5.png"
+dest_files=["res://.godot/imported/rock5.png-96acc41f2441d20410d3e139b257fa4f.ctex"]
 
 [params]
 

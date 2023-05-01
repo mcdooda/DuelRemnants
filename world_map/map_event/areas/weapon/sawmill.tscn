@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0q8qjikwc5xd"]
+
+[ext_resource type="PackedScene" uid="uid://cfqm1tbfuiynd" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_eadow"]
+[ext_resource type="Texture2D" uid="uid://b4oe7sve8f3qv" path="res://world_map/tiles/buildings/human/sawmill.png" id="2_gmjvr"]
+[ext_resource type="Texture2D" uid="uid://p7fq1n5argm6" path="res://world_map/tiles/props/crate1.png" id="3_x6m5w"]
+[ext_resource type="Texture2D" uid="uid://basrlhaouny44" path="res://world_map/tiles/props/crate2.png" id="4_jg1yf"]
+[ext_resource type="Texture2D" uid="uid://dhq5efye7i63k" path="res://world_map/tiles/props/tree1.png" id="5_cu85b"]
+
+[node name="Sawmill" type="Node2D"]
+
+[node name="grass_patch" parent="." instance=ExtResource("1_eadow")]
+
+[node name="Sawmill" type="Sprite2D" parent="."]
+position = Vector2(1, -13)
+texture = ExtResource("2_gmjvr")
+region_enabled = true
+region_rect = Rect2(0, 0, 51, 46)
+
+[node name="Crate" type="Sprite2D" parent="."]
+position = Vector2(21, 12)
+texture = ExtResource("3_x6m5w")
+region_rect = Rect2(0, 0, 51, 46)
+
+[node name="Crate2" type="Sprite2D" parent="."]
+position = Vector2(-11, 20)
+texture = ExtResource("4_jg1yf")
+region_rect = Rect2(0, 0, 51, 46)
+
+[node name="Crate3" type="Sprite2D" parent="."]
+position = Vector2(-32, -6)
+texture = ExtResource("4_jg1yf")
+region_rect = Rect2(0, 0, 51, 46)
+
+[node name="Crate4" type="Sprite2D" parent="."]
+position = Vector2(-33, 6)
+texture = ExtResource("3_x6m5w")
+region_rect = Rect2(0, 0, 51, 46)
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(48, -14)
+texture = ExtResource("5_cu85b")
+region_rect = Rect2(0, 0, 51, 46)
