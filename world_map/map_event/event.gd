@@ -5,7 +5,7 @@ class_name MapEvent
 const margin = 10
 
 var children: Array = []
-enum EventType {START, MOB, ELITE, BOSS, SHOP, TREASURE, RANDOM, WEAPON}
+enum EventType {START, BOSS, MOB, ELITE, SHOP, TREASURE, RANDOM, WEAPON}
 var type := EventType.MOB
 
 var area_scene : PackedScene

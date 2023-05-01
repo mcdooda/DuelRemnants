@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp75q04pu8aas"]
 
-[ext_resource type="PackedScene" uid="uid://3cep8pehkov4" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_pclih"]
+[ext_resource type="PackedScene" uid="uid://4jqecgtwpl10" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_pclih"]
 [ext_resource type="Texture2D" uid="uid://d4ktkgj3ksb54" path="res://world_map/tiles/props/minerals.png" id="2_j6onm"]
 
 [node name="Crystals" type="Node2D"]

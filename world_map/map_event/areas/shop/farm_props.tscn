@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dsf85lwe1m3ne"]
 
-[ext_resource type="PackedScene" uid="uid://3cep8pehkov4" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_a6nqx"]
+[ext_resource type="PackedScene" uid="uid://4jqecgtwpl10" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_a6nqx"]
 [ext_resource type="Texture2D" uid="uid://ctvjdwjyxxtsw" path="res://world_map/tiles/buildings/human/windmill.png" id="2_jnt6g"]
 [ext_resource type="Texture2D" uid="uid://cib0u1vqysuys" path="res://world_map/tiles/props/wheat.png" id="3_xsb36"]
 

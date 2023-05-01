@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bq5ylv273uxjb"]
 
 [ext_resource type="Texture2D" uid="uid://dywefs0bxhyjd" path="res://world_map/tiles/buildings/barbarians/hut.png" id="2_0iw26"]
-[ext_resource type="PackedScene" uid="uid://3cep8pehkov4" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="2_gpi11"]
+[ext_resource type="PackedScene" uid="uid://4jqecgtwpl10" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="2_gpi11"]
 [ext_resource type="Texture2D" uid="uid://cfun4xelcqv4h" path="res://world_map/tiles/buildings/barbarians/barracks.png" id="2_l4rnu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxsv7"]

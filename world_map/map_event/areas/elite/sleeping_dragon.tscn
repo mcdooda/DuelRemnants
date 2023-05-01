@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://c70de60fdft14"]
+
+[ext_resource type="Texture2D" uid="uid://8o788ilng8sw" path="res://world_map/tiles/buildings/wild/sleeping-dragon.png" id="1_oe4tf"]
+[ext_resource type="PackedScene" uid="uid://cfqm1tbfuiynd" path="res://world_map/map_event/areas/tiles_patch/gold_patch.tscn" id="1_ui3ae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvcdu"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(0, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d704n"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(57, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckm62"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(114, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kkey"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(171, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfx7l"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(228, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7soh1"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(285, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olfds"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(342, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3y7o"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(399, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvp2f"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(456, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewcwc"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(513, 0, 57, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw7bt"]
+atlas = ExtResource("1_oe4tf")
+region = Rect2(570, 0, 57, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4qmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvcdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d704n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckm62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kkey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfx7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7soh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olfds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3y7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvp2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewcwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw7bt")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 6.0
+}]
+
+[node name="sleeping_dragon" type="Node2D"]
+
+[node name="gold_patch" parent="." instance=ExtResource("1_ui3ae")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -19)
+sprite_frames = SubResource("SpriteFrames_q4qmo")
+animation = &"new_animation"
+autoplay = "new_animation"

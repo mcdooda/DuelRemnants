@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://3cep8pehkov4"]
+[gd_scene load_steps=5 format=3 uid="uid://4jqecgtwpl10"]
 
 [ext_resource type="Script" path="res://world_map/map_event/areas/tiles_patch/tiles_patch.gd" id="1_0u4la"]
 [ext_resource type="TileSet" uid="uid://cx28r85164l3a" path="res://world_map/map_event/areas/tiles/tileset.tres" id="2_w2fcc"]

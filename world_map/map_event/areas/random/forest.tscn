@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhq5efye7i63k" path="res://world_map/tiles/props/tree1.png" id="2_h1cr2"]
 [ext_resource type="Texture2D" uid="uid://dssfp3m461fmk" path="res://world_map/tiles/props/pine1.png" id="3_3q3dc"]
-[ext_resource type="PackedScene" uid="uid://3cep8pehkov4" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="4_renab"]
+[ext_resource type="PackedScene" uid="uid://4jqecgtwpl10" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="4_renab"]
 [ext_resource type="Texture2D" uid="uid://behck0aniv8yf" path="res://world_map/tiles/props/pine2.png" id="4_w4mke"]
 
 [node name="Forest" type="Node2D"]

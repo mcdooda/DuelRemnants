@@ -57,5 +57,5 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_e6jav")
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("4_e2j7y")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.423529, 0.290196, 0.145098, 1)
 text = "Old town name"

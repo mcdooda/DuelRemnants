@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlumms4uke6hm"]
+[gd_scene load_steps=8 format=3 uid="uid://dlumms4uke6hm"]
 
 [ext_resource type="Script" path="res://world_map/world_map.gd" id="1_xsjd4"]
 [ext_resource type="PackedScene" uid="uid://bvc3vywik1x0p" path="res://world_map/map_event/event.tscn" id="2_vjbkk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c734klld6jd74" path="res://world_map/map_background.png" id="3_wdh0d"]
 [ext_resource type="PackedScene" uid="uid://dy7qfymqew0cs" path="res://world_map/map_cursor/map_cursor.tscn" id="4_0amn6"]
 [ext_resource type="Script" path="res://world_map/background.gd" id="4_viwcq"]
+[ext_resource type="Script" path="res://world_map/camera.gd" id="6_446hw"]
 
 [node name="world_map" type="Node2D"]
 script = ExtResource("1_xsjd4")
@@ -26,6 +27,7 @@ script = ExtResource("4_viwcq")
 
 [node name="Cursor" parent="." instance=ExtResource("4_0amn6")]
 
-[node name="Pawn" parent="." instance=ExtResource("3_ju4w8")]
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("6_446hw")
 
-[node name="Camera2D" type="Camera2D" parent="Pawn"]
+[node name="Pawn" parent="." instance=ExtResource("3_ju4w8")]

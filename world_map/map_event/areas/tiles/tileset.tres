@@ -1,8 +1,10 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cx28r85164l3a"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cx28r85164l3a"]
 
 [ext_resource type="Texture2D" uid="uid://8x5dh07bbdjn" path="res://world_map/map_event/areas/tiles/grass_atlas.png" id="1_oelxe"]
 [ext_resource type="Texture2D" uid="uid://c8agagsyrs0k3" path="res://world_map/map_event/areas/tiles/tiles_atlas.png" id="2_sctup"]
 [ext_resource type="Texture2D" uid="uid://sppc58r0u7nl" path="res://world_map/map_event/areas/tiles/plank_atlas.png" id="3_b088p"]
+[ext_resource type="Texture2D" uid="uid://igkh41ghd3g1" path="res://world_map/map_event/areas/tiles/gold_atlas.png" id="4_alur3"]
+[ext_resource type="Texture2D" uid="uid://cvc3c2b7pxy66" path="res://world_map/map_event/areas/tiles/cavern_atlas.png" id="5_liy35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mn3qs"]
 texture = ExtResource("1_oelxe")
@@ -101,6 +103,22 @@ texture = ExtResource("3_b088p")
 texture_region_size = Vector2i(42, 38)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qmgs"]
+texture = ExtResource("4_alur3")
+texture_region_size = Vector2i(40, 45)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyein"]
+texture = ExtResource("5_liy35")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
 [resource]
 tile_shape = 1
 tile_size = Vector2i(40, 20)
@@ -108,3 +126,5 @@ occlusion_layer_0/light_mask = 1
 sources/0 = SubResource("TileSetAtlasSource_mn3qs")
 sources/1 = SubResource("TileSetAtlasSource_fca4v")
 sources/2 = SubResource("TileSetAtlasSource_r85m8")
+sources/3 = SubResource("TileSetAtlasSource_0qmgs")
+sources/4 = SubResource("TileSetAtlasSource_lyein")

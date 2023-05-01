@@ -1,6 +1,6 @@
 extends Node2D
 
-const plane_len = 3000
+const plane_len = 1200
 @export var path_count = 5
 @export var distance_between_points = 180
 
@@ -30,9 +30,10 @@ func _ready():
 
 	$Pawn.global_position = events[0].global_position
 	$Cursor.assign_event_children(events[0])
-	$Pawn.connect("objective_reached", load_level)
+	#$Pawn.connect("objective_reached", load_level)
 	$Pawn.z_index = 2
 	$Cursor.z_index = 1
+	$Camera.global_position = $Pawn.global_position
 
 func load_level():
 	var selected_objective = $Pawn.objective_event
