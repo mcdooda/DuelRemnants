@@ -5,6 +5,7 @@ var index := 0
 
 # Called when the node enters the scene tree for the first time.
 func assign_event_children(event: MapEvent):
+	index = 0
 	event_children = event.children
 	if not event_children.is_empty():
 		change_position()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvc3vywik1x0p"]
+[gd_scene load_steps=8 format=3 uid="uid://bvc3vywik1x0p"]
 
 [ext_resource type="SpriteFrames" uid="uid://culdmf87f7kuf" path="res://world_map/map_event/icons/boss/icon_dark_fire_sacrifice.tres" id="1_8occq"]
 [ext_resource type="Script" path="res://world_map/map_event/event.gd" id="1_s0x2j"]
+[ext_resource type="Texture2D" uid="uid://w6e57qc28fap" path="res://ui/world_map_labels/map_names_red.png" id="3_33rw1"]
 [ext_resource type="Texture2D" uid="uid://cqst4nb2ycivo" path="res://ui/world_map_labels/map_names.png" id="3_euoqj"]
 [ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="4_e2j7y"]
 
@@ -18,6 +19,7 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.619332
 script = ExtResource("1_s0x2j")
+elite_background_texture = ExtResource("3_33rw1")
 
 [node name="EventNamePanel" type="Control" parent="."]
 layout_mode = 3

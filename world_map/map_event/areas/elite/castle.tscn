@@ -1,33 +1,99 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5jr3qc48mgwj"]
+[gd_scene load_steps=13 format=3 uid="uid://c5jr3qc48mgwj"]
 
 [ext_resource type="Texture2D" uid="uid://bf58hy7a861s2" path="res://world_map/tiles/buildings/human/wall.png" id="1_k23na"]
+[ext_resource type="Texture2D" uid="uid://dssfp3m461fmk" path="res://world_map/tiles/props/pine1.png" id="1_m32o3"]
+[ext_resource type="Texture2D" uid="uid://doextcy20c8bw" path="res://world_map/tiles/buildings/human/tower_2.png" id="1_njrq4"]
+[ext_resource type="PackedScene" uid="uid://4jqecgtwpl10" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_t2v0d"]
+[ext_resource type="Texture2D" uid="uid://behck0aniv8yf" path="res://world_map/tiles/props/pine2.png" id="2_m2wuc"]
 [ext_resource type="Texture2D" uid="uid://b0yhqqoa5x7h" path="res://world_map/tiles/buildings/human/tower_1.png" id="2_rxkbw"]
+[ext_resource type="Texture2D" uid="uid://rgral5a3xwc3" path="res://world_map/tiles/buildings/human/house.png" id="2_vkajg"]
+[ext_resource type="Texture2D" uid="uid://cpp2dttphvg6s" path="res://world_map/tiles/buildings/human/house_3.png" id="4_hscw6"]
+[ext_resource type="Texture2D" uid="uid://c14qq6o13nr2x" path="res://world_map/tiles/buildings/human/wooden_wall.png" id="8_6phm0"]
+[ext_resource type="Texture2D" uid="uid://kwwo5g85xqwi" path="res://world_map/tiles/props/rock2.png" id="9_3w8bt"]
+[ext_resource type="Texture2D" uid="uid://bed34j80hpidb" path="res://world_map/tiles/props/rock4.png" id="10_b8oym"]
+[ext_resource type="Texture2D" uid="uid://bw6338y6eibbw" path="res://world_map/tiles/props/rock5.png" id="11_cacyu"]
 
 [node name="Castle" type="Node2D"]
 
-[node name="Wall" type="Sprite2D" parent="."]
+[node name="grass_patch" parent="." instance=ExtResource("1_t2v0d")]
+
+[node name="Pine1" type="Sprite2D" parent="."]
+position = Vector2(-64, -33)
+texture = ExtResource("1_m32o3")
+
+[node name="Pine2" type="Sprite2D" parent="."]
+position = Vector2(-77, -16)
+texture = ExtResource("2_m2wuc")
+
+[node name="Tower3" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-2, -44)
+texture = ExtResource("1_njrq4")
+region_enabled = true
+region_rect = Rect2(0, 0, 35, 62)
+
+[node name="middle_house2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-18, -15)
+texture = ExtResource("2_vkajg")
+region_enabled = true
+region_rect = Rect2(0, 10, 40, 40)
+
+[node name="Tower5" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-38, -29)
+texture = ExtResource("1_njrq4")
+region_enabled = true
+region_rect = Rect2(0, 0, 35, 62)
+
+[node name="middle_house4" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(15, -16)
+texture = ExtResource("2_vkajg")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 10, 40, 40)
+
+[node name="middle_house" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(31, -20)
+texture = ExtResource("4_hscw6")
+
+[node name="middle_house5" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(15, -6)
+texture = ExtResource("2_vkajg")
+region_enabled = true
+region_rect = Rect2(0, 10, 40, 40)
+
+[node name="Tower6" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-17, -8)
 texture = ExtResource("1_k23na")
 region_enabled = true
-region_rect = Rect2(0, 129, 42, 43)
+region_rect = Rect2(0, 45, 42, 43)
 
-[node name="Wall2" type="Sprite2D" parent="."]
-position = Vector2(20, 10)
-texture = ExtResource("1_k23na")
-region_enabled = true
-region_rect = Rect2(0, 129, 42, 43)
-
-[node name="Wall3" type="Sprite2D" parent="."]
-position = Vector2(40, 20)
-texture = ExtResource("1_k23na")
-region_enabled = true
-region_rect = Rect2(0, 129, 42, 43)
-
-[node name="Tower" type="Sprite2D" parent="."]
-position = Vector2(57, 24)
+[node name="CentralTower" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, -5)
 texture = ExtResource("2_rxkbw")
+flip_h = true
 region_rect = Rect2(0, 129, 42, 43)
 
-[node name="Tower2" type="Sprite2D" parent="."]
-position = Vector2(57, 24)
-texture = ExtResource("2_rxkbw")
-region_rect = Rect2(0, 129, 42, 43)
+[node name="WoodenWall" type="Sprite2D" parent="."]
+position = Vector2(40, -14)
+texture = ExtResource("8_6phm0")
+region_enabled = true
+region_rect = Rect2(0, 0, 40, 40)
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(1, 31)
+texture = ExtResource("9_3w8bt")
+
+[node name="Rock4" type="Sprite2D" parent="."]
+position = Vector2(24, 26)
+texture = ExtResource("10_b8oym")
+
+[node name="Rock5" type="Sprite2D" parent="."]
+position = Vector2(60, 1)
+texture = ExtResource("11_cacyu")

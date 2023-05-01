@@ -16,7 +16,7 @@ position = Vector2(2, -21)
 sprite_frames = ExtResource("2_h5tg5")
 animation = &"breathing"
 autoplay = "breathing"
-frame_progress = 0.581728
+frame_progress = 0.0121337
 script = ExtResource("3_tp3f5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

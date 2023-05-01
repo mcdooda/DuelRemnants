@@ -2,7 +2,7 @@ extends Node2D
 
 const plane_len = 1200
 @export var path_count = 5
-@export var distance_between_points = 180
+@export var distance_between_points = 200
 
 const map_scale = 20.0
 
@@ -30,7 +30,7 @@ func _ready():
 
 	$Pawn.global_position = events[0].global_position
 	$Cursor.assign_event_children(events[0])
-	#$Pawn.connect("objective_reached", load_level)
+	$Pawn.connect("objective_reached", load_level)
 	$Pawn.z_index = 2
 	$Cursor.z_index = 1
 	$Camera.global_position = $Pawn.global_position
@@ -39,6 +39,7 @@ func load_level():
 	var selected_objective = $Pawn.objective_event
 	if selected_objective != events[0]:
 		get_tree().change_scene_to_file("res://levels/level_1/level_1.tscn")
+	$Cursor.assign_event_children(selected_objective)
 
 func _unhandled_input(event):
 	if $Pawn.is_moving():
