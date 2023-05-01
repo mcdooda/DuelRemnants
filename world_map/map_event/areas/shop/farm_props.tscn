@@ -1,85 +1,85 @@
 [gd_scene load_steps=26 format=3 uid="uid://dsf85lwe1m3ne"]
 
-[ext_resource type="PackedScene" uid="uid://cfqm1tbfuiynd" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_auknw"]
+[ext_resource type="PackedScene" uid="uid://3cep8pehkov4" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_a6nqx"]
 [ext_resource type="Texture2D" uid="uid://ctvjdwjyxxtsw" path="res://world_map/tiles/buildings/human/windmill.png" id="2_jnt6g"]
 [ext_resource type="Texture2D" uid="uid://cib0u1vqysuys" path="res://world_map/tiles/props/wheat.png" id="3_xsb36"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ruxyp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c007"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(0, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v52hb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h1xi"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(62, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pds3g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ai0e"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(124, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bh30o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl0q7"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(186, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vfseu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrnxi"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(248, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukidm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_blk2d"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(310, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ih21n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxx6g"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(372, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xn7g2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ld5s"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(434, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iguu8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbi85"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(496, 0, 62, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_obvu6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jww3i"]
 atlas = ExtResource("2_jnt6g")
 region = Rect2(558, 0, 62, 74)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2ke34"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mswg2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ruxyp")
+"texture": SubResource("AtlasTexture_1c007")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v52hb")
+"texture": SubResource("AtlasTexture_0h1xi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pds3g")
+"texture": SubResource("AtlasTexture_3ai0e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bh30o")
+"texture": SubResource("AtlasTexture_cl0q7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vfseu")
+"texture": SubResource("AtlasTexture_wrnxi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ukidm")
+"texture": SubResource("AtlasTexture_blk2d")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ih21n")
+"texture": SubResource("AtlasTexture_cxx6g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xn7g2")
+"texture": SubResource("AtlasTexture_8ld5s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iguu8")
+"texture": SubResource("AtlasTexture_jbi85")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_obvu6")
+"texture": SubResource("AtlasTexture_jww3i")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha70h"]
@@ -162,12 +162,13 @@ animations = [{
 
 [node name="farm" type="Node2D"]
 
-[node name="grass_patch" parent="." instance=ExtResource("1_auknw")]
+[node name="grass_patch" parent="." instance=ExtResource("1_a6nqx")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(15.5, -42)
-sprite_frames = SubResource("SpriteFrames_2ke34")
+[node name="Windmill" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, -41)
+sprite_frames = SubResource("SpriteFrames_mswg2")
 autoplay = "default"
+frame_progress = 0.761586
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(27.5, -8)
@@ -188,7 +189,7 @@ autoplay = "default"
 frame_progress = 0.598013
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
-position = Vector2(3.5, 5)
+position = Vector2(48, 3)
 sprite_frames = SubResource("SpriteFrames_8uyne")
 autoplay = "default"
 frame_progress = 0.598013

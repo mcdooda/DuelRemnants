@@ -10,12 +10,14 @@ var type := EventType.MOB
 
 var area_scene : PackedScene
 var area: Node2D
+@onready var event_label = get_node("EventNamePanel/PanelContainer/PanelContainer/Label")
 
 func randomize_type(_weight: int):
 	var rng = RandomNumberGenerator.new()
 	type = rng.randi_range(EventType.MOB, EventType.WEAPON) as EventType
 	load_animation()
 	load_prop()
+	event_label.text = event_type_string()
 
 func event_type_string():
 	return EventType.keys()[type]
@@ -39,7 +41,6 @@ func load_animation():
 	var icone_sprite_frame: SpriteFrames = ResourceLoader.load(animation_resource)
 	set_sprite_frames(icone_sprite_frame)
 	play("default")
-
 
 func set_type(event_type: EventType):
 	type = event_type

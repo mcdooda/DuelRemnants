@@ -1,61 +1,60 @@
 [gd_scene load_steps=10 format=3 uid="uid://bq5ylv273uxjb"]
 
-[ext_resource type="PackedScene" uid="uid://cfqm1tbfuiynd" path="res://world_map/map_event/areas/grass_patch/grass_patch.tscn" id="1_hgqeh"]
 [ext_resource type="Texture2D" uid="uid://dywefs0bxhyjd" path="res://world_map/tiles/buildings/barbarians/hut.png" id="2_0iw26"]
+[ext_resource type="PackedScene" uid="uid://3cep8pehkov4" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="2_gpi11"]
 [ext_resource type="Texture2D" uid="uid://cfun4xelcqv4h" path="res://world_map/tiles/buildings/barbarians/barracks.png" id="2_l4rnu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a4a4p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxsv7"]
 atlas = ExtResource("2_l4rnu")
 region = Rect2(0, 0, 67, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6fjr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxfc7"]
 atlas = ExtResource("2_l4rnu")
 region = Rect2(67, 0, 67, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_agd3p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_es2oa"]
 atlas = ExtResource("2_l4rnu")
 region = Rect2(134, 0, 67, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iyehy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxc35"]
 atlas = ExtResource("2_l4rnu")
 region = Rect2(201, 0, 67, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fo8lj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqrc0"]
 atlas = ExtResource("2_l4rnu")
 region = Rect2(268, 0, 67, 58)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jvrrw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s3ar"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a4a4p")
+"texture": SubResource("AtlasTexture_nxsv7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h6fjr")
+"texture": SubResource("AtlasTexture_cxfc7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_agd3p")
+"texture": SubResource("AtlasTexture_es2oa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iyehy")
+"texture": SubResource("AtlasTexture_yxc35")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fo8lj")
+"texture": SubResource("AtlasTexture_jqrc0")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [node name="camp" type="Node2D"]
 
-[node name="grass_patch" parent="." instance=ExtResource("1_hgqeh")]
+[node name="grass_patch" parent="." instance=ExtResource("2_gpi11")]
 
-[node name="barrack" type="AnimatedSprite2D" parent="."]
-position = Vector2(-10.5, -17)
-sprite_frames = SubResource("SpriteFrames_jvrrw")
-autoplay = "default"
-frame_progress = 0.570921
+[node name="Barracks" type="AnimatedSprite2D" parent="."]
+position = Vector2(-18, -14)
+sprite_frames = SubResource("SpriteFrames_3s3ar")
+frame_progress = 0.775286
 
 [node name="hut2" type="Sprite2D" parent="."]
 position = Vector2(24.5, 7)
