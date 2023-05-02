@@ -48,7 +48,7 @@ func set_type(event_type: EventType):
 		event_label_background.texture = elite_background_texture
 	load_animation()
 	load_prop()
-	event_label.text = event_type_string()
+	event_label.text = event_type_string().capitalize() 
 
 func _draw():
 	if type == EventType.START:

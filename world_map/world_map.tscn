@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlumms4uke6hm"]
+[gd_scene load_steps=10 format=3 uid="uid://dlumms4uke6hm"]
 
 [ext_resource type="Script" path="res://world_map/world_map.gd" id="1_xsjd4"]
 [ext_resource type="PackedScene" uid="uid://bvc3vywik1x0p" path="res://world_map/map_event/event.tscn" id="2_vjbkk"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dy7qfymqew0cs" path="res://world_map/map_cursor/map_cursor.tscn" id="4_0amn6"]
 [ext_resource type="Script" path="res://world_map/background.gd" id="4_viwcq"]
 [ext_resource type="Script" path="res://world_map/camera.gd" id="6_446hw"]
+[ext_resource type="Texture2D" uid="uid://dstgammqax812" path="res://world_map/tiles/map_props/mountain.png" id="9_d6qs7"]
+[ext_resource type="Texture2D" uid="uid://c4tucpp6u811" path="res://world_map/tiles/map_props/mountain2.png" id="10_mjg0k"]
 
 [node name="world_map" type="Node2D"]
 script = ExtResource("1_xsjd4")
@@ -24,6 +26,136 @@ texture = ExtResource("3_wdh0d")
 centered = false
 region_enabled = true
 script = ExtResource("4_viwcq")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="BigMountain" type="Sprite2D" parent="Props"]
+position = Vector2(210, 620)
+texture = ExtResource("9_d6qs7")
+
+[node name="BigMountain2" type="Sprite2D" parent="Props"]
+position = Vector2(261, 645)
+texture = ExtResource("9_d6qs7")
+
+[node name="BigMountain3" type="Sprite2D" parent="Props"]
+position = Vector2(176, 671)
+texture = ExtResource("9_d6qs7")
+
+[node name="BigMountain5" type="Sprite2D" parent="Props"]
+position = Vector2(671, 295)
+texture = ExtResource("9_d6qs7")
+
+[node name="BigMountain6" type="Sprite2D" parent="Props"]
+position = Vector2(643, 307)
+texture = ExtResource("9_d6qs7")
+
+[node name="BigMountain7" type="Sprite2D" parent="Props"]
+position = Vector2(688, 327)
+texture = ExtResource("9_d6qs7")
+
+[node name="BigMountain8" type="Sprite2D" parent="Props"]
+position = Vector2(758, 761)
+texture = ExtResource("9_d6qs7")
+
+[node name="SmallMountain" type="Sprite2D" parent="Props"]
+position = Vector2(216, 649)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain12" type="Sprite2D" parent="Props"]
+position = Vector2(180, 622)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain13" type="Sprite2D" parent="Props"]
+position = Vector2(192, 692)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain2" type="Sprite2D" parent="Props"]
+position = Vector2(285, 645)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain3" type="Sprite2D" parent="Props"]
+position = Vector2(301, 671)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain6" type="Sprite2D" parent="Props"]
+position = Vector2(747, 732)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain7" type="Sprite2D" parent="Props"]
+position = Vector2(727, 739)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain8" type="Sprite2D" parent="Props"]
+position = Vector2(775, 768)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain9" type="Sprite2D" parent="Props"]
+position = Vector2(731, 767)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain10" type="Sprite2D" parent="Props"]
+position = Vector2(771, 771)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain11" type="Sprite2D" parent="Props"]
+position = Vector2(761, 513)
+texture = ExtResource("10_mjg0k")
+
+[node name="Node2D" type="Node2D" parent="Props"]
+position = Vector2(-693, -982)
+
+[node name="BigMountain8" type="Sprite2D" parent="Props/Node2D"]
+position = Vector2(1636, 1382)
+texture = ExtResource("9_d6qs7")
+
+[node name="SmallMountain6" type="Sprite2D" parent="Props/Node2D"]
+position = Vector2(1625, 1353)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain7" type="Sprite2D" parent="Props/Node2D"]
+position = Vector2(1605, 1360)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain8" type="Sprite2D" parent="Props/Node2D"]
+position = Vector2(1653, 1389)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain9" type="Sprite2D" parent="Props/Node2D"]
+position = Vector2(1609, 1388)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain10" type="Sprite2D" parent="Props/Node2D"]
+position = Vector2(1649, 1392)
+texture = ExtResource("10_mjg0k")
+
+[node name="Node2D2" type="Node2D" parent="Props"]
+
+[node name="BigMountain4" type="Sprite2D" parent="Props/Node2D2"]
+position = Vector2(476, 451)
+texture = ExtResource("9_d6qs7")
+
+[node name="SmallMountain4" type="Sprite2D" parent="Props/Node2D2"]
+position = Vector2(429, 440)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain5" type="Sprite2D" parent="Props/Node2D2"]
+position = Vector2(503, 455)
+texture = ExtResource("10_mjg0k")
+
+[node name="Node2D3" type="Node2D" parent="Props"]
+position = Vector2(654, 203)
+
+[node name="BigMountain4" type="Sprite2D" parent="Props/Node2D3"]
+position = Vector2(476, 451)
+texture = ExtResource("9_d6qs7")
+
+[node name="SmallMountain4" type="Sprite2D" parent="Props/Node2D3"]
+position = Vector2(429, 440)
+texture = ExtResource("10_mjg0k")
+
+[node name="SmallMountain5" type="Sprite2D" parent="Props/Node2D3"]
+position = Vector2(503, 455)
+texture = ExtResource("10_mjg0k")
 
 [node name="Cursor" parent="." instance=ExtResource("4_0amn6")]
 
