@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 const plane_len = 1200
 @export var path_count = 5

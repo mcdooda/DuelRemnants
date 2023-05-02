@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e4fkqtc4mglc"
-path="res://.godot/imported/pine2.png-c42e1e410353d650f0d0ec2e63650183.ctex"
+uid="uid://behck0aniv8yf"
+path="res://.godot/imported/pine2.png-ad7b7d55469dc264d16e130238bddd1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world_map/tiles/props/pine2.png"
-dest_files=["res://.godot/imported/pine2.png-c42e1e410353d650f0d0ec2e63650183.ctex"]
+source_file="res://world_map/tiles/map_props/pine2.png"
+dest_files=["res://.godot/imported/pine2.png-ad7b7d55469dc264d16e130238bddd1b.ctex"]
 
 [params]
 

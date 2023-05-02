@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvflah7b46huw"]
+[gd_scene load_steps=5 format=3 uid="uid://bj0cx3ku5u8gh"]
 
 [ext_resource type="Texture2D" uid="uid://dhq5efye7i63k" path="res://world_map/tiles/props/tree1.png" id="2_h1cr2"]
 [ext_resource type="Texture2D" uid="uid://dssfp3m461fmk" path="res://world_map/tiles/props/pine1.png" id="3_3q3dc"]
 [ext_resource type="PackedScene" uid="uid://4jqecgtwpl10" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="4_renab"]
-[ext_resource type="Texture2D" uid="uid://behck0aniv8yf" path="res://world_map/tiles/props/pine2.png" id="4_w4mke"]
+[ext_resource type="Texture2D" uid="uid://behck0aniv8yf" path="res://world_map/tiles/map_props/pine2.png" id="4_t3vg2"]
 
 [node name="Forest" type="Node2D"]
 
@@ -34,13 +34,116 @@ position = Vector2(39, 24)
 texture = ExtResource("3_3q3dc")
 
 [node name="pine4" type="Sprite2D" parent="."]
-position = Vector2(-1, 40)
-texture = ExtResource("4_w4mke")
+position = Vector2(93, 38)
 
 [node name="pine5" type="Sprite2D" parent="."]
-position = Vector2(-63, 4)
-texture = ExtResource("4_w4mke")
+position = Vector2(-44, -4)
 
 [node name="pine6" type="Sprite2D" parent="."]
-position = Vector2(52, -18)
-texture = ExtResource("4_w4mke")
+position = Vector2(37, -18)
+
+[node name="Node" type="Node2D" parent="."]
+
+[node name="Pine2" type="Sprite2D" parent="Node"]
+position = Vector2(-74, 22)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine3" type="Sprite2D" parent="Node"]
+position = Vector2(-61, 29)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine4" type="Sprite2D" parent="Node"]
+position = Vector2(-97, 16)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine5" type="Sprite2D" parent="Node"]
+position = Vector2(-58, 46)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine6" type="Sprite2D" parent="Node"]
+position = Vector2(-85, 41)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine7" type="Sprite2D" parent="Node"]
+position = Vector2(16, -55)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine17" type="Sprite2D" parent="Node"]
+position = Vector2(-10, -70)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine18" type="Sprite2D" parent="Node"]
+position = Vector2(-77, -16)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine19" type="Sprite2D" parent="Node"]
+position = Vector2(-62, -48)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine20" type="Sprite2D" parent="Node"]
+position = Vector2(-44, 58)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine8" type="Sprite2D" parent="Node"]
+position = Vector2(108, -2)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine9" type="Sprite2D" parent="Node"]
+position = Vector2(72, -15)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine10" type="Sprite2D" parent="Node"]
+position = Vector2(84, 33)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine27" type="Sprite2D" parent="Node"]
+position = Vector2(-13, 44)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine11" type="Sprite2D" parent="Node"]
+position = Vector2(84, 10)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine12" type="Sprite2D" parent="Node"]
+position = Vector2(62, -54)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine21" type="Sprite2D" parent="Node"]
+position = Vector2(63, 54)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine22" type="Sprite2D" parent="Node"]
+position = Vector2(17, 56)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine23" type="Sprite2D" parent="Node"]
+position = Vector2(-15, 62)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine24" type="Sprite2D" parent="Node"]
+position = Vector2(16, 77)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine25" type="Sprite2D" parent="Node"]
+position = Vector2(42, 58)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine26" type="Sprite2D" parent="Node"]
+position = Vector2(84, 48)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine13" type="Sprite2D" parent="Node"]
+position = Vector2(75, -47)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine14" type="Sprite2D" parent="Node"]
+position = Vector2(54, -60)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine15" type="Sprite2D" parent="Node"]
+position = Vector2(78, -30)
+texture = ExtResource("4_t3vg2")
+
+[node name="Pine16" type="Sprite2D" parent="Node"]
+position = Vector2(51, -35)
+texture = ExtResource("4_t3vg2")

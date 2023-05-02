@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5jr3qc48mgwj"]
+[gd_scene load_steps=12 format=3 uid="uid://cxj3imk0qtpwi"]
 
 [ext_resource type="Texture2D" uid="uid://bf58hy7a861s2" path="res://world_map/tiles/buildings/human/wall.png" id="1_k23na"]
 [ext_resource type="Texture2D" uid="uid://dssfp3m461fmk" path="res://world_map/tiles/props/pine1.png" id="1_m32o3"]
 [ext_resource type="Texture2D" uid="uid://doextcy20c8bw" path="res://world_map/tiles/buildings/human/tower_2.png" id="1_njrq4"]
 [ext_resource type="PackedScene" uid="uid://4jqecgtwpl10" path="res://world_map/map_event/areas/tiles_patch/grass_patch.tscn" id="1_t2v0d"]
-[ext_resource type="Texture2D" uid="uid://behck0aniv8yf" path="res://world_map/tiles/props/pine2.png" id="2_m2wuc"]
 [ext_resource type="Texture2D" uid="uid://b0yhqqoa5x7h" path="res://world_map/tiles/buildings/human/tower_1.png" id="2_rxkbw"]
 [ext_resource type="Texture2D" uid="uid://rgral5a3xwc3" path="res://world_map/tiles/buildings/human/house.png" id="2_vkajg"]
 [ext_resource type="Texture2D" uid="uid://cpp2dttphvg6s" path="res://world_map/tiles/buildings/human/house_3.png" id="4_hscw6"]
@@ -23,7 +22,6 @@ texture = ExtResource("1_m32o3")
 
 [node name="Pine2" type="Sprite2D" parent="."]
 position = Vector2(-77, -16)
-texture = ExtResource("2_m2wuc")
 
 [node name="Tower3" type="Sprite2D" parent="."]
 y_sort_enabled = true
