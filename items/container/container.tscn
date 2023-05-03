@@ -7,6 +7,12 @@
 radius = 16.0312
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mhft5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="container" type="Area2D"]
 collision_layer = 8
@@ -16,8 +22,11 @@ script = ExtResource("1_36ahj")
 shape = SubResource("CircleShape2D_agov2")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mhft5")
+animation = &"idle"
+autoplay = "idle"
 script = ExtResource("2_dbitm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -14,12 +14,14 @@
 radius = 50.0
 
 [node name="PlayerCharacter" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_wuyec")
 heal_animation = ExtResource("2_5jkmc")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-40, -59)
 sprite_frames = ExtResource("2_nov3l")

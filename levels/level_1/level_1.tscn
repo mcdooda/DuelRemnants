@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b62tu0fa0d466"]
+[gd_scene load_steps=13 format=3 uid="uid://b62tu0fa0d466"]
 
 [ext_resource type="Texture2D" uid="uid://d2m5djbucqj05" path="res://levels/level_1/battlemap6_middleground.png" id="1_bjso7"]
 [ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="2_16a8w"]
 [ext_resource type="PackedScene" uid="uid://cl75wute2x26a" path="res://player/ability/abilities/fire_arrow/fire_arrow.tscn" id="3_ixt4h"]
+[ext_resource type="PackedScene" uid="uid://c1qus3wkghdbi" path="res://scene_transition/scene_transition.tscn" id="4_0hwd8"]
+[ext_resource type="Script" path="res://levels/level_1/camera.gd" id="4_b47l3"]
 [ext_resource type="PackedScene" uid="uid://1fo2m4q6nafk" path="res://spawner/spawner.tscn" id="4_eyok2"]
 [ext_resource type="PackedScene" uid="uid://diq0t53fc518" path="res://ui/screen_ui/screen_ui.tscn" id="5_jnsgi"]
 [ext_resource type="PackedScene" uid="uid://bka3uf1w8psng" path="res://items/container/chest/chest.tscn" id="6_3a0op"]
@@ -16,12 +18,6 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(575.5, 324.5)
 texture = ExtResource("1_bjso7")
-
-[node name="PlayerCharacter" parent="." instance=ExtResource("2_16a8w")]
-position = Vector2(169, 146)
-starting_ability = ExtResource("3_ixt4h")
-
-[node name="Camera" type="Camera2D" parent="PlayerCharacter"]
 
 [node name="Spawner" parent="." instance=ExtResource("4_eyok2")]
 
@@ -38,3 +34,12 @@ items = Array[PackedScene]([ExtResource("8_keb0d"), ExtResource("9_y8e74")])
 
 [node name="EndlessObelysk" parent="." instance=ExtResource("10_ubya3")]
 position = Vector2(451, 354)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_16a8w")]
+position = Vector2(169, 146)
+starting_ability = ExtResource("3_ixt4h")
+
+[node name="Camera" type="Camera2D" parent="PlayerCharacter"]
+script = ExtResource("4_b47l3")
+
+[node name="Transition" parent="PlayerCharacter/Camera" instance=ExtResource("4_0hwd8")]

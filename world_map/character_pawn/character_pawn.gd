@@ -17,6 +17,7 @@ func _physics_process(delta):
 	if global_position.distance_squared_to(objective_event.global_position) < 9:
 		velocity = Vector2(0, 0)
 		emit_signal("objective_reached")
+		objective_event = null
 	else:
 		var direction = objective_event.global_position - global_position
 		velocity = direction.normalized() * speed

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlumms4uke6hm"]
+[gd_scene load_steps=13 format=3 uid="uid://dlumms4uke6hm"]
 
 [ext_resource type="Script" path="res://world_map/world_map.gd" id="1_xsjd4"]
 [ext_resource type="PackedScene" uid="uid://bvc3vywik1x0p" path="res://world_map/map_event/event.tscn" id="2_vjbkk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b7ab73kibalvs" path="res://world_map/tiles/map_props/pine.png" id="8_dbacn"]
 [ext_resource type="Texture2D" uid="uid://dstgammqax812" path="res://world_map/tiles/map_props/mountain.png" id="9_d6qs7"]
 [ext_resource type="Texture2D" uid="uid://c4tucpp6u811" path="res://world_map/tiles/map_props/mountain2.png" id="10_mjg0k"]
+[ext_resource type="PackedScene" uid="uid://c1qus3wkghdbi" path="res://scene_transition/scene_transition.tscn" id="12_xycsi"]
 
 [node name="world_map" type="Node"]
 script = ExtResource("1_xsjd4")
@@ -470,16 +471,9 @@ texture = ExtResource("8_dbacn")
 
 [node name="Cursor" parent="." instance=ExtResource("4_0amn6")]
 
+[node name="Pawn" parent="." instance=ExtResource("3_ju4w8")]
+
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("6_446hw")
 
-[node name="Pawn" parent="." instance=ExtResource("3_ju4w8")]
-
-[node name="Overlay" type="ColorRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="Transition" parent="Camera" instance=ExtResource("12_xycsi")]

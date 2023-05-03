@@ -8,6 +8,7 @@ const map_scale = 20.0
 
 var events = {}
 @export var event_scene: PackedScene
+@onready var transition = get_node("Camera/Transition")
 
 func _ready():
 	var generator = preload("res://world_map/generator.gd").new()
@@ -17,7 +18,7 @@ func _ready():
 		var point = map_data.nodes[k]
 		var event = event_scene.instantiate()
 		event.position = point + Vector2(100, 0)
-		add_child(event)
+		$Props.add_sibling(event)
 		events[k] = event
 	
 	for path in map_data.paths:
@@ -30,16 +31,18 @@ func _ready():
 
 	$Pawn.global_position = events[0].global_position
 	$Cursor.assign_event_children(events[0])
-	$Pawn.connect("objective_reached", load_level)
-	$Pawn.z_index = 2
-	$Cursor.z_index = 1
 	$Camera.global_position = $Pawn.global_position
+	$Pawn.connect("objective_reached", start_scene_transition)
+	GlobalUi.connect("scene_transition_animation_finished", load_level)
+
+func start_scene_transition():
+	transition.in_transition()
 
 func load_level():
 	var selected_objective = $Pawn.objective_event
 	if selected_objective != events[0]:
 		get_tree().change_scene_to_file("res://levels/level_1/level_1.tscn")
-	$Cursor.assign_event_children(selected_objective)
+	#$Cursor.assign_event_children(selected_objective)
 
 func _unhandled_input(event):
 	if $Pawn.is_moving():

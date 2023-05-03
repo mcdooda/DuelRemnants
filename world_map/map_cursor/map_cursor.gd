@@ -5,6 +5,7 @@ var sorted_children: Array[int] = []
 var index := 0
 
 func sort_children():
+	sorted_children.clear()
 	for i in event_children.size():
 		sorted_children.push_back(i)
 	sorted_children.sort_custom(y_comparison)

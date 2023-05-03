@@ -29,6 +29,7 @@ func load_prop():
 	if random_scene:
 		area_scene = ResourceLoader.load(random_scene)
 		area = area_scene.instantiate()
+		area.show_behind_parent = true
 		add_child(area)
 
 func load_animation():
