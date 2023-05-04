@@ -23,18 +23,18 @@ func _ready():
 	$Sprite.connect("animation_looped", attack_finished)
 	$Sprite.connect("frame_changed", frame_changed)
 	starting_ability_ref = $Inventory.add_item(starting_ability, false)
-	
+
 func start_attack():
 	$Sprite.play("attack2")
 	playing_attack_animation = true
-	
+
 func attack_finished():
 	playing_attack_animation = false
-	
+
 func frame_changed():
 	if playing_attack_animation and $Sprite.frame == attack_frame:
 		starting_ability_ref.trigger_ability()
-	
+
 func _physics_process(delta):
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	if input_direction.x != 0 or input_direction.y != 0:
@@ -60,7 +60,8 @@ func heal(amount):
 	add_child(animation)
 
 func _process(_delta):
-	pass
+	var v := get_viewport()
+	v.canvas_transform = Transform2D(0.0, -Vector2i(global_position) + Vector2i(v.get_visible_rect().size) / 2)
 	
 func reset_invincibility():
 	invincible = false
