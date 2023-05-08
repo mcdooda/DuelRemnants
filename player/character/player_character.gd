@@ -42,20 +42,19 @@ func _physics_process(delta):
 	velocity = input_direction * speed
 	global_position += velocity * delta
 
+func change_life(delta: int):
+	if life + delta > 0 and life + delta < max_life:
+		life += delta
+		emit_signal("life_changed", life)
+
 func hit():
 	if not invincible:
 		invincible = true
 		$InvincibilityTimer.start()
-		if life > 0:
-			life -= 1
-			emit_signal("life_changed", life)
+		change_life(-1)
 
-func heal(amount):
-	life += amount
-	if life > max_life:
-		life = max_life
-	emit_signal("life_changed", life)
-	# play heal animation
+func heal(delta):
+	change_life(delta)
 	var animation = heal_animation.instantiate()
 	add_child(animation)
 

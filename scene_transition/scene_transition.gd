@@ -1,42 +1,62 @@
 extends Control
 
+class_name SceneTransition
+
+var rects := []
+@export var width := 8
+@export var height := 8
+@export var duration := 0.8
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	
-func compute_size():
+	for x in width:
+		rects.append([])
+		rects[x] = []
+		for y in height:
+			rects[x].append([])
+			rects[x][y] = ColorRect.new()
+			rects[x][y].color = Color(0, 0, 0, 0)
+			add_child(rects[x][y])
+	compute_size_and_position()
+	var animation_library: AnimationLibrary = $AnimationPlayer.get_animation_library("default")
+	var in_animation = create_animation(Color(0, 0, 0, 0), Color.BLACK)
+	animation_library.add_animation("in", in_animation)
+	var out_animation = create_animation(Color.BLACK, Color(0, 0, 0, 0))
+	animation_library.add_animation("out", out_animation)
+
+
+func compute_size_and_position():
 	size = get_viewport().get_visible_rect().size
-	$TopLeft.size = size / 3 + Vector2(2, 2)
-	$TopLeft.position = Vector2(0, 0)
-	$TopCenter.size = size / 3 + Vector2(2, 2)
-	$TopCenter.position = Vector2(size.x / 3, 0)
-	$TopRight.size = size / 3 + Vector2(2, 2)
-	$TopRight.position = Vector2(size.x * 2 / 3, 0)
-	$MiddleLeft.size = size / 3 + Vector2(2, 2)
-	$MiddleLeft.position = Vector2(0, size.y / 3)
-	$MiddleCenter.size = size / 3 + Vector2(2, 2)
-	$MiddleCenter.size = size / 3 + Vector2(2, 2)
-	$MiddleCenter.position = Vector2(size.x / 3, size.y / 3)
-	$MiddleRight.size = size / 3 + Vector2(2, 2)
-	$MiddleRight.position = Vector2(size.x * 2 / 3, size.y / 3)
-	$BottomLeft.size = size / 3 + Vector2(2, 2)
-	$BottomLeft.position = Vector2(0, size.y * 2 / 3)
-	$BottomCenter.size = size / 3 + Vector2(2, 2)
-	$BottomCenter.position = Vector2(size.x / 3, size.y * 2 / 3)
-	$BottomRight.size = size / 3 + Vector2(2, 2)
-	$BottomRight.position = Vector2(size.x * 2 / 3, size.y * 2 / 3)
+	for x in rects.size():
+		for y in rects[x].size():
+			# add 1 to handle int cast loss
+			var rect_size = Vector2i(int(size.x / width) + 1, int(size.y / height) + 1)
+			rects[x][y].size = rect_size
+			rects[x][y].position = Vector2(x * rect_size.x, y * rect_size .y)
+
+func create_animation(start: Color, end: Color):
+	var animation = Animation.new()
+	animation.length = duration + 0.5
+	var total_size : float = width + height
+	for x in rects.size():
+		for y in rects[x].size():
+			var track_index = animation.add_track(Animation.TYPE_VALUE)
+			animation.track_set_path(track_index, "/" + rects[x][y].get_path().get_concatenated_names() + ":color")
+			var animation_start = ((x + y) / total_size) * duration
+			animation.track_insert_key(track_index, animation_start, start)
+			animation.track_insert_key(track_index, animation_start + 0.5, end)
+	return animation
 
 func in_transition():
-	compute_size()
+	compute_size_and_position()
 	position -= size / 2
-	$AnimationPlayer.play("show")
+	$AnimationPlayer.play("default/in")
 	$AnimationPlayer.connect("animation_finished", transition_finished)
 	
 func out_transition():
-	compute_size()
+	compute_size_and_position()
 	position -= size / 2
-	$AnimationPlayer.play("out")
+	$AnimationPlayer.play("default/out")
 	$AnimationPlayer.connect("animation_finished", transition_finished)
 	
 func transition_finished(_name):
