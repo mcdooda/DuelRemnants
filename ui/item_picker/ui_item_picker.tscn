@@ -8,56 +8,47 @@
 process_mode = 3
 layout_direction = 1
 layout_mode = 3
-anchor_right = 0.095
-anchor_bottom = 0.109
-offset_right = 709.4
-offset_bottom = 279.8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1, 1.00822)
 theme = ExtResource("1_euokk")
 script = ExtResource("1_lig1l")
 
-[node name="Item1" parent="." instance=ExtResource("2_tw14f")]
-layout_direction = 1
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 150.0
-offset_bottom = 200.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Control" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -9.0
+offset_right = 31.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item1" parent="Control" instance=ExtResource("2_tw14f")]
+layout_mode = 2
 focus_neighbor_left = NodePath("../Item3")
 focus_neighbor_right = NodePath("../Item2")
 focus_next = NodePath("../Item2")
 focus_previous = NodePath("../Item3")
 
-[node name="Item2" parent="." instance=ExtResource("2_tw14f")]
-layout_direction = 1
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 160.0
-offset_right = 310.0
-offset_bottom = 200.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Item2" parent="Control" instance=ExtResource("2_tw14f")]
+layout_mode = 2
+size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Item1")
 focus_neighbor_right = NodePath("../Item3")
 focus_next = NodePath("../Item3")
 focus_previous = NodePath("../Item1")
 
-[node name="Item3" parent="." instance=ExtResource("2_tw14f")]
-layout_direction = 1
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 320.0
-offset_right = 470.0
-offset_bottom = 200.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Item3" parent="Control" instance=ExtResource("2_tw14f")]
+layout_mode = 2
+size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Item2")
 focus_neighbor_right = NodePath("../Item1")
 focus_next = NodePath("../Item1")

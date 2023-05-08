@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b62tu0fa0d466"]
+[gd_scene load_steps=12 format=3 uid="uid://ddvbc3c158dmg"]
 
 [ext_resource type="Texture2D" uid="uid://d2m5djbucqj05" path="res://levels/level_1/battlemap6_middleground.png" id="1_bjso7"]
 [ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="2_16a8w"]
-[ext_resource type="PackedScene" uid="uid://cl75wute2x26a" path="res://player/ability/abilities/fire_arrow/fire_arrow.tscn" id="3_ixt4h"]
 [ext_resource type="PackedScene" uid="uid://c1qus3wkghdbi" path="res://scene_transition/scene_transition.tscn" id="4_0hwd8"]
 [ext_resource type="PackedScene" uid="uid://1fo2m4q6nafk" path="res://spawner/spawner.tscn" id="4_eyok2"]
 [ext_resource type="PackedScene" uid="uid://diq0t53fc518" path="res://ui/screen_ui/screen_ui.tscn" id="5_jnsgi"]
@@ -11,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bifqp1owgfgc5" path="res://items/collectible/mini_jax/collectible_mini_jax.tscn" id="8_keb0d"]
 [ext_resource type="PackedScene" uid="uid://dls7cnhhahcle" path="res://player/ability/abilities/decimate/item/item_decimate.tscn" id="9_y8e74"]
 [ext_resource type="PackedScene" uid="uid://btk2njxsf32eo" path="res://items/container/endless_obelysk/container_endless_obelysk.tscn" id="10_ubya3"]
-[ext_resource type="Script" path="res://levels/level_1/scene_transition.gd" id="12_mm2at"]
+[ext_resource type="Script" path="res://levels/scene_transition.gd" id="12_58qh1"]
 
 [node name="level_1" type="Node2D"]
 
@@ -37,7 +36,6 @@ position = Vector2(451, 354)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_16a8w")]
 position = Vector2(169, 146)
-starting_ability = ExtResource("3_ixt4h")
 
 [node name="Transition" parent="PlayerCharacter" instance=ExtResource("4_0hwd8")]
-script = ExtResource("12_mm2at")
+script = ExtResource("12_58qh1")

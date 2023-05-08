@@ -1,6 +1,9 @@
 extends Control
 
-@onready var player_ref = get_node("/root/level_1/PlayerCharacter")
+@onready var player_ref = get_node("/root/level/PlayerCharacter")
+@onready var item1 = get_node("Control/Item1")
+@onready var item2 = get_node("Control/Item2")
+@onready var item3 = get_node("Control/Item3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,11 +21,11 @@ func load_item(item_path: String, item_ui):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func on_level_changed():
 	var picked_items: Array[String] = ItemSelector.pick_random_items(3)
-	load_item(picked_items[0], $Item1)
-	load_item(picked_items[1], $Item2)
-	load_item(picked_items[2], $Item3)
+	load_item(picked_items[0], item1)
+	load_item(picked_items[1], item2)
+	load_item(picked_items[2], item3)
 	show()
-	$Item1.grab_focus()
+	item1.grab_focus()
 	get_tree().paused = true
 	pass
 

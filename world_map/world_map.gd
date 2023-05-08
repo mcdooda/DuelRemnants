@@ -41,7 +41,7 @@ func start_scene_transition():
 func load_level():
 	var selected_objective = $Pawn.objective_event
 	if selected_objective != events[0]:
-		get_tree().change_scene_to_file("res://levels/level_1/level_1.tscn")
+		get_tree().change_scene_to_file("res://levels/level_mob_town/level_mob_town.tscn")
 	#$Cursor.assign_event_children(selected_objective)
 
 func _unhandled_input(event):

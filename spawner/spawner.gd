@@ -12,9 +12,9 @@ var current_time := 0.0
 var enemy_count := 0
 var rng := RandomNumberGenerator.new()
 @export var max_enemy_count := 200
-@onready var player_collision = get_node("/root/level_1/PlayerCharacter/Collision")
 
 var current_wave
+var player_ref: CharacterBody2D
 
 func _ready():
 	for wave_settings in spawn_settings:
@@ -33,6 +33,9 @@ func _ready():
 		$EventTimer.wait_time = event_instances[0].timing
 		$EventTimer.start()
 
+func set_player_ref(player: CharacterBody2D):
+	player_ref = player
+
 func handle_next_wave():
 	if wave_index < spawn_settings_instances.size() - 1 and current_time >= spawn_settings_instances[wave_index + 1].timing:
 		setup_next_wave()
@@ -50,7 +53,7 @@ func setup_next_wave():
 		current_wave = spawn_settings_instances[wave_index]
 
 func player_position():
-	return player_collision.global_position
+	return player_ref.global_position
 
 func compute_out_of_screen_position():
 	var position = player_position()
@@ -92,6 +95,6 @@ func _on_garbage_timer_timeout():
 	var all_enemies = get_tree().get_nodes_in_group("enemies")
 	var max_distance_squared = max_distance_allowed * max_distance_allowed
 	for enemy in all_enemies:
-		if player_collision.global_position.distance_squared_to(enemy.global_position) > max_distance_squared:
+		if player_ref.global_position.distance_squared_to(enemy.global_position) > max_distance_squared:
 			print("Removing ", enemy)
 			enemy.kill(true)

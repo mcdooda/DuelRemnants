@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt6ajpg5ggmwa"]
+
+[ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="1_oefvl"]
+[ext_resource type="PackedScene" uid="uid://c1qus3wkghdbi" path="res://scene_transition/scene_transition.tscn" id="2_h7udg"]
+[ext_resource type="Script" path="res://levels/scene_transition.gd" id="3_xy1ma"]
+[ext_resource type="PackedScene" uid="uid://diq0t53fc518" path="res://ui/screen_ui/screen_ui.tscn" id="4_h54go"]
+
+[node name="level" type="Node2D"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_oefvl")]
+
+[node name="scene_transition" parent="PlayerCharacter" instance=ExtResource("2_h7udg")]
+script = ExtResource("3_xy1ma")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="screen_ui" parent="CanvasLayer" instance=ExtResource("4_h54go")]

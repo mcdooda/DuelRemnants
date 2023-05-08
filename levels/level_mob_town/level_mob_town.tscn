@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://qat5uecgohg2"]
+
+[ext_resource type="PackedScene" uid="uid://bt6ajpg5ggmwa" path="res://levels/level.tscn" id="1_hy7gq"]
+[ext_resource type="PackedScene" uid="uid://1fo2m4q6nafk" path="res://spawner/spawner.tscn" id="2_64tcx"]
+[ext_resource type="Script" path="res://levels/level_mob_town/level_mob_town.gd" id="2_wiuxa"]
+
+[node name="level" instance=ExtResource("1_hy7gq")]
+script = ExtResource("2_wiuxa")
+
+[node name="Spawner" parent="." index="2" instance=ExtResource("2_64tcx")]

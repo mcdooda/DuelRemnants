@@ -9,7 +9,7 @@ var speed = max_speed
 @export var knockback_resistance := 0.0
 @export var life := 5
 
-@onready var target = get_node("/root/level_1/PlayerCharacter/Collision")
+@onready var target = get_node("/root/level/PlayerCharacter/Collision")
 var is_alive = true
 
 @onready var sprite_material = $Sprite.material
