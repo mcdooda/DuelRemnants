@@ -22,6 +22,7 @@ ItemSelector="*res://globals/item_selector.gd"
 GlobalUi="*res://globals/global_ui.gd"
 SceneUtils="*res://globals/scene_utils.gd"
 AbilityUtils="*res://globals/ability_utils.gd"
+WorldMapData="*res://globals/world_map_data.gd"
 
 [display]
 

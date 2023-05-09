@@ -2,7 +2,6 @@ extends Node
 
 func generate(plane_len, distance_between_points, path_count):
 	# make sure that we are not going to generate the same map every time
-	randomize()
 	var center = Vector2(plane_len / 2, plane_len / 2)
 	var region := Vector3(center.x, center.y, plane_len / 2)
 	var poisson_sampler = preload("res://utils/poisson_disc_sampling.gd").new()
@@ -44,9 +43,9 @@ func generate(plane_len, distance_between_points, path_count):
 		
 		paths.append(id_path)
 		# step 4: removing nodes / generating unique path every time
-		for j in range(randi() % 2 + 1):
+		for j in range(WorldMapData.rng.randi() % 2 + 1):
 			# index between 1 and id_path.size() - 2 (inclusive)
-			var index = randi() % (id_path.size() - 2) + 1
+			var index = WorldMapData.rng.randi() % (id_path.size() - 2) + 1
 			
 			var id = id_path[index]
 			astar.set_point_disabled(id)

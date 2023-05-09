@@ -14,6 +14,8 @@ var _points: Array = []
 var _spawn_points: Array = []
 var _transpose: Vector2
 
+var rng := WorldMapData.rng
+
 # radius - minimum distance between points
 # sample_region_shape - takes any of the following:
 # 		-a Rect2 for rectangular region
@@ -29,14 +31,13 @@ func generate_points(radius: float, sample_region_shape, retries: int, start_pos
 	_retries = retries
 	_start_pos = start_pos
 	_init_vars()
-	
 	while _spawn_points.size() > 0:
-		var spawn_index: int = randi() % _spawn_points.size()
+		var spawn_index: int = rng.randi() % _spawn_points.size()
 		var spawn_centre: Vector2 = _spawn_points[spawn_index]
 		var sample_accepted: bool = false
 		for i in retries:
-			var angle: float = 2 * PI * randf()
-			var sample: Vector2 = spawn_centre + Vector2(cos(angle), sin(angle)) * (radius + radius * randf())
+			var angle: float = 2 * PI * rng.randf()
+			var sample: Vector2 = spawn_centre + Vector2(cos(angle), sin(angle)) * (radius + radius * rng.randf())
 			if _is_valid_sample(sample):
 				_grid[int((_transpose.x + sample.x) / _cell_size_scaled.x)][int((_transpose.y + sample.y) / _cell_size_scaled.y)] = _points.size()
 				_points.append(sample)
@@ -81,15 +82,13 @@ func _is_point_in_sample_region(sample: Vector2) -> bool:
 	return false
 
 func _init_vars() -> void:
-	randomize()
-	
 	# identify the type of shape and it's bounding rectangle and starting point
 	match typeof(_sample_region_shape):
 		TYPE_RECT2:
 			_sample_region_rect = _sample_region_shape
 			if _start_pos.x == INF:
-				_start_pos.x = _sample_region_rect.position.x + _sample_region_rect.size.x * randf()
-				_start_pos.y = _sample_region_rect.position.y + _sample_region_rect.size.y * randf()
+				_start_pos.x = _sample_region_rect.position.x + _sample_region_rect.size.x * rng.randf()
+				_start_pos.y = _sample_region_rect.position.y + _sample_region_rect.size.y * rng.randf()
 			
 		TYPE_PACKED_VECTOR2_ARRAY, TYPE_ARRAY:
 			var start: Vector2 = _sample_region_shape[0]
@@ -102,8 +101,8 @@ func _init_vars() -> void:
 			_sample_region_rect = Rect2(start, end - start)
 			if _start_pos.x == INF:
 				var n: int = _sample_region_shape.size()
-				var i: int = randi() % n
-				_start_pos = _sample_region_shape[i] + (_sample_region_shape[(i + 1) % n] - _sample_region_shape[i]) * randf()
+				var i: int = rng.randi() % n
+				_start_pos = _sample_region_shape[i] + (_sample_region_shape[(i + 1) % n] - _sample_region_shape[i]) * rng.randf()
 			
 		TYPE_VECTOR3:
 			var x = _sample_region_shape.x
@@ -111,8 +110,8 @@ func _init_vars() -> void:
 			var r = _sample_region_shape.z
 			_sample_region_rect = Rect2(x - r, y - r, r * 2, r * 2)
 			if _start_pos.x == INF:
-				var angle: float = 2 * PI * randf()
-				_start_pos = Vector2(x, y) + Vector2(cos(angle), sin(angle)) * r * randf()
+				var angle: float = 2 * PI * rng.randf()
+				_start_pos = Vector2(x, y) + Vector2(cos(angle), sin(angle)) * r * rng.randf()
 		_:
 			_sample_region_shape = Rect2(0, 0, 0, 0)
 			push_error("Unrecognized shape!!! Please input a valid shape")

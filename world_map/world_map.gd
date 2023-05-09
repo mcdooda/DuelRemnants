@@ -11,6 +11,7 @@ var events = {}
 @onready var transition = get_node("Camera/Transition")
 
 func _ready():
+	WorldMapData.save_state()
 	var generator = preload("res://world_map/generator.gd").new()
 	var map_data = generator.generate(plane_len, distance_between_points, path_count)
 
@@ -41,6 +42,7 @@ func start_scene_transition():
 func load_level():
 	var selected_objective = $Pawn.objective_event
 	if selected_objective != events[0]:
+		WorldMapData.reset_state()
 		get_tree().change_scene_to_file("res://levels/level_mob_town/level_mob_town.tscn")
 	#$Cursor.assign_event_children(selected_objective)
 

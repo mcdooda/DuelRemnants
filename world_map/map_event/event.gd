@@ -40,7 +40,7 @@ func load_animation():
 	play("default")
 
 func randomize_type(_weight: int):
-	var rng = RandomNumberGenerator.new()
+	var rng = WorldMapData.rng
 	set_type(rng.randi_range(EventType.MOB, EventType.WEAPON) as EventType)
 
 func set_type(event_type: EventType):
