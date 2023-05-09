@@ -22,7 +22,7 @@ func add_child_event(child):
 	if !children.has(child):
 		children.append(child)
 		
-func load_prop():
+func load_area():
 	if area:
 		area.queue_free()
 	var random_scene = SceneUtils.find_random_file_with_extension_from_path("res://world_map/map_event/areas/" + event_type_string(), "tscn")
@@ -48,7 +48,7 @@ func set_type(event_type: EventType):
 	if type == EventType.ELITE:
 		event_label_background.texture = elite_background_texture
 	load_animation()
-	load_prop()
+	load_area()
 	event_label.text = event_type_string().capitalize() 
 
 func _draw():

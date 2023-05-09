@@ -23,16 +23,21 @@ func _ready():
 	animation_library.add_animation("in", in_animation)
 	var out_animation = create_animation(Color.BLACK, Color(0, 0, 0, 0))
 	animation_library.add_animation("out", out_animation)
+	$AnimationPlayer.connect("animation_finished", transition_finished)
 
-
-func compute_size_and_position():
-	size = get_viewport().get_visible_rect().size
+func update_rects():
 	for x in rects.size():
 		for y in rects[x].size():
-			# add 1 to handle int cast loss
+			# add 1 to handle cast loss
 			var rect_size = Vector2i(int(size.x / width) + 1, int(size.y / height) + 1)
 			rects[x][y].size = rect_size
 			rects[x][y].position = Vector2(x * rect_size.x, y * rect_size .y)
+
+func compute_size_and_position():
+	var new_size = get_viewport().get_visible_rect().size
+	if size != new_size:
+		size = new_size
+		update_rects()
 
 func create_animation(start: Color, end: Color):
 	var animation = Animation.new()
@@ -49,15 +54,13 @@ func create_animation(start: Color, end: Color):
 
 func in_transition():
 	compute_size_and_position()
-	position -= size / 2
+	position = -size / 2
 	$AnimationPlayer.play("default/in")
-	$AnimationPlayer.connect("animation_finished", transition_finished)
 	
 func out_transition():
 	compute_size_and_position()
-	position -= size / 2
+	position = -size / 2
 	$AnimationPlayer.play("default/out")
-	$AnimationPlayer.connect("animation_finished", transition_finished)
 	
 func transition_finished(_name):
 	GlobalUi.emit_signal("scene_transition_animation_finished")
