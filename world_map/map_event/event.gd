@@ -2,9 +2,9 @@ extends AnimatedSprite2D
 
 class_name MapEvent
 
-const margin = 10
+const margin = 50
 
-var children: Array = []
+var children := {}
 enum EventType {START, BOSS, MOB, ELITE, SHOP, TREASURE, RANDOM, WEAPON}
 var type := EventType.MOB
 
@@ -18,9 +18,9 @@ var area: Node2D
 func event_type_string():
 	return EventType.keys()[type]
 
-func add_child_event(child):
-	if !children.has(child):
-		children.append(child)
+func add_child_event(child, index):
+	if !children.has(index):
+		children[index] = child
 		
 func load_area():
 	if area:
@@ -51,12 +51,9 @@ func set_type(event_type: EventType):
 	load_area()
 	event_label.text = event_type_string().capitalize() 
 
-func _draw():
-	if type == EventType.START:
-		draw_circle(Vector2.ZERO, 4, Color.WHITE_SMOKE)
-	
-	for child in children:
-		var line = child.position - position
+func _draw():	
+	for index in children:
+		var line = children[index].position - position
 		var normal = line.normalized()
 		line -= margin * normal
 		var color = Color.GRAY

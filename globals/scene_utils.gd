@@ -29,11 +29,14 @@ func find_all_files_with_extension_from_path(path, extension):
 		print("An error occurred when trying to access the item path: ", path)
 	return result
 
-func find_random_file_with_extension_from_path(path, extension):
+func find_random_file_with_extension_from_path(path, extension, random_generator = null):
+	var random = rng
+	if random_generator:
+		random = random_generator
 	var all_files = find_all_files_with_extension_from_path(path, extension)
 	if all_files.is_empty():
 		return null
-	return all_files[rng.randi_range(0, all_files.size() - 1)]
+	return all_files[random.randi_range(0, all_files.size() - 1)]
 
 func find_abilities_paths():
 	var abilities_parent_path = "res://player/ability/abilities/"

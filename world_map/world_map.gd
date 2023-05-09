@@ -26,25 +26,30 @@ func _ready():
 		for i in range(path.size() - 1):
 			var index1 = path[i]
 			var index2 = path[i + 1]
-			
-			events[index1].add_child_event(events[index2])
+			events[index1].add_child_event(events[index2], index2)
 			events[index1].randomize_type(i)
-
-	$Pawn.global_position = events[0].global_position
-	$Cursor.assign_event_children(events[0])
+	initialize_player_position()
 	$Camera.global_position = $Pawn.global_position
 	$Pawn.connect("objective_reached", start_scene_transition)
 	GlobalUi.connect("scene_transition_animation_finished", load_level)
+
+func initialize_player_position():
+	if WorldMapData.current_player_node:
+		$Pawn.global_position = events[WorldMapData.current_player_node].global_position
+		$Cursor.assign_event_children(events[WorldMapData.current_player_node])
+	else:
+		$Pawn.global_position = events[0].global_position
+		$Cursor.assign_event_children(events[0])
 
 func start_scene_transition():
 	transition.in_transition()
 
 func load_level():
-	var selected_objective = $Pawn.objective_event
-	if selected_objective != events[0]:
+	var event_index = $Cursor.selected_event_index()
+	if event_index != 0:
 		WorldMapData.reset_state()
+		WorldMapData.change_player_node(event_index)
 		get_tree().change_scene_to_file("res://levels/level_mob_town/level_mob_town.tscn")
-	#$Cursor.assign_event_children(selected_objective)
 
 func _unhandled_input(event):
 	if $Pawn.is_moving():
@@ -55,4 +60,4 @@ func _unhandled_input(event):
 		elif Input.is_action_pressed("Down"):
 			$Cursor.assign_to_previous()
 		elif Input.is_action_pressed("ui_accept"):
-			$Pawn.move_to_event($Cursor.selected_event())
+			$Pawn.move_to_event(events[$Cursor.selected_event_index()])
