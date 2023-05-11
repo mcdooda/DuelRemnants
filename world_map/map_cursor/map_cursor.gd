@@ -23,7 +23,9 @@ func assign_event_children(event: MapEvent):
 		print("Can't move cursor to child event: no child event")
 
 func selected_event_index():
-	return sorted_children[index]
+	if index < sorted_children.size():
+		return sorted_children[index]
+	return null
 
 func change_position():
 	global_position = event_children[selected_event_index()].global_position

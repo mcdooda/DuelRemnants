@@ -7,7 +7,7 @@ class_name ItemContainer
 var player_ref: CharacterBody2D
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player_characters"):
 		player_ref = body
 		$Sprite.play("open")
 	check_content()

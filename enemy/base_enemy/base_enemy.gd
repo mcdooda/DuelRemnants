@@ -9,7 +9,8 @@ var speed = max_speed
 @export var knockback_resistance := 0.0
 @export var life := 5
 
-@onready var target = get_node("/root/level/PlayerCharacter/Collision")
+var target: Node2D
+
 var is_alive = true
 
 @onready var sprite_material = $Sprite.material
@@ -19,6 +20,8 @@ var direction: Vector2
 @export var acceleration = 600
 
 func _ready():
+	var players = get_tree().get_nodes_in_group("player_characters")
+	target = players[0]
 	$FlashTimer.connect("timeout", reset_flash)
 
 func drop_item():
@@ -73,7 +76,7 @@ func _physics_process(delta):
 func handle_collision_with_player():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_collider().is_in_group("player"):
+		if collision.get_collider().is_in_group("player_characters"):
 			collision.get_collider().hit()
 
 func _on_sprite_animation_finished():

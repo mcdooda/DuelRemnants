@@ -14,7 +14,6 @@ var timer: Timer
 @export var projectile_scene: PackedScene
 var modifiers := Modifiers.new()
 
-# Called when the node enters the scene tree for the first time.
 func init(trigger_on_cooldown, level = 0):
 	current_level = level
 	# each level adds to the item modifier, we have load each

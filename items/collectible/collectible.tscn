@@ -85,7 +85,7 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="Collectible" type="CharacterBody2D"]
+[node name="Collectible" type="CharacterBody2D" groups=["collectibles"]]
 collision_layer = 8
 script = ExtResource("1_plu04")
 

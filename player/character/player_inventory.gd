@@ -1,7 +1,8 @@
 extends Node
 
-var item_list = {}
 @export var max_size = 6
+
+var item_list = {}
 
 func random_key():
 	var item_keys = item_list.keys()

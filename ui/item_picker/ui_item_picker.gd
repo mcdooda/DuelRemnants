@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player_ref = get_node("/root/level/PlayerCharacter")
+var player_ref: Node2D
 @onready var item1 = get_node("Control/Item1")
 @onready var item2 = get_node("Control/Item2")
 @onready var item3 = get_node("Control/Item3")
@@ -11,7 +11,13 @@ func _ready():
 	GlobalExperience.connect("level_changed", on_level_changed)
 	GlobalUi.connect("item_selected", on_item_selected)
 
+func assign_players():
+	var players = get_tree().get_nodes_in_group("player_characters")
+	player_ref = players[0]
+
 func load_item(item_path: String, item_ui):
+	if not player_ref:
+		assign_players()
 	var player_ability = player_ref.inventory.maybe_get_ability(item_path)
 	if player_ability != null:
 		item_ui.set_item(item_path, player_ability.current_level + 1)
@@ -30,6 +36,8 @@ func on_level_changed():
 	pass
 
 func on_item_selected(item):
+	if not player_ref:
+		assign_players()
 	player_ref.inventory.add_instantiated_item(item)
 	hide()
 	get_tree().paused = false

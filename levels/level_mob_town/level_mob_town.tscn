@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://egkhqxt57xiw"]
+[gd_scene load_steps=6 format=3 uid="uid://egkhqxt57xiw"]
 
 [ext_resource type="PackedScene" uid="uid://bt6ajpg5ggmwa" path="res://levels/level.tscn" id="1_hy7gq"]
 [ext_resource type="PackedScene" uid="uid://1fo2m4q6nafk" path="res://spawner/spawner.tscn" id="2_64tcx"]
 [ext_resource type="Script" path="res://levels/level_mob_town/level_mob_town.gd" id="2_wiuxa"]
 [ext_resource type="Script" path="res://levels/level_mob_town/survive_timer_label.gd" id="3_tc86l"]
+[ext_resource type="PackedScene" uid="uid://c1qus3wkghdbi" path="res://scene_transition/scene_transition.tscn" id="5_cix0q"]
 
-[node name="level" instance=ExtResource("1_hy7gq")]
+[node name="LevelMobTown" instance=ExtResource("1_hy7gq")]
 script = ExtResource("2_wiuxa")
 
 [node name="SurviveTimerLabel" type="Label" parent="CanvasLayer" index="1"]
@@ -20,8 +21,10 @@ size_flags_vertical = 0
 script = ExtResource("3_tc86l")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/SurviveTimerLabel" index="0"]
-wait_time = 3.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
-[node name="Spawner" parent="." index="2" instance=ExtResource("2_64tcx")]
+[node name="Spawner" parent="." index="1" instance=ExtResource("2_64tcx")]
+
+[node name="Transition" parent="." index="2" instance=ExtResource("5_cix0q")]
