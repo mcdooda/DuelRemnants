@@ -5,6 +5,8 @@ class_name Level
 @export var world_map: Resource
 @export var player_character_scene: PackedScene
 
+@onready var transition = get_node("CanvasLayer/Transition")
+
 var player_character: Node2D
 
 func _ready():
@@ -14,17 +16,14 @@ func _ready():
 	else:
 		player_character = GlobalPlayer.saved_players[0]
 		add_child(player_character)
-		player_character.show()
 
 func save_character():
-	player_character.hide()
 	remove_child(player_character)
 	GlobalPlayer.saved_players.append(player_character)
 
 func success():
-	$Transition.global_position = player_character.global_position
-	$Transition.in_transition()
 	GlobalUi.connect("scene_transition_animation_finished", load_world_map)
+	transition.in_transition()
 
 func load_world_map():
 	save_character()

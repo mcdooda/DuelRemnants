@@ -5,7 +5,7 @@ class_name SceneTransition
 var rects := []
 @export var width := 8
 @export var height := 8
-@export var duration := 0.8
+@export var duration := 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +24,7 @@ func _ready():
 	var out_animation = create_animation(Color.BLACK, Color(0, 0, 0, 0))
 	animation_library.add_animation("out", out_animation)
 	$AnimationPlayer.connect("animation_finished", transition_finished)
+	out_transition()
 
 func update_rects():
 	for x in rects.size():
@@ -31,7 +32,7 @@ func update_rects():
 			# add 1 to handle cast loss
 			var rect_size = Vector2i(int(size.x / width) + 1, int(size.y / height) + 1)
 			rects[x][y].size = rect_size
-			rects[x][y].position = Vector2(x * rect_size.x, y * rect_size .y)
+			rects[x][y].position = Vector2i(x * rect_size.x, y * rect_size .y)
 
 func compute_size_and_position():
 	var new_size = get_viewport().get_visible_rect().size
@@ -54,13 +55,12 @@ func create_animation(start: Color, end: Color):
 
 func in_transition():
 	compute_size_and_position()
-	position = -size / 2
 	$AnimationPlayer.play("default/in")
 	
 func out_transition():
 	compute_size_and_position()
-	position = -size / 2
 	$AnimationPlayer.play("default/out")
 	
-func transition_finished(_name):
-	GlobalUi.emit_signal("scene_transition_animation_finished")
+func transition_finished(animation_name):
+	if (animation_name == "default/in"):
+		GlobalUi.emit_signal("scene_transition_animation_finished")

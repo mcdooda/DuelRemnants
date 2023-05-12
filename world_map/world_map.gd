@@ -8,7 +8,7 @@ const map_scale = 20.0
 
 var events = {}
 @export var event_scene: PackedScene
-@onready var transition = get_node("Camera/Transition")
+@onready var transition = get_node("CanvasLayer/Transition")
 
 func _ready():
 	WorldMapData.save_state()
