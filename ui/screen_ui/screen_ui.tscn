@@ -18,9 +18,11 @@ script = ExtResource("1_wcih4")
 popup_scene = ExtResource("2_hssy4")
 
 [node name="ExperienceBar" parent="." instance=ExtResource("2_xu2fa")]
+process_mode = 3
 layout_mode = 1
 
 [node name="ItemPicker" parent="." instance=ExtResource("4_q2mhe")]
+process_mode = 2
 visible = false
 layout_mode = 1
 

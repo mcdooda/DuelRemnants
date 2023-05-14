@@ -14,7 +14,6 @@ var area: Node2D
 @onready var event_label_background: NinePatchRect = get_node("EventNamePanel/PanelContainer/NinePatchRect")
 @export var elite_background_texture: Resource
 
-
 func event_type_string():
 	return EventType.keys()[type]
 

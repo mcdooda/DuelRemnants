@@ -8,7 +8,8 @@ var ability: Ability
 @onready var focus_label = get_node("Panel/VBoxContainer/FocusLabel")
 @onready var animated_sprite: AnimatedSprite2D = get_node("Panel/VBoxContainer/Control/AnimatedSprite2D")
 
-func set_item(ability_path, level):
+func set_item(ability_path, level, delay: float):
+	$AnimationPlayer.start_animation(delay)
 	var ability_resource = ResourceLoader.load(ability_path)
 	ability = ability_resource.instantiate()
 	ability.init(true, level)

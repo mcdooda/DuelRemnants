@@ -12,6 +12,13 @@ var events = {}
 
 func _ready():
 	WorldMapData.save_state()
+	generate_map()
+	initialize_player_position()
+	$Camera.global_position = $Pawn.global_position
+	$Pawn.connect("objective_reached", start_scene_transition)
+	GlobalUi.connect("scene_transition_animation_finished", load_level)
+
+func generate_map():
 	var generator = preload("res://world_map/generator.gd").new()
 	var map_data = generator.generate(plane_len, distance_between_points, path_count)
 
@@ -28,10 +35,7 @@ func _ready():
 			var index2 = path[i + 1]
 			events[index1].add_child_event(events[index2], index2)
 			events[index1].randomize_type(i)
-	initialize_player_position()
-	$Camera.global_position = $Pawn.global_position
-	$Pawn.connect("objective_reached", start_scene_transition)
-	GlobalUi.connect("scene_transition_animation_finished", load_level)
+	
 
 func initialize_player_position():
 	if WorldMapData.current_player_node:
