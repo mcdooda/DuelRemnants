@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name PlayerCharacter
 
 @export var speed = 200
-@export var direction = Vector2(1, 0)
+@export var direction := Vector2(1, 0)
 
 @export var heal_animation: PackedScene
 @export var starting_ability : PackedScene
@@ -39,8 +39,8 @@ func frame_changed():
 
 func _physics_process(delta):
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
-	if input_direction.x != 0 or input_direction.y != 0:
-		direction = input_direction
+	direction = input_direction
+	direction.x = -1 if $Sprite.is_flipped_h() else 1
 	velocity = input_direction * speed
 	global_position += velocity * delta
 
