@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cps0eq3eiej1k"]
+[gd_scene load_steps=4 format=3 uid="uid://2nf81qoeoe5t"]
 
 [ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="1_euokk"]
 [ext_resource type="Script" path="res://ui/item_picker/ui_item_picker.gd" id="1_lig1l"]
-[ext_resource type="PackedScene" uid="uid://dp4jnurhaok5p" path="res://ui/item_description/ui_item_description.tscn" id="2_tw14f"]
+[ext_resource type="PackedScene" uid="uid://dmorvy7b66ore" path="res://ui/item_description/item_card.tscn" id="2_tw14f"]
 
-[node name="ui_item_picker" type="Control"]
+[node name="ItemPicker" type="Control"]
 process_mode = 3
 layout_direction = 1
 layout_mode = 3

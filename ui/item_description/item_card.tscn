@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp4jnurhaok5p"]
+[gd_scene load_steps=9 format=3 uid="uid://dmorvy7b66ore"]
 
-[ext_resource type="Script" path="res://ui/item_description/ui_item_description.gd" id="1_661nd"]
 [ext_resource type="Texture2D" uid="uid://dpxsk1kqqt4nm" path="res://themes/border.png" id="2_8pa1s"]
+[ext_resource type="Script" path="res://ui/item_description/item_card.gd" id="2_10p6s"]
 [ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="3_c17r6"]
 [ext_resource type="Script" path="res://ui/item_description/animation_player.gd" id="4_11jdi"]
 
@@ -83,7 +83,7 @@ pivot_offset = Vector2(80, 400)
 focus_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_c17r6")
-script = ExtResource("1_661nd")
+script = ExtResource("2_10p6s")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2

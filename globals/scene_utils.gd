@@ -51,3 +51,7 @@ func find_abilities_paths():
 		print("An error occurred when trying to access the ability path: ", abilities_parent_path)
 	return null
 
+func find_evolution_paths():
+	var evolution_parent_path = "res://world_map/evolution/evolutions/"
+	var result: PackedStringArray = find_all_files_with_extension_from_path(evolution_parent_path, "tscn")
+	return result

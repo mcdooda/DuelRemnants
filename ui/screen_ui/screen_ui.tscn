@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://ui/screen_ui/screen_ui.gd" id="1_wcih4"]
 [ext_resource type="PackedScene" uid="uid://bnsvjqbwasykt" path="res://ui/notification/notification.tscn" id="2_hssy4"]
 [ext_resource type="PackedScene" uid="uid://dushukjmi4x7u" path="res://ui/experience_bar/ui_experience_bar.tscn" id="2_xu2fa"]
-[ext_resource type="PackedScene" uid="uid://cps0eq3eiej1k" path="res://ui/item_picker/ui_item_picker.tscn" id="4_q2mhe"]
+[ext_resource type="PackedScene" uid="uid://2nf81qoeoe5t" path="res://ui/item_picker/ui_item_picker.tscn" id="4_q2mhe"]
 [ext_resource type="Script" path="res://ui/screen_ui/objective_label.gd" id="6_ns3sh"]
 
 [node name="ScreenUI" type="Control"]

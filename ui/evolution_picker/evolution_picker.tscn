@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbsj7b6x78hf0"]
+
+[ext_resource type="PackedScene" uid="uid://2nf81qoeoe5t" path="res://ui/item_picker/ui_item_picker.tscn" id="1_qerfa"]
+[ext_resource type="Script" path="res://ui/evolution_picker/evolution_picker.gd" id="2_cir5s"]
+
+[node name="EvolutionPicker" instance=ExtResource("1_qerfa")]
+script = ExtResource("2_cir5s")

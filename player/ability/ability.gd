@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Ability
 
-@export var ability_name: String
+@export var card_name: String
 @export var num_projectiles := 1
 @export var pierce := 0
 @export var speed := 1

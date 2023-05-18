@@ -28,14 +28,13 @@ func generate_map():
 		event.position = point + Vector2(100, 0)
 		$Props.add_sibling(event)
 		events[k] = event
-	
+
 	for path in map_data.paths:
 		for i in range(path.size() - 1):
 			var index1 = path[i]
 			var index2 = path[i + 1]
 			events[index1].add_child_event(events[index2], index2)
 			events[index1].randomize_type(i)
-	
 
 func initialize_player_position():
 	if WorldMapData.current_player_node:

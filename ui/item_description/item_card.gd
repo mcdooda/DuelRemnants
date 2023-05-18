@@ -1,6 +1,8 @@
 extends Control
 
-var ability: Ability
+class_name ItemCard
+
+var choice
 
 @onready var name_label = get_node("Panel/VBoxContainer/NameLabel")
 @onready var level_label = get_node("Panel/VBoxContainer/LevelLabel")
@@ -8,24 +10,27 @@ var ability: Ability
 @onready var focus_label = get_node("Panel/VBoxContainer/FocusLabel")
 @onready var animated_sprite: AnimatedSprite2D = get_node("Panel/VBoxContainer/Control/AnimatedSprite2D")
 
-func set_item(ability_path, level, delay: float):
+func set_item(item_ref, delay: float):
 	$AnimationPlayer.start_animation(delay)
-	var ability_resource = ResourceLoader.load(ability_path)
-	ability = ability_resource.instantiate()
-	ability.init(true, level)
-	name_label.text = ability.ability_name
-	level_label.text = "Level " + str(ability.current_level)
-	description_label.text = ability.modifiers.description
-	var icone_sprite_frame: SpriteFrames = ResourceLoader.load(AbilityUtils.find_item_animation(ability))
-	animated_sprite.set_sprite_frames(icone_sprite_frame)
-	animated_sprite.play("default")
+	choice = item_ref
+	name_label.text = choice.card_name
+	if "current_level" in choice:
+		level_label.text = "Level " + str(choice.current_level)
+	else:
+		level_label.visible = false
+	description_label.text = choice.modifiers.description
+	var animation_resource = AbilityUtils.find_item_animation(choice)
+	if animation_resource:
+		var icone_sprite_frame: SpriteFrames = ResourceLoader.load(animation_resource)
+		animated_sprite.set_sprite_frames(icone_sprite_frame)
+		animated_sprite.play("default")
 
 func _on_gui_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_X:
-			GlobalUi.emit_signal("item_selected", ability)
+			GlobalUi.emit_signal("item_selected", choice)
 	elif event is InputEventMouseButton:
-		GlobalUi.emit_signal("item_selected", ability)
+		GlobalUi.emit_signal("item_selected", choice)
 
 func _on_focus_entered():
 	focus_label.show()
