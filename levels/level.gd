@@ -16,6 +16,7 @@ func _ready():
 	else:
 		player_character = GlobalPlayer.saved_players[0]
 		add_child(player_character)
+	player_character.global_position = Vector2i(0, 0)
 	WorldMapData.emit_signal("enter_map", self)
 
 func save_character():

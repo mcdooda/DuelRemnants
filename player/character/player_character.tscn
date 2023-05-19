@@ -66,4 +66,4 @@ offset_right = 25.0
 offset_bottom = 23.0
 
 [node name="InvincibilityTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.1
