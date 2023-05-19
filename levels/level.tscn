@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://drtouk1oa6ij4" path="res://player/character/player_character.tscn" id="1_oefvl"]
 [ext_resource type="Script" path="res://levels/level.gd" id="1_yetui"]
-[ext_resource type="PackedScene" uid="uid://dlumms4uke6hm" path="res://world_map/world_map.tscn" id="2_4jqnt"]
+[ext_resource type="PackedScene" uid="uid://dsrr1p3x50te3" path="res://victory/victory.tscn" id="2_g501u"]
 [ext_resource type="PackedScene" uid="uid://c1qus3wkghdbi" path="res://scene_transition/scene_transition.tscn" id="2_h7udg"]
 [ext_resource type="PackedScene" uid="uid://diq0t53fc518" path="res://ui/screen_ui/screen_ui.tscn" id="4_h54go"]
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_yetui")
-world_map = ExtResource("2_4jqnt")
+victory_map = ExtResource("2_g501u")
 player_character_scene = ExtResource("1_oefvl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -21,8 +21,11 @@ var direction: Vector2
 
 func _ready():
 	var players = get_tree().get_nodes_in_group("player_characters")
-	target = players[0]
-	$FlashTimer.connect("timeout", reset_flash)
+	if not players.is_empty():
+		target = players[0]
+		$FlashTimer.connect("timeout", reset_flash)
+	else:
+		queue_free()
 
 func drop_item():
 	$Collision.disabled = true

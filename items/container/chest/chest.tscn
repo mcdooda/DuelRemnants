@@ -211,4 +211,3 @@ script = ExtResource("2_5vvp0")
 
 [node name="Sprite" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_4k42h")
-animation = &"idle"

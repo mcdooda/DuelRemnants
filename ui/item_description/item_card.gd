@@ -28,9 +28,12 @@ func set_item(item_ref, delay: float):
 func _on_gui_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_X:
-			GlobalUi.emit_signal("item_selected", choice)
+			select_item()
 	elif event is InputEventMouseButton:
-		GlobalUi.emit_signal("item_selected", choice)
+		select_item()
+
+func select_item():
+	GlobalUi.emit_signal("item_selected", choice)
 
 func _on_focus_entered():
 	focus_label.show()

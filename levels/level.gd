@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Level
 
-@export var world_map: Resource
+@export var victory_map: Resource
 @export var player_character_scene: PackedScene
 
 @onready var transition = get_node("CanvasLayer/Transition")
@@ -16,6 +16,7 @@ func _ready():
 	else:
 		player_character = GlobalPlayer.saved_players[0]
 		add_child(player_character)
+	WorldMapData.emit_signal("enter_map", self)
 
 func save_character():
 	remove_child(player_character)
@@ -33,4 +34,5 @@ func load_world_map():
 	var all_collectibles = get_tree().get_nodes_in_group("collectibles")
 	for collectible in all_collectibles:
 		collectible.queue_free()
-	get_tree().change_scene_to_packed(world_map)
+	get_tree().change_scene_to_packed(victory_map)
+

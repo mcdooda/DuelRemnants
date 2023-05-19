@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsrr1p3x50te3"]
+
+[ext_resource type="Script" path="res://victory/victory.gd" id="1_p4c1k"]
+[ext_resource type="PackedScene" uid="uid://bbsj7b6x78hf0" path="res://ui/evolution_picker/evolution_picker.tscn" id="1_tgl6i"]
+[ext_resource type="PackedScene" uid="uid://dlumms4uke6hm" path="res://world_map/world_map.tscn" id="2_p5l1p"]
+
+[node name="victory" type="Node2D"]
+script = ExtResource("1_p4c1k")
+world_map = ExtResource("2_p5l1p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EvolutionPicker" parent="CanvasLayer" instance=ExtResource("1_tgl6i")]

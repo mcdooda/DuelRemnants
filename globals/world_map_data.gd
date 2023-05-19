@@ -11,6 +11,7 @@ func _ready():
 	save_state()
 
 func add_evolution(evolution: Evolution):
+	evolution.reparent(self)
 	map_evolutions.append(evolution)
 
 func save_state():
@@ -21,3 +22,5 @@ func reset_state():
 
 func change_player_node(player_node):
 	current_player_node = player_node
+
+signal enter_map
