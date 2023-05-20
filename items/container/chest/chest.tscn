@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bka3uf1w8psng"]
+[gd_scene load_steps=35 format=3 uid="uid://bka3uf1w8psng"]
 
 [ext_resource type="PackedScene" uid="uid://dhxdho7naox1a" path="res://items/container/container.tscn" id="1_hh8tr"]
 [ext_resource type="Script" path="res://items/container/chest/chest.gd" id="2_5vvp0"]
@@ -206,8 +206,67 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="Animation" id="Animation_820jb"]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_open_animation"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1xw7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_23ocx"]
+_data = {
+"RESET": SubResource("Animation_1xw7i"),
+"open": SubResource("Animation_820jb")
+}
+
 [node name="Chest" instance=ExtResource("1_hh8tr")]
 script = ExtResource("2_5vvp0")
 
 [node name="Sprite" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_4k42h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_23ocx")
+}

@@ -7,6 +7,7 @@
 [node name="Treasure" instance=ExtResource("1_7v8ok")]
 script = ExtResource("2_rjq1b")
 chest_scene = ExtResource("3_f7ub8")
+num_chests = 10
 card_name = "Treasure"
 
 [node name="Modifiers" parent="." index="0"]

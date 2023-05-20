@@ -6,7 +6,11 @@ class_name  Evolution
 @export var card_name : String
 
 func _ready():
-	WorldMapData.connect("enter_map", enter_map_action)
+	WorldMapData.connect("enter_map", map_entered)
+	selected()
 
-func enter_map_action(_map):
+func map_entered(_map):
+	pass
+
+func selected():
 	pass

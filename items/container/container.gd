@@ -9,11 +9,14 @@ var player_ref: CharacterBody2D
 func _on_body_entered(body):
 	if body.is_in_group("player_characters"):
 		player_ref = body
-		$Sprite.play("open")
+		$AnimationPlayer.play("open")
 	check_content()
 
 func check_content():
 	pass
+
+func play_open_animation():
+	$Sprite.play("open")
 
 func _on_sprite_animation_finished():
 	for item in items:

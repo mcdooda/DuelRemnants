@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c27qjvmpo2hm2"]
+
+[ext_resource type="PackedScene" uid="uid://blc2qc26ggej5" path="res://world_map/evolution/evolution.tscn" id="1_hmxml"]
+[ext_resource type="Script" path="res://world_map/evolution/evolutions/stronger.gd" id="2_xhdbb"]
+
+[node name="Stronger" instance=ExtResource("1_hmxml")]
+script = ExtResource("2_xhdbb")
+
+[node name="Modifiers" parent="." index="0"]
+damage = 3
+num_projectiles = 1
+life = 50
+description = "+50 hp, +3 damages, +1 projectile"
