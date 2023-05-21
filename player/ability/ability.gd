@@ -12,13 +12,13 @@ var current_level := 0
 var timer: Timer
 #@export var item: Resource
 @export var projectile_scene: PackedScene
-var modifiers := Modifiers.new()
+var stats := Stats.new()
 
 func init(trigger_on_cooldown, level = 0):
 	current_level = level
 	# each level adds to the item modifier, we have load each
 	for i in current_level + 1:
-		load_level_modifiers(i)
+		load_level_stats(i)
 	if trigger_on_cooldown:
 		timer = Timer.new()
 		timer.wait_time = cooldown
@@ -33,7 +33,14 @@ func trigger_ability():
 	pass
 
 func max_projectiles():
-	return num_projectiles + modifiers.num_projectiles
+	var total = total_stats()
+	return num_projectiles + total.num_projectiles
+
+func total_stats():
+	var total := Stats.new()
+	total.add(stats)
+	total.add(get_parent().stats)
+	return total
 
 func get_level_scene(path, level):
 	var dir = DirAccess.open(path)
@@ -53,12 +60,12 @@ func get_level_modifier(level):
 	return get_level_scene(current_path + "/levels", level)
 
 func load_modifier(modifier_scene):
-	var next_modifiers = ResourceLoader.load(modifier_scene)
-	var instance = next_modifiers.instantiate()
-	modifiers.add(instance)
+	var next_stats = ResourceLoader.load(modifier_scene)
+	var instance = next_stats.instantiate()
+	stats.add(instance)
 	return instance
 
-func load_level_modifiers(level: int):
+func load_level_stats(level: int):
 	var maybe_next_level = get_level_modifier(level)
 	if maybe_next_level != null:
 		return load_modifier(maybe_next_level)
@@ -66,6 +73,6 @@ func load_level_modifiers(level: int):
 
 func level_up():
 	current_level += 1
-	var instance = load_level_modifiers(current_level)
+	var instance = load_level_stats(current_level)
 	if instance:
 		GlobalUi.emit_signal("item_leveled_up", current_level, instance)

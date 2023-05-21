@@ -10,4 +10,5 @@ script = ExtResource("2_xhdbb")
 damage = 3
 num_projectiles = 1
 life = 50
-description = "+50 hp, +3 damages, +1 projectile"
+max_life = 50
+description = "+50 hp, +50 max hp, +3 damages, +1 projectile"

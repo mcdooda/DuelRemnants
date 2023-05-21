@@ -8,4 +8,5 @@ script = ExtResource("2_rg2aw")
 card_name = "Heal"
 
 [node name="Modifiers" parent="." index="0"]
-description = "Heal 30% before each map"
+life = 50
+description = "Heal 50hp on each new map"

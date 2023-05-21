@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b75sxtvmynxi1"]
 
-[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_55vud"]
+[ext_resource type="Script" path="res://player/character/stats.gd" id="1_kms7b"]
 
 [node name="level_0" type="Node"]
-script = ExtResource("1_55vud")
+script = ExtResource("1_kms7b")
 description = "Fire arrow"

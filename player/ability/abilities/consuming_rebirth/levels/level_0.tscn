@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bql5m8kjj0x6s"]
 
-[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_4niqd"]
+[ext_resource type="Script" path="res://player/character/stats.gd" id="1_732ht"]
 
 [node name="level_0" type="Node"]
-script = ExtResource("1_4niqd")
+script = ExtResource("1_732ht")
 description = "Consuming rebirth"

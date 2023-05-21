@@ -5,12 +5,14 @@ class_name  Evolution
 @onready var modifiers = $Modifiers
 @export var card_name : String
 
+#func _init():
+
 func _ready():
 	WorldMapData.connect("enter_map", map_entered)
-	selected()
+	selected(GlobalPlayer.saved_players)
 
 func map_entered(_map):
 	pass
 
-func selected():
+func selected(_players: Array[PlayerCharacter]):
 	pass

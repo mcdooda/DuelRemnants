@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cb10kn28avjl1"]
 
-[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_00p2h"]
+[ext_resource type="Script" path="res://player/character/stats.gd" id="1_bp5ix"]
 
 [node name="level_0" type="Node"]
-script = ExtResource("1_00p2h")
+script = ExtResource("1_bp5ix")
 description = "Decimate"

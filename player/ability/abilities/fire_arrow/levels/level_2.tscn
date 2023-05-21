@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://rli80m8qoptr"]
 
-[ext_resource type="Script" path="res://player/ability/modifiers.gd" id="1_mnqih"]
+[ext_resource type="Script" path="res://player/character/stats.gd" id="1_fvdd4"]
 
 [node name="level_2" type="Node"]
-script = ExtResource("1_mnqih")
+script = ExtResource("1_fvdd4")
 damage = 1
 description = "+1 damage"

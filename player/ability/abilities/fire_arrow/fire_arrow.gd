@@ -7,7 +7,7 @@ func _ready():
 	init_timer()
 
 func trigger_ability():
-	var projectile_number = num_projectiles + modifiers.num_projectiles
+	var projectile_number = max_projectiles()
 	for i in projectile_number:
 		var alpha = (-max_angle / 2.0) + ((i + 1)/ float(projectile_number + 1)) * max_angle
 		var projectile = projectile_scene.instantiate()

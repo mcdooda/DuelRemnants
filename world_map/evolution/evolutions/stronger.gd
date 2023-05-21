@@ -1,5 +1,5 @@
 extends Evolution
 
-
-func selected():
-	pass
+func selected(players: Array[PlayerCharacter]):
+	for player in players:
+		player.add_stats(modifiers)

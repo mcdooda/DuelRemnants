@@ -1,3 +1,3 @@
 extends Node
 
-var saved_players : Array = []
+var saved_players : Array[PlayerCharacter] = []
