@@ -18,5 +18,5 @@ func spawn_sword(sword_ratio):
 	var projectile = projectile_scene.instantiate()
 	var alpha = (2 * PI) * sword_ratio
 	projectile.position += Vector2(cos(alpha) * radius, sin(alpha)  * radius)
-	projectile.modifiers = modifiers
+	projectile.stats = stats
 	get_parent().add_child(projectile)

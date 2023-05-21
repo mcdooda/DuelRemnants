@@ -2,7 +2,7 @@ extends Node2D
 
 class_name  Evolution
 
-@onready var modifiers = $Modifiers
+@onready var stats = $Modifiers
 @export var card_name : String
 
 #func _init():

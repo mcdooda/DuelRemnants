@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkgliwjecsedy"]
+
+[ext_resource type="PackedScene" uid="uid://blc2qc26ggej5" path="res://world_map/evolution/evolution.tscn" id="1_k62lt"]
+[ext_resource type="Script" path="res://world_map/evolution/evolutions/experience_heal.gd" id="2_dmdas"]
+
+[node name="ExperienceHeal" instance=ExtResource("1_k62lt")]
+script = ExtResource("2_dmdas")
+card_name = "Heal"
+
+[node name="Modifiers" parent="." index="0"]
+description = "Heal 1 hp for each experience gained"

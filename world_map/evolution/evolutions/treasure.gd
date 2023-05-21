@@ -1,7 +1,7 @@
 extends Evolution
 
 @export var chest_scene: PackedScene
-@export var num_chests := 10
+@export var num_chests := 1
 
 func map_entered(map):
 	for i in num_chests:

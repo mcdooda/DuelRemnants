@@ -77,7 +77,7 @@ func reset_invincibility():
 func add_stats(other: Stats):
 	var previous_life = stats.life
 	stats.add(other)
-	if previous_life < stats.life:
+	if previous_life != stats.life:
 		play_heal_animation()
 		emit_signal("life_changed", stats.life)
 

@@ -18,7 +18,7 @@ func set_item(item_ref, delay: float):
 		level_label.text = "Level " + str(choice.current_level)
 	else:
 		level_label.visible = false
-	description_label.text = choice.modifiers.description
+	description_label.text = choice.stats.description
 	var animation_resource = AbilityUtils.find_item_animation(choice)
 	if animation_resource:
 		var icone_sprite_frame: SpriteFrames = ResourceLoader.load(animation_resource)
