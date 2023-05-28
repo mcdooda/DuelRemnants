@@ -37,3 +37,7 @@ func load_world_map():
 		collectible.queue_free()
 	get_tree().change_scene_to_packed(victory_map)
 
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			success()

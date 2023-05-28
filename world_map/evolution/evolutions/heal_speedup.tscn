@@ -5,8 +5,9 @@
 
 [node name="HealSpeedup" instance=ExtResource("1_lfg4y")]
 script = ExtResource("2_iieog")
+duration = 3
 card_name = "Gotta go fast"
 
 [node name="Modifiers" parent="." index="0"]
-movement_speed = 200
+movement_speed = 150
 description = "Speed up when healed"
