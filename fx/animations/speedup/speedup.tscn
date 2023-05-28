@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://drwe0ltih6nye"]
+
+[ext_resource type="Texture2D" uid="uid://bll4otqw0gjmy" path="res://player/character/player_character.png" id="1_m242r"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c3xb4"]
+particles_animation = true
+particles_anim_h_frames = 14
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_2dvgd"]
+offsets = PackedFloat32Array(0, 0.261765, 0.626471, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.347059, 0.695294, 1, 1, 1, 1, 1, 1, 0, 0.533333, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uqoeq"]
+gradient = SubResource("Gradient_2dvgd")
+use_hdr = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wouch"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_uqoeq")
+
+[node name="speedup" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_c3xb4")
+process_material = SubResource("ParticleProcessMaterial_wouch")
+texture = ExtResource("1_m242r")
+lifetime = 0.6

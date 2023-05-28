@@ -1,6 +1,7 @@
 extends Evolution
 
 var timers = {}
+@export var particle_effect: PackedScene
 @export var duration := 3
 
 func init_timer():
@@ -20,6 +21,8 @@ func healed(player):
 	var timer = timers[player]
 	if timer.is_stopped():
 		player.add_stats(stats)
+		var instance = particle_effect.instantiate()
+		player.add_child(instance)
 	timer.start()
 
 func reset_stats(player):

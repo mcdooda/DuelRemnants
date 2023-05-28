@@ -20,7 +20,7 @@ size_flags_vertical = 0
 script = ExtResource("3_tc86l")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/SurviveTimerLabel" index="0"]
-wait_time = 20.0
+wait_time = 80.0
 one_shot = true
 autostart = true
 
