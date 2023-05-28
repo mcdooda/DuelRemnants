@@ -26,3 +26,16 @@ func add(other: Stats):
 		life = max_life
 	# overwrite the description
 	description = other.description
+
+func remove(other: Stats):
+	damage -= other.damage
+	knockback -= other.knockback
+	cooldown -= other.cooldown
+	cooldown_percent -= other.cooldown_percent
+	movement_speed -= other.movement_speed
+	num_projectiles -= other.num_projectiles
+	max_life -= other.max_life
+	life -= other.life
+	if life < 0:
+		life = 0
+	

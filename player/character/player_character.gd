@@ -66,6 +66,7 @@ func play_heal_animation():
 func heal(delta):
 	change_life(delta)
 	play_heal_animation()
+	emit_signal("healed", self)
 
 func _process(_delta):
 	var v := get_viewport()
@@ -81,4 +82,8 @@ func add_stats(other: Stats):
 		play_heal_animation()
 		emit_signal("life_changed", stats.life)
 
+func remove_stats(other: Stats):
+	stats.remove(other)
+
 signal life_changed
+signal healed

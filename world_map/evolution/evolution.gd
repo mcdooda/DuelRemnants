@@ -5,9 +5,7 @@ class_name  Evolution
 @onready var stats = $Modifiers
 @export var card_name : String
 
-#func _init():
-
-func _ready():
+func select():
 	WorldMapData.connect("enter_map", map_entered)
 	selected(GlobalPlayer.saved_players)
 
