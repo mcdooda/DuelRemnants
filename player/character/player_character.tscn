@@ -26,10 +26,9 @@ starting_ability = ExtResource("3_5ibkt")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(-40, -59)
+position = Vector2(0, -19)
 sprite_frames = ExtResource("2_nov3l")
 animation = &"attack2"
-centered = false
 script = ExtResource("3_xi74e")
 
 [node name="Collision" type="CollisionShape2D" parent="."]

@@ -8,25 +8,26 @@ particles_anim_h_frames = 14
 particles_anim_v_frames = 7
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id="Gradient_2dvgd"]
-offsets = PackedFloat32Array(0, 0.261765, 0.626471, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.347059, 0.695294, 1, 1, 1, 1, 1, 1, 0, 0.533333, 1, 0)
+[sub_resource type="Gradient" id="Gradient_vcu03"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_uqoeq"]
-gradient = SubResource("Gradient_2dvgd")
-use_hdr = true
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_by52v"]
+gradient = SubResource("Gradient_vcu03")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wouch"]
 particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-color_ramp = SubResource("GradientTexture1D_uqoeq")
+color_ramp = SubResource("GradientTexture1D_by52v")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
 
-[node name="speedup" type="Node2D"]
+[node name="Speedup" type="Node2D"]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Particles" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_c3xb4")
+amount = 4
 process_material = SubResource("ParticleProcessMaterial_wouch")
 texture = ExtResource("1_m242r")
-lifetime = 0.6
+lifetime = 0.4

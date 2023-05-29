@@ -16,12 +16,13 @@ var invincible = false
 @onready var muzzle = $Muzzle
 @onready var inventory = $Inventory
 @onready var stats = $Statistics
+@onready var sprite = $Sprite
 
 func _ready():
 	$Timer.connect("timeout", start_attack)
 	$InvincibilityTimer.connect("timeout", reset_invincibility)
-	$Sprite.connect("animation_looped", attack_finished)
-	$Sprite.connect("frame_changed", frame_changed)
+	sprite.connect("animation_looped", attack_finished)
+	sprite.connect("frame_changed", frame_changed)
 	init_health_bar()
 	starting_ability_ref = $Inventory.add_item(starting_ability, false)
 
@@ -31,20 +32,20 @@ func init_health_bar():
 	connect("life_changed", $HealthBar.on_life_changed)
 
 func start_attack():
-	$Sprite.play("attack2")
+	sprite.play("attack2")
 	playing_attack_animation = true
 
 func attack_finished():
 	playing_attack_animation = false
 
 func frame_changed():
-	if playing_attack_animation and $Sprite.frame == attack_frame:
+	if playing_attack_animation and sprite.frame == attack_frame:
 		starting_ability_ref.trigger_ability()
 
 func _physics_process(delta):
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	direction = input_direction
-	direction.x = -1 if $Sprite.is_flipped_h() else 1
+	direction.x = -1 if sprite.is_flipped_h() else 1
 	velocity = input_direction * stats.movement_speed
 	global_position += velocity * delta
 
