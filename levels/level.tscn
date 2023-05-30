@@ -13,8 +13,8 @@ player_character_scene = ExtResource("1_oefvl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ScreenUI" parent="CanvasLayer" instance=ExtResource("4_h54go")]
-
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("2_h7udg")]
 offset_right = 1280.0
 offset_bottom = 800.0
+
+[node name="ScreenUI" parent="CanvasLayer" instance=ExtResource("4_h54go")]

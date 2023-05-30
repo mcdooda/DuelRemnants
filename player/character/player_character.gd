@@ -59,6 +59,7 @@ func hit():
 		invincible = true
 		$InvincibilityTimer.start()
 		change_life(-1)
+		emit_signal("hurt", self)
 
 func play_heal_animation():
 	var animation = heal_animation.instantiate()
@@ -88,3 +89,4 @@ func remove_stats(other: Stats):
 
 signal life_changed
 signal healed
+signal hurt

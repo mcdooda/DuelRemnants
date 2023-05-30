@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://duu4l3cicud4r"]
+
+[ext_resource type="PackedScene" uid="uid://blc2qc26ggej5" path="res://world_map/evolution/evolution.tscn" id="1_lfp3j"]
+[ext_resource type="Script" path="res://world_map/evolution/evolutions/knockback_on_hit.gd" id="2_gc54b"]
+[ext_resource type="PackedScene" uid="uid://d4jppkt1en3v" path="res://fx/animations/energy_halo/energy_halo.tscn" id="3_g523u"]
+
+[node name="KnockbackOnHit" instance=ExtResource("1_lfp3j")]
+script = ExtResource("2_gc54b")
+explosion = ExtResource("3_g523u")
+num_hit = 5
+card_name = "Can't touch me"
+
+[node name="Modifiers" parent="." index="0"]
+description = "Sometimes knockback enemies when hit"

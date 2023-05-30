@@ -5,6 +5,7 @@
 
 [node name="Stronger" instance=ExtResource("1_hmxml")]
 script = ExtResource("2_xhdbb")
+card_name = "Super man"
 
 [node name="Modifiers" parent="." index="0"]
 damage = 3
