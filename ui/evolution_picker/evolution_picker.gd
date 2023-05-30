@@ -17,3 +17,6 @@ func _ready():
 	item3.set_item(instance3, 0.2)
 	
 	item1.grab_focus()
+
+func focus_first_item():
+	item1.grab_focus()

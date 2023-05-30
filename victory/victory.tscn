@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://dsrr1p3x50te3"]
+[gd_scene load_steps=32 format=3 uid="uid://dsrr1p3x50te3"]
 
 [ext_resource type="Script" path="res://victory/victory.gd" id="1_p4c1k"]
 [ext_resource type="PackedScene" uid="uid://bbsj7b6x78hf0" path="res://ui/evolution_picker/evolution_picker.tscn" id="1_tgl6i"]
 [ext_resource type="PackedScene" uid="uid://dlumms4uke6hm" path="res://world_map/world_map.tscn" id="2_p5l1p"]
 [ext_resource type="Texture2D" uid="uid://bm1oapjfdya71" path="res://victory/victory.png" id="4_5g8pb"]
+[ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="5_yuw3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7bd74"]
 atlas = ExtResource("4_5g8pb")
@@ -105,34 +106,6 @@ region = Rect2(4140, 0, 180, 180)
 atlas = ExtResource("4_5g8pb")
 region = Rect2(4320, 0, 180, 180)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iq2kk"]
-atlas = ExtResource("4_5g8pb")
-region = Rect2(4500, 0, 180, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjjee"]
-atlas = ExtResource("4_5g8pb")
-region = Rect2(4680, 0, 180, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a4hpd"]
-atlas = ExtResource("4_5g8pb")
-region = Rect2(4860, 0, 180, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y6b4l"]
-atlas = ExtResource("4_5g8pb")
-region = Rect2(5040, 0, 180, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rm63i"]
-atlas = ExtResource("4_5g8pb")
-region = Rect2(5220, 0, 180, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f0he3"]
-atlas = ExtResource("4_5g8pb")
-region = Rect2(5400, 0, 180, 180)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wfn4y"]
-atlas = ExtResource("4_5g8pb")
-region = Rect2(5580, 0, 180, 180)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_js5a1"]
 animations = [{
 "frames": [{
@@ -210,38 +183,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_50ph8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iq2kk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hjjee")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a4hpd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y6b4l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rm63i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f0he3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wfn4y")
 }],
 "loop": false,
 "name": &"default",
 "speed": 13.0
 }]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y441k"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 
 [node name="victory" type="Node2D"]
 script = ExtResource("1_p4c1k")
@@ -262,23 +208,42 @@ grow_vertical = 2
 
 [node name="Control" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_top = 90.0
-offset_bottom = 90.0
+anchor_bottom = 0.5
 grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/Control"]
 sprite_frames = SubResource("SpriteFrames_js5a1")
 autoplay = "default"
-frame = 31
+frame = 24
 frame_progress = 1.0
 
 [node name="Control2" type="Control" parent="CanvasLayer/Control"]
-anchors_preset = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 40.0
+grow_horizontal = 2
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer/Control/Control2"]
-process_material = SubResource("ParticleProcessMaterial_y441k")
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 100.0
+offset_right = 74.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme = ExtResource("5_yuw3w")
+theme_override_font_sizes/font_size = 50
+text = "Victory"
+
+[connection signal="animation_finished" from="CanvasLayer/Control/Control/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
