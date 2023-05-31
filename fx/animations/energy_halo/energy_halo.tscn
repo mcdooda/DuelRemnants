@@ -54,8 +54,8 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_px0lk"]
-size = Vector2(136, 71.75)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mft3b"]
+radius = 100.0
 
 [node name="EnergyHalo" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_g7dat")
@@ -71,8 +71,8 @@ collision_mask = 2
 script = ExtResource("3_rxfor")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, 1.75)
-shape = SubResource("RectangleShape2D_px0lk")
+position = Vector2(-1, 3.75)
+shape = SubResource("CircleShape2D_mft3b")
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

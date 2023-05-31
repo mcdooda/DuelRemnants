@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dsrr1p3x50te3"]
+[gd_scene load_steps=35 format=3 uid="uid://dsrr1p3x50te3"]
 
 [ext_resource type="Script" path="res://victory/victory.gd" id="1_p4c1k"]
 [ext_resource type="PackedScene" uid="uid://bbsj7b6x78hf0" path="res://ui/evolution_picker/evolution_picker.tscn" id="1_tgl6i"]
@@ -189,6 +189,81 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="Animation" id="Animation_fg4q6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xf0eq"]
+resource_name = "appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.37841, -2),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Control/VictoryAnimation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7uq2y"]
+_data = {
+"RESET": SubResource("Animation_fg4q6"),
+"appear": SubResource("Animation_xf0eq")
+}
+
 [node name="victory" type="Node2D"]
 script = ExtResource("1_p4c1k")
 world_map = ExtResource("2_p5l1p")
@@ -216,11 +291,8 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/Control"]
+[node name="VictoryAnimation" type="AnimatedSprite2D" parent="CanvasLayer/Control/Control"]
 sprite_frames = SubResource("SpriteFrames_js5a1")
-autoplay = "default"
-frame = 24
-frame_progress = 1.0
 
 [node name="Control2" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -237,13 +309,20 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -74.0
-offset_top = 100.0
-offset_right = 74.0
-offset_bottom = 151.0
+offset_left = -117.5
+offset_top = 70.0
+offset_right = 117.5
+offset_bottom = 148.0
 grow_horizontal = 2
+pivot_offset = Vector2(117, 39)
 theme = ExtResource("5_yuw3w")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 80
 text = "Victory"
 
-[connection signal="animation_finished" from="CanvasLayer/Control/Control/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Label"]
+autoplay = "appear"
+libraries = {
+"": SubResource("AnimationLibrary_7uq2y")
+}
+
+[connection signal="animation_finished" from="CanvasLayer/Control/Control/VictoryAnimation" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -2,6 +2,7 @@ extends Node2D
 
 @export var world_map: Resource
 @onready var evolution_picker = get_node("CanvasLayer/EvolutionPicker")
+@onready var victory_animation = get_node("CanvasLayer/Control/Control/VictoryAnimation")
 
 func _ready():
 	$CanvasLayer.remove_child(evolution_picker)

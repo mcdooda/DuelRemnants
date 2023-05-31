@@ -13,6 +13,7 @@ func _ready():
 	if GlobalPlayer.saved_players.is_empty():
 		player_character = player_character_scene.instantiate()
 		add_child(player_character)
+		GlobalPlayer.saved_players.append(player_character)
 	else:
 		player_character = GlobalPlayer.saved_players[0]
 		add_child(player_character)
@@ -21,7 +22,6 @@ func _ready():
 
 func save_character():
 	remove_child(player_character)
-	GlobalPlayer.saved_players.append(player_character)
 
 func success():
 	GlobalUi.connect("scene_transition_animation_finished", load_world_map)

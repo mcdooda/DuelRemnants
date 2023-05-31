@@ -10,8 +10,7 @@ var choice
 @onready var focus_label = get_node("Panel/VBoxContainer/FocusLabel")
 @onready var animated_sprite: AnimatedSprite2D = get_node("Panel/VBoxContainer/Control/AnimatedSprite2D")
 
-func set_item(item_ref, delay: float):
-	$AnimationPlayer.start_animation(delay)
+func set_item(item_ref):
 	choice = item_ref
 	name_label.text = choice.card_name
 	if "current_level" in choice:
