@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://csjoertviq2eu"]
+
+[ext_resource type="Script" path="res://ui/text_bubble/text_bubble.gd" id="1_swb6w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojsqg"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.45098)
+skew = Vector2(0.4, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+
+[node name="text_bubble" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_swb6w")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_right = 71.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojsqg")
+
+[node name="Label" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "text here"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

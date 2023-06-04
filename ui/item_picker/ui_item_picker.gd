@@ -1,13 +1,14 @@
 extends Control
 
 var player_ref: Node2D
-@onready var item1 = get_node("Control/Control/Item1")
-@onready var item2 = get_node("Control/Control2/Item2")
-@onready var item3 = get_node("Control/Control3/Item3")
+@onready var item1 = get_node("VBoxContainer/HBoxContainer/Control/Item1")
+@onready var item2 = get_node("VBoxContainer/HBoxContainer/Control2/Item2")
+@onready var item3 = get_node("VBoxContainer/HBoxContainer/Control3/Item3")
 
 func _ready():
 	GlobalExperience.connect("level_changed", on_level_changed)
 	GlobalUi.connect("item_selected", on_item_selected)
+	item1.grab_focus()
 
 func assign_players():
 	var players = get_tree().get_nodes_in_group("player_characters")

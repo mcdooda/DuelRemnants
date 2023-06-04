@@ -24,8 +24,8 @@ func _ready():
 	if not players.is_empty():
 		target = players[0]
 		$FlashTimer.connect("timeout", reset_flash)
-	else:
-		queue_free()
+	#else:
+	#	queue_free()
 
 func drop_item():
 	$Collision.disabled = true
@@ -68,7 +68,7 @@ func handle_direction():
 	direction = target_position - self_position
 
 func _physics_process(delta):
-	if not is_alive:
+	if not is_alive or not target:
 		return
 	handle_direction()
 	speed = min(speed + delta * acceleration, max_speed)

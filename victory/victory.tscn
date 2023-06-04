@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://victory/victory.gd" id="1_p4c1k"]
 [ext_resource type="PackedScene" uid="uid://bbsj7b6x78hf0" path="res://ui/evolution_picker/evolution_picker.tscn" id="1_tgl6i"]
-[ext_resource type="PackedScene" uid="uid://dlumms4uke6hm" path="res://world_map/world_map.tscn" id="2_p5l1p"]
+[ext_resource type="PackedScene" uid="uid://c1lvotquv0j4o" path="res://world_map/world_map.tscn" id="2_p5l1p"]
 [ext_resource type="Texture2D" uid="uid://bm1oapjfdya71" path="res://victory/victory.png" id="4_5g8pb"]
 [ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="5_yuw3w"]
 
@@ -272,6 +272,7 @@ world_map = ExtResource("2_p5l1p")
 
 [node name="EvolutionPicker" parent="CanvasLayer" instance=ExtResource("1_tgl6i")]
 scale = Vector2(1, 1)
+theme = ExtResource("5_yuw3w")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy/base_enemy/base_enemy.gd" id="1_hwflu"]
 [ext_resource type="Shader" uid="uid://dwmmkvg1eibh0" path="res://enemy/base_enemy/base_enemy_shader.tres" id="2_sfmqd"]
-[ext_resource type="PackedScene" uid="uid://cjuxkww2js77n" path="res://items/collectible/experience/experience.tscn" id="2_ueeec"]
+[ext_resource type="PackedScene" uid="uid://b0aftde2rndlh" path="res://items/collectible/experience/experience.tscn" id="2_ueeec"]
 [ext_resource type="Script" path="res://enemy/base_enemy/base_enemy_sprite.gd" id="3_3i7qw"]
 [ext_resource type="SpriteFrames" uid="uid://m0bv476rtb4n" path="res://enemy/maw/enemy_maw.tres" id="4_ya4vk"]
 

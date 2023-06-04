@@ -8,6 +8,7 @@ const map_scale = 20.0
 
 var events = {}
 @export var event_scene: PackedScene
+@export var gem_scene: PackedScene
 @onready var transition = get_node("CanvasLayer/Transition")
 
 func _ready():
@@ -52,7 +53,7 @@ func load_level():
 	if event_index != 0:
 		WorldMapData.reset_state()
 		WorldMapData.change_player_node(event_index)
-		get_tree().change_scene_to_file("res://levels/level_mob_town/level_mob_town.tscn")
+		get_tree().change_scene_to_file("res://levels/level_shop/level_shop.tscn")
 
 func _unhandled_input(event):
 	if $Pawn.is_moving():

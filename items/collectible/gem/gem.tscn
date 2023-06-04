@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://df5ce6tthtub4"]
+
+[ext_resource type="PackedScene" uid="uid://deahjuq85kgnj" path="res://items/collectible/collectible.tscn" id="1_gv4hp"]
+[ext_resource type="Script" path="res://items/collectible/gem/gem.gd" id="2_dpc16"]
+[ext_resource type="SpriteFrames" uid="uid://cywy5o7q8hpn2" path="res://items/collectible/gem/gem.tres" id="3_jhay5"]
+
+[node name="Gem" instance=ExtResource("1_gv4hp")]
+script = ExtResource("2_dpc16")
+value = 1
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_jhay5")
+animation = &"idle2"
+autoplay = "idle2"
+frame = 0
+frame_progress = 0.0

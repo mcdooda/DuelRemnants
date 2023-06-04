@@ -4,11 +4,11 @@ class_name ItemCard
 
 var choice
 
-@onready var name_label = get_node("Panel/VBoxContainer/NameLabel")
-@onready var level_label = get_node("Panel/VBoxContainer/LevelLabel")
-@onready var description_label = get_node("Panel/VBoxContainer/DescriptionLabel")
-@onready var focus_label = get_node("Panel/VBoxContainer/FocusLabel")
-@onready var animated_sprite: AnimatedSprite2D = get_node("Panel/VBoxContainer/Control/AnimatedSprite2D")
+@onready var name_label = get_node("AnimatedControl/MarginContainer/Panel/VBoxContainer/NameLabel")
+@onready var level_label = get_node("AnimatedControl/MarginContainer/Panel/VBoxContainer/LevelLabel")
+@onready var description_label = get_node("AnimatedControl/MarginContainer/Panel/VBoxContainer/DescriptionLabel")
+@onready var animated_sprite: AnimatedSprite2D = get_node("AnimatedControl/MarginContainer/Panel/VBoxContainer/Control/AnimatedSprite2D")
+@onready var animation_player = get_node("AnimatedControl/AnimationPlayer")
 
 func set_item(item_ref):
 	choice = item_ref
@@ -26,7 +26,7 @@ func set_item(item_ref):
 
 func _on_gui_input(event):
 	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_X:
+		if event.pressed and event.keycode == KEY_SPACE:
 			select_item()
 	elif event is InputEventMouseButton:
 		select_item()
@@ -35,9 +35,9 @@ func select_item():
 	GlobalUi.emit_signal("item_selected", choice)
 
 func _on_focus_entered():
-	focus_label.show()
+	animation_player.play("focused")
 	pass # Replace with function body.
 
 func _on_focus_exited():
-	focus_label.hide()
+	animation_player.play("RESET")
 	pass # Replace with function body.

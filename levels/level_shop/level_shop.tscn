@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://boxfmbgtnjf2x"]
+
+[ext_resource type="PackedScene" uid="uid://bt6ajpg5ggmwa" path="res://levels/level.tscn" id="1_j5i40"]
+[ext_resource type="PackedScene" uid="uid://c1lvotquv0j4o" path="res://world_map/world_map.tscn" id="2_0wsdb"]
+[ext_resource type="Script" path="res://levels/level_shop/level_shop.gd" id="2_aophk"]
+[ext_resource type="PackedScene" uid="uid://dc4ru570hwlqe" path="res://enemy/dusk_weaver/enemy_dusk_weaver.tscn" id="3_lse0o"]
+[ext_resource type="PackedScene" uid="uid://bka3uf1w8psng" path="res://items/container/chest/chest.tscn" id="5_ytcq1"]
+[ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="6_ptxas"]
+[ext_resource type="PackedScene" uid="uid://bbsj7b6x78hf0" path="res://ui/evolution_picker/evolution_picker.tscn" id="6_xoha4"]
+
+[node name="Shop" instance=ExtResource("1_j5i40")]
+script = ExtResource("2_aophk")
+item_price = 3
+victory_map = ExtResource("2_0wsdb")
+
+[node name="ShopKeeper" parent="." index="0" instance=ExtResource("3_lse0o")]
+position = Vector2(121, -124)
+
+[node name="EvolutionPicker" parent="CanvasLayer" index="0" instance=ExtResource("6_xoha4")]
+theme = ExtResource("6_ptxas")
+
+[node name="Chest" parent="." index="2" instance=ExtResource("5_ytcq1")]
+position = Vector2(-50, -77)

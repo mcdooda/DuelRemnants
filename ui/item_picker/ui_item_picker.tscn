@@ -1,27 +1,101 @@
-[gd_scene load_steps=7 format=3 uid="uid://2nf81qoeoe5t"]
+[gd_scene load_steps=6 format=3 uid="uid://2nf81qoeoe5t"]
 
-[ext_resource type="Theme" uid="uid://blkin3xm8152j" path="res://themes/game_theme.tres" id="1_euokk"]
 [ext_resource type="Script" path="res://ui/item_picker/ui_item_picker.gd" id="1_lig1l"]
 [ext_resource type="PackedScene" uid="uid://dmorvy7b66ore" path="res://ui/item_description/item_card.tscn" id="2_tw14f"]
+
+[sub_resource type="Animation" id="Animation_8pvxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer/Control/Item1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer/Control/Item1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/HBoxContainer/Control2/Item2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/HBoxContainer/Control2/Item2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/HBoxContainer/Control3/Item3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/HBoxContainer/Control3/Item3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_80r8p"]
 resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Control/Item1:rotation")
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer/Control/Item1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 2),
 "update": 0,
-"values": [1.5708, 0.0]
+"values": [1.5708, -0.0523599, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Control/Item1:modulate")
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer/Control/Item1:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -33,19 +107,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Control2/Item2:rotation")
+tracks/2/path = NodePath("VBoxContainer/HBoxContainer/Control2/Item2:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 2),
 "update": 0,
-"values": [1.5708, 0.0]
+"values": [1.5708, -0.0523599, 0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Control2/Item2:modulate")
+tracks/3/path = NodePath("VBoxContainer/HBoxContainer/Control2/Item2:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -57,19 +131,19 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Control3/Item3:rotation")
+tracks/4/path = NodePath("VBoxContainer/HBoxContainer/Control3/Item3:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 2),
 "update": 0,
-"values": [1.5708, 0.0]
+"values": [1.5708, -0.0523599, 0.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Control/Control3/Item3:modulate")
+tracks/5/path = NodePath("VBoxContainer/HBoxContainer/Control3/Item3:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -77,81 +151,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_8pvxb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Control/Item1:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Control/Item1:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Control2/Item2:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Control2/Item2:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Control3/Item3:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Control/Control3/Item3:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6mpa0"]
@@ -170,86 +169,83 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.00822)
-theme = ExtResource("1_euokk")
 script = ExtResource("1_lig1l")
 
-[node name="Control" type="HBoxContainer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_6mpa0")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -215.0
-offset_right = 215.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
 
-[node name="Control" type="Control" parent="Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_constants/separation = 20
 
-[node name="Item1" parent="Control/Control" instance=ExtResource("2_tw14f")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -100.0
-offset_right = 75.0
-offset_bottom = 100.0
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 210)
+layout_mode = 2
+
+[node name="Item1" parent="VBoxContainer/HBoxContainer/Control" instance=ExtResource("2_tw14f")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 focus_neighbor_left = NodePath("../../Control3/Item3")
 focus_neighbor_right = NodePath("../../Control2/Item2")
 focus_next = NodePath("../../Control2/Item2")
 focus_previous = NodePath("../../Control3/Item3")
 
-[node name="Control2" type="Control" parent="Control"]
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 210)
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="Item2" parent="Control/Control2" instance=ExtResource("2_tw14f")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -100.0
-offset_right = 75.0
-offset_bottom = 100.0
-size_flags_horizontal = 3
+[node name="Item2" parent="VBoxContainer/HBoxContainer/Control2" instance=ExtResource("2_tw14f")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 focus_neighbor_left = NodePath("../../Control/Item1")
 focus_neighbor_right = NodePath("../../Control3/Item3")
 focus_next = NodePath("../../Control3/Item3")
 focus_previous = NodePath("../../Control/Item1")
 
-[node name="Control3" type="Control" parent="Control"]
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 210)
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="Item3" parent="Control/Control3" instance=ExtResource("2_tw14f")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -100.0
-offset_right = 75.0
-offset_bottom = 100.0
-size_flags_horizontal = 3
+[node name="Item3" parent="VBoxContainer/HBoxContainer/Control3" instance=ExtResource("2_tw14f")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 focus_neighbor_left = NodePath("../../Control2/Item2")
 focus_neighbor_right = NodePath("../../Control/Item1")
 focus_next = NodePath("../../Control/Item1")
 focus_previous = NodePath("../../Control2/Item2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "default"
-speed_scale = 3.0
-libraries = {
-"": SubResource("AnimationLibrary_6mpa0")
-}
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Select with [SPACE]"
+horizontal_alignment = 1

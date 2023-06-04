@@ -327,4 +327,4 @@ max_speed = 80
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_gsh0o")
-animation = &"move"
+animation = &"idle"

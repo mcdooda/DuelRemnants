@@ -423,9 +423,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1addp")
 }],
-"loop": true,
+"loop": false,
 "name": &"new_animation",
-"speed": 13.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -512,4 +512,4 @@ script = ExtResource("2_21rb3")
 sprite_frames = SubResource("SpriteFrames_velnn")
 animation = &"new_animation_1"
 frame = 0
-frame_progress = 0.224698
+frame_progress = 0.632117

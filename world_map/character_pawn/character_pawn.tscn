@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7wsjafu4t1hq"]
+[gd_scene load_steps=7 format=3 uid="uid://b7wsjafu4t1hq"]
 
 [ext_resource type="Script" path="res://world_map/character_pawn/character_pawn.gd" id="1_ly3ao"]
 [ext_resource type="SpriteFrames" uid="uid://cjaf6l5pws0kx" path="res://player/character/player_character.tres" id="2_h5tg5"]
 [ext_resource type="Script" path="res://world_map/character_pawn/character_pawn_sprite.gd" id="3_tp3f5"]
+[ext_resource type="Script" path="res://player/character/player_item_collision.gd" id="4_fkgqs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0di2"]
 radius = 21.0238
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0rwej"]
+radius = 50.0
+
 [node name="character_pawn" type="CharacterBody2D"]
+collision_mask = 6
 script = ExtResource("1_ly3ao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -22,3 +27,12 @@ script = ExtResource("3_tp3f5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_m0di2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("4_fkgqs")
+
+[node name="ItemCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_0rwej")

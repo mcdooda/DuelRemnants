@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlumms4uke6hm"]
+[gd_scene load_steps=14 format=3 uid="uid://c1lvotquv0j4o"]
 
 [ext_resource type="Script" path="res://world_map/world_map.gd" id="1_xsjd4"]
 [ext_resource type="PackedScene" uid="uid://bvc3vywik1x0p" path="res://world_map/map_event/event.tscn" id="2_vjbkk"]
@@ -12,10 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://dstgammqax812" path="res://world_map/tiles/map_props/mountain.png" id="9_d6qs7"]
 [ext_resource type="Texture2D" uid="uid://c4tucpp6u811" path="res://world_map/tiles/map_props/mountain2.png" id="10_mjg0k"]
 [ext_resource type="PackedScene" uid="uid://c1qus3wkghdbi" path="res://scene_transition/scene_transition.tscn" id="12_xycsi"]
+[ext_resource type="PackedScene" uid="uid://df5ce6tthtub4" path="res://items/collectible/gem/gem.tscn" id="13_gp2cj"]
 
-[node name="world_map" type="Node"]
+[node name="WorldMap" type="Node"]
 script = ExtResource("1_xsjd4")
 event_scene = ExtResource("2_vjbkk")
+gem_scene = ExtResource("13_gp2cj")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -481,3 +483,6 @@ script = ExtResource("6_446hw")
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("12_xycsi")]
 offset_right = 1280.0
 offset_bottom = 800.0
+
+[node name="Gem" parent="." instance=ExtResource("13_gp2cj")]
+position = Vector2(-54, 582)
